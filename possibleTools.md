@@ -16,4 +16,4 @@
 
 ***
 
-####Please feel free to add whatever you like and we will discuss it asap, and please add a litle note mentioning why the tool will be useful since I am sure we will all be inexperienced in something
+####Please feel free to add whatever you like and we will discuss it asap, and please add a little note mentioning why the tool will be useful since I am sure we will all be inexperienced in something
