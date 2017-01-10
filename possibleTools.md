@@ -1,4 +1,4 @@
-#These are our discussed options for tools to use on our projects thus far
+#Possible Tools For The Project
 
 - Firebase for authentication
 
