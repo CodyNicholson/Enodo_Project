@@ -13,14 +13,14 @@ namespace Capstone_Project.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult TakeSurveys()
         {
             ViewBag.Message = "Your application description page.";
 
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult MyResults()
         {
             ViewBag.Message = "Your contact page.";
 
