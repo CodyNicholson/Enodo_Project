@@ -1,3 +1,5 @@
+#Git Workflow
+
 1. git clone (url) - when setting up repository
 
 1. git pull
