@@ -16,7 +16,7 @@ class Pair {
 
 public class algorithm {
 
-    public static int xnum = 1000;
+    public static int xnum = 100;
     public static int ynum = 20;
 
     static int[][] surveys = new int[xnum][ynum];
