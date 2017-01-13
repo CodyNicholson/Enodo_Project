@@ -2,7 +2,7 @@
 
 1. git clone (url) - when setting up repository
 
-1. git pull
+1. git pull (So you can get all the changes and avoid code conflicts)
 
 2. Make changes to code
 
