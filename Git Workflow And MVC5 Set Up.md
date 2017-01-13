@@ -32,6 +32,6 @@ MAKE SURE TO RESTART VISUAL STUDIOS AFTERWARDS
 
 ***
 
-If building stills fails and you get the "Unable To Access The IIS Metabase" do this:
+#####If building stills fails and you get the "Unable To Access The IIS Metabase" do this:
 
 Go To: project -> {Project Name} properties -> Click Web ( on the left menu) -> click the "Create Virtual Directory" button
