@@ -413,3 +413,4 @@ C:\Users\Cody\OneDrive\GitHub\Capstone_Project\Enodo\Capstone_Project\obj\Debug\
 C:\Users\Cody\OneDrive\GitHub\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.AddUsers.resources
 C:\Users\Cody\OneDrive\GitHub\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.AddUsersBirthdate.resources
 C:\Users\Cody\OneDrive\GitHub\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.UpdateUsersToAppUsers.resources
+C:\Users\Cody\OneDrive\GitHub\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.UpdateUserIdToAutoGenerate.resources

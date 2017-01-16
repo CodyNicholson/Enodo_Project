@@ -218,6 +218,10 @@
     <Compile Include="Migrations\201701161828067_UpdateUsersToAppUsers.Designer.cs">
       <DependentUpon>201701161828067_UpdateUsersToAppUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701162027435_UpdateUserIdToAutoGenerate.cs" />
+    <Compile Include="Migrations\201701162027435_UpdateUserIdToAutoGenerate.Designer.cs">
+      <DependentUpon>201701162027435_UpdateUserIdToAutoGenerate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -311,6 +315,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201701161828067_UpdateUsersToAppUsers.resx">
       <DependentUpon>201701161828067_UpdateUsersToAppUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701162027435_UpdateUserIdToAutoGenerate.resx">
+      <DependentUpon>201701162027435_UpdateUserIdToAutoGenerate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
