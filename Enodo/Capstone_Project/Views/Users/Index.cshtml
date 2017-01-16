@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Capstone_Project.Models.User>
+@{
+    ViewBag.Title = "Users";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Users</h2>
+@if (!Model.Any())
+{
+    <p>We don't have any Users yet.</p>
+}
+else
+{
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Membership Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in Model)
+            {
+                <tr>
+                    <td>@Html.ActionLink(user.Name, "Details", "Users", new {id = user.Id}, null)</td>
+                    @if (@user.IsResearcher)
+                    {
+                        <td>Researcher</td>
+                    }
+                    else
+                    {
+                        <td>Standard User</td>
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+}
