@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -9,11 +8,18 @@ namespace Capstone_Project.Models
 {
     public class User
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public byte Id { get; set; }
+        public Int32 Id { get; set; }
+
         [Required]
         public string Name { get; set; }
+
         public bool IsResearcher { get; set; }
+
         public DateTime? Birthdate { get; set; }
+
+        public Survey Survey { get; set; }
+
+        [Required]
+        public string SurveyId { get; set; }
     }
 }
