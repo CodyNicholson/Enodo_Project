@@ -218,16 +218,42 @@
     <Compile Include="Migrations\201701161828067_UpdateUsersToAppUsers.Designer.cs">
       <DependentUpon>201701161828067_UpdateUsersToAppUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701162027435_UpdateUserIdToAutoGenerate.cs" />
+    <Compile Include="Migrations\201701162027435_UpdateUserIdToAutoGenerate.Designer.cs">
+      <DependentUpon>201701162027435_UpdateUserIdToAutoGenerate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701180011336_AddToUserListOfSurveyIds.cs" />
+    <Compile Include="Migrations\201701180011336_AddToUserListOfSurveyIds.Designer.cs">
+      <DependentUpon>201701180011336_AddToUserListOfSurveyIds.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701180021512_ChangesUserIdToInt.cs" />
+    <Compile Include="Migrations\201701180021512_ChangesUserIdToInt.Designer.cs">
+      <DependentUpon>201701180021512_ChangesUserIdToInt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701180321401_AddSurveysIdToUser.cs" />
+    <Compile Include="Migrations\201701180321401_AddSurveysIdToUser.Designer.cs">
+      <DependentUpon>201701180321401_AddSurveysIdToUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701180325036_AddNameToSurvey.cs" />
+    <Compile Include="Migrations\201701180325036_AddNameToSurvey.Designer.cs">
+      <DependentUpon>201701180325036_AddNameToSurvey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701181538218_UpdateIds.cs" />
+    <Compile Include="Migrations\201701181538218_UpdateIds.Designer.cs">
+      <DependentUpon>201701181538218_UpdateIds.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Model.cs" />
+    <Compile Include="Models\Survey.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModel\UserFormViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -287,6 +313,7 @@
     <Content Include="Views\Users\Index.cshtml" />
     <Content Include="Views\Users\Details.cshtml" />
     <Content Include="Views\Shared\_NavBar.cshtml" />
+    <Content Include="Views\Users\UserForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -311,6 +338,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201701161828067_UpdateUsersToAppUsers.resx">
       <DependentUpon>201701161828067_UpdateUsersToAppUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701162027435_UpdateUserIdToAutoGenerate.resx">
+      <DependentUpon>201701162027435_UpdateUserIdToAutoGenerate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701180011336_AddToUserListOfSurveyIds.resx">
+      <DependentUpon>201701180011336_AddToUserListOfSurveyIds.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701180021512_ChangesUserIdToInt.resx">
+      <DependentUpon>201701180021512_ChangesUserIdToInt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701180321401_AddSurveysIdToUser.resx">
+      <DependentUpon>201701180321401_AddSurveysIdToUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701180325036_AddNameToSurvey.resx">
+      <DependentUpon>201701180325036_AddNameToSurvey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701181538218_UpdateIds.resx">
+      <DependentUpon>201701181538218_UpdateIds.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

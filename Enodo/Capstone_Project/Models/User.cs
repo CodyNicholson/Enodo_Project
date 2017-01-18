@@ -8,10 +8,18 @@ namespace Capstone_Project.Models
 {
     public class User
     {
-        public byte Id { get; set; }
+        public int Id { get; set; }
+
         [Required]
         public string Name { get; set; }
+
         public bool IsResearcher { get; set; }
+
         public DateTime? Birthdate { get; set; }
+
+        public Survey Survey { get; set; }
+
+        [Required]
+        public int SurveyId { get; set; }
     }
 }
