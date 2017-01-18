@@ -8,7 +8,7 @@ namespace Capstone_Project.Models
 {
     public class User
     {
-        public Int32 Id { get; set; }
+        public int Id { get; set; }
 
         [Required]
         public string Name { get; set; }
@@ -20,6 +20,6 @@ namespace Capstone_Project.Models
         public Survey Survey { get; set; }
 
         [Required]
-        public string SurveyId { get; set; }
+        public int SurveyId { get; set; }
     }
 }

@@ -238,6 +238,10 @@
     <Compile Include="Migrations\201701180325036_AddNameToSurvey.Designer.cs">
       <DependentUpon>201701180325036_AddNameToSurvey.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701181538218_UpdateIds.cs" />
+    <Compile Include="Migrations\201701181538218_UpdateIds.Designer.cs">
+      <DependentUpon>201701181538218_UpdateIds.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -349,6 +353,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201701180325036_AddNameToSurvey.resx">
       <DependentUpon>201701180325036_AddNameToSurvey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701181538218_UpdateIds.resx">
+      <DependentUpon>201701181538218_UpdateIds.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
