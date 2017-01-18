@@ -26,5 +26,19 @@ namespace Capstone_Project.Controllers
 
             return View();
         }
+
+        public ActionResult CreateSurveys()
+        {
+            ViewBag.Message = "Create a survey";
+
+            return View();
+        }
+
+        public ActionResult About()
+        {
+            ViewBag.Message = "About Enodo";
+
+            return View();
+        }
     }
 }
