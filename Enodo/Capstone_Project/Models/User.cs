@@ -17,9 +17,6 @@ namespace Capstone_Project.Models
 
         public DateTime? Birthdate { get; set; }
 
-        public Survey Survey { get; set; }
-
-        [Required]
-        public int SurveyId { get; set; }
+        public List<string> SurveyIds { get; set; }
     }
 }

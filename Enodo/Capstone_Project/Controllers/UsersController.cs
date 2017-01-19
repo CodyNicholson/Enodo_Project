@@ -54,7 +54,6 @@ namespace Capstone_Project.Controllers
 
                 userInDb.Name = user.Name;
                 userInDb.Birthdate = user.Birthdate;
-                userInDb.SurveyId = user.SurveyId;
                 userInDb.IsResearcher = user.IsResearcher;
             }
 
