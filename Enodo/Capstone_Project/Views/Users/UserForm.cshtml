@@ -17,10 +17,6 @@
         @Html.LabelFor(m => m.User.Birthdate)
         @Html.TextBoxFor(m => m.User.Birthdate, "{0:d MMM yyyy}", new { @class = "form-control" })
     </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.User.SurveyId)
-        @Html.DropDownListFor(m => m.User.SurveyId, new SelectList(Model.Surveys, "Id", "Name"), "Select Survey Type", new { @class = "form-control" })
-    </div>
     <div class="checkbox">
         <label>
             @Html.CheckBoxFor(m => m.User.IsResearcher) Are you a researcher?
