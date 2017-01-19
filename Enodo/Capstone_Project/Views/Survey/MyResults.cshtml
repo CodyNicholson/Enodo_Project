@@ -1,8 +1,32 @@
-﻿@model Capstone_Project.Models.Survey
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    
+    <style type="text/css">
+        circle.node {
+            cursor: pointer;
+            stroke: #000;
+            stroke-width: .5px;
+        }
 
-@{
-    ViewBag.Title = "My Results";
-    ViewBag.Message = "This is where we can have all the surveys the user has already taken visible to be clicked on.\nOnce a survey is clicked on, we can use D3 to visualize the data in another page or in a pop up with the statistics";
-}
-<h2>@ViewBag.Title</h2>
-<p>@ViewBag.Message</p>
+        line.link {
+            fill: none;
+            stroke: #9ecae1;
+            stroke-width: 1.5px;
+        }
+    </style>
+</head>
+<body>
+    
+  
+    
+    <script src="~/Scripts/libraries/d3.geom.js"></script>
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="~/Scripts/libraries/d3.layout.js"></script>
+    <script src="~/Scripts/sketch.js"></script>
+
+
+
+    </body>
+</html>
