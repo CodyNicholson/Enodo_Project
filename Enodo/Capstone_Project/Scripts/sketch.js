@@ -14,7 +14,7 @@ var vis = d3.select("body").append("svg:svg")
     .attr("width", w)
     .attr("height", h);
 
-d3.json("flare.json", function(json) {
+d3.json("../Scripts/flare.json", function (json) {
   root = json;
   root.fixed = true;
   root.x = w / 2;
