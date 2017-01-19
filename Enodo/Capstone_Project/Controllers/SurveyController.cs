@@ -21,7 +21,7 @@ namespace Capstone_Project.Controllers
 
         public ActionResult MyResults()
         {
-            return View("~/Views/Survey/MyResults.cshtml");
+            return View();
         }
     }
 }
