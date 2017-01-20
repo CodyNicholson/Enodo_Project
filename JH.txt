@@ -1,3 +1,5 @@
 Hi, this is Jeremy
 
 I'm testing some stuff
+
+https://www.udemy.com/the-complete-aspnet-mvc-5-course/?couponCode=mvc_blog25
