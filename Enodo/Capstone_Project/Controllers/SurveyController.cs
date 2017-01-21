@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Capstone_Project.Models;
+using Capstone_Project.ViewModel;
 using Microsoft.AspNet.Identity;
 
 namespace Capstone_Project.Controllers
@@ -34,9 +35,18 @@ namespace Capstone_Project.Controllers
             return View();
         }
 
-        public ActionResult TakeSurvey()
+        public ActionResult TakeSurvey(int id)
         {
-            return View();
+            var survey = _context.Surveys.SingleOrDefault(s => s.Id == id);
+            var options = _context.Options.ToList();
+
+            var viewModel = new SurveyViewModel()
+            {
+                Options = options,
+                Survey = survey
+            };
+
+            return View("TakeSurvey", viewModel);
         }
 
         public ActionResult MyResults()

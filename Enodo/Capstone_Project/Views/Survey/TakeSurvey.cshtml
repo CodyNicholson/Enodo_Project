@@ -1,21 +1,21 @@
-﻿@model Capstone_Project.Models.Survey
+﻿@model Capstone_Project.ViewModel.SurveyViewModel
 
 @{
     ViewBag.Title = "TakeSurvey";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Take Surveys</h2>
+<h2>@Model.Survey.Name</h2>
 
 <body>
     <ul id="sortable">
-        <li>Item 1</li>
-        <li>Item 2</li>
-        <li>Item 3</li>
-        <li>Item 4</li>
-        <li>Item 5</li>
-        <li>Item 6</li>
-        <li>Item 7</li>
+        @foreach (var option in Model.Options)
+        {
+             if(option.SurveyId == Model.Survey.Id)
+             {
+                 <li>@option.Name</li>
+             }
+        }
     </ul>
 </body>
 

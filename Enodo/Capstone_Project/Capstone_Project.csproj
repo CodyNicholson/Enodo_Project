@@ -305,6 +305,7 @@
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModel\SurveyViewModel.cs" />
     <Compile Include="ViewModel\UserFormViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
