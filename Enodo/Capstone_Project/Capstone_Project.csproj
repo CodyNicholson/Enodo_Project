@@ -291,6 +291,10 @@
     <Compile Include="Migrations\201701211511238_FixDemographicId.Designer.cs">
       <DependentUpon>201701211511238_FixDemographicId.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701211603233_AddOwnerToSurvey.cs" />
+    <Compile Include="Migrations\201701211603233_AddOwnerToSurvey.Designer.cs">
+      <DependentUpon>201701211603233_AddOwnerToSurvey.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Demographic.cs" />
@@ -374,6 +378,7 @@
     <Content Include="Views\Users\UserForm.cshtml" />
     <Content Include="Views\Survey\CreateSurveys.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Survey\TakeSurvey.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -450,6 +455,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201701211511238_FixDemographicId.resx">
       <DependentUpon>201701211511238_FixDemographicId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701211603233_AddOwnerToSurvey.resx">
+      <DependentUpon>201701211603233_AddOwnerToSurvey.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

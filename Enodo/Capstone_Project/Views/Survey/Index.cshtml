@@ -1,20 +1,42 @@
-﻿@model Capstone_Project.Models.Survey
+﻿@model IEnumerable<Capstone_Project.Models.Survey>
 
 @{
-    ViewBag.Title = "Take Surveys";
+    ViewBag.Title = "Take Our Surveys";
     ViewBag.Message = "We can  use this page to list all of the various surveys our users can take.\n When they click on one, they are reffered to another page where they can complete the survey";
 }
 <h2>@ViewBag.Title</h2>
 <p>@ViewBag.Message</p>
 
-<body>
-    <ul id="sortable">
-        <li>Item 1</li>
-        <li>Item 2</li>
-        <li>Item 3</li>
-        <li>Item 4</li>
-        <li>Item 5</li>
-        <li>Item 6</li>
-        <li>Item 7</li>
-    </ul>
-</body>
+@if (!Model.Any())
+{
+    <p>We don't have any surveys yet.</p>
+}
+else
+{
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Survey</th>
+                <th>Owner</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var survey in Model)
+            {
+                <tr>
+                    <td>@Html.ActionLink(survey.Name, "TakeSurvey", "Survey", new { id = survey.Id }, null)</td>
+                    @if(survey.Owner == null)
+                    {
+                        <td>Enodo</td>
+                    }
+                    else
+                    {
+                        <td>@survey.Owner</td>
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+<p><a class="btn btn-default" href="/Survey/CreateSurveys">Create a Survey &raquo;</a></p>

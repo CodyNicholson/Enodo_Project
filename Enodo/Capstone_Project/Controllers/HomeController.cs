@@ -13,27 +13,6 @@ namespace Capstone_Project.Controllers
             return View();
         }
 
-        public ActionResult TakeSurveys()
-        {
-            ViewBag.Message = "Take surveys page";
-
-            return View();
-        }
-
-        public ActionResult MyResults()
-        {
-            ViewBag.Message = "Your results page";
-
-            return View();
-        }
-
-        public ActionResult CreateSurveys()
-        {
-            ViewBag.Message = "Create a survey";
-
-            return View();
-        }
-
         public ActionResult About()
         {
             ViewBag.Message = "About Enodo";

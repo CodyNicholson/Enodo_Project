@@ -26,7 +26,7 @@ namespace Capstone_Project.Controllers
         // GET: Customers
         public ActionResult Index()
         {
-            var users = _context.AppUsers./*Include(u => u.Demographic).*/ToList(); //When this is called Entity Framework will not query the database - this is called deferred execution
+            var users = _context.AppUsers.Include(u => u.Demographic).ToList(); //When this is called Entity Framework will not query the database - this is called deferred execution
 
             return View(users);
         }
