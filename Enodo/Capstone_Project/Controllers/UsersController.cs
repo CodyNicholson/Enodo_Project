@@ -26,14 +26,14 @@ namespace Capstone_Project.Controllers
         // GET: Customers
         public ActionResult Index()
         {
-            var users = _context.AppUsers.ToList(); //When this is called Entity Framework will not query the database - this is called deferred execution
+            var users = _context.AppUsers./*Include(u => u.Demographic).*/ToList(); //When this is called Entity Framework will not query the database - this is called deferred execution
 
             return View(users);
         }
 
         public ActionResult Details(int id)
         {
-            var user = _context.AppUsers.SingleOrDefault(c => c.Id == id); //This will make our query execute immediately
+            var user = _context.AppUsers.SingleOrDefault(u => u.Id == id); //This will make our query execute immediately
 
             if (user == null)
                 return HttpNotFound();
@@ -50,11 +50,12 @@ namespace Capstone_Project.Controllers
             }
             else
             {
-                var userInDb = _context.AppUsers.Single(c => c.Id == user.Id);
+                var userInDb = _context.AppUsers.Single(u => u.Id == user.Id);
 
                 userInDb.Name = user.Name;
                 userInDb.Birthdate = user.Birthdate;
                 userInDb.IsResearcher = user.IsResearcher;
+                userInDb.DemographicId = user.DemographicId;
             }
 
             _context.SaveChanges(); // To persist these changes, we write the customer to the database using the SaveChanges() method
@@ -62,9 +63,20 @@ namespace Capstone_Project.Controllers
             return RedirectToAction("Index", "Users");
         }
 
+        public ActionResult New()
+        {
+            var demographics = _context.Demographics.ToList();
+            var viewModel = new UserFormViewModel()
+            {
+                Demographics = demographics
+            };
+
+            return View("UserForm", viewModel);
+        }
+
         public ActionResult Edit(int id)
         {
-            var user = _context.AppUsers.SingleOrDefault(c => c.Id == id);
+            var user = _context.AppUsers.SingleOrDefault(u => u.Id == id);
 
             if (user == null)
             {
@@ -74,7 +86,7 @@ namespace Capstone_Project.Controllers
             var viewModel = new UserFormViewModel()
             {
                 User = user,
-                Surveys = _context.Surveys.ToList()
+                Demographics = _context.Demographics.ToList()
             };
 
             return View("UserForm", viewModel);

@@ -255,12 +255,49 @@
     <Compile Include="Migrations\201701190216054_AddSurveyOptionId.Designer.cs">
       <DependentUpon>201701190216054_AddSurveyOptionId.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701200055320_RemoveSurveyOptionSurveyId.cs" />
+    <Compile Include="Migrations\201701200055320_RemoveSurveyOptionSurveyId.Designer.cs">
+      <DependentUpon>201701200055320_RemoveSurveyOptionSurveyId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701211333444_RemoveSurveyOptions.cs" />
+    <Compile Include="Migrations\201701211333444_RemoveSurveyOptions.Designer.cs">
+      <DependentUpon>201701211333444_RemoveSurveyOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701211337211_AddOptions.cs" />
+    <Compile Include="Migrations\201701211337211_AddOptions.Designer.cs">
+      <DependentUpon>201701211337211_AddOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701211339127_AddOptionSurveyId.cs" />
+    <Compile Include="Migrations\201701211339127_AddOptionSurveyId.Designer.cs">
+      <DependentUpon>201701211339127_AddOptionSurveyId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701211401152_AddDemographic.cs" />
+    <Compile Include="Migrations\201701211401152_AddDemographic.Designer.cs">
+      <DependentUpon>201701211401152_AddDemographic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701211446205_AddDemographicId.cs" />
+    <Compile Include="Migrations\201701211446205_AddDemographicId.Designer.cs">
+      <DependentUpon>201701211446205_AddDemographicId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701211450061_UpdateDemographicId.cs" />
+    <Compile Include="Migrations\201701211450061_UpdateDemographicId.Designer.cs">
+      <DependentUpon>201701211450061_UpdateDemographicId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701211452123_RemoveSecondDemographicId.cs" />
+    <Compile Include="Migrations\201701211452123_RemoveSecondDemographicId.Designer.cs">
+      <DependentUpon>201701211452123_RemoveSecondDemographicId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701211511238_FixDemographicId.cs" />
+    <Compile Include="Migrations\201701211511238_FixDemographicId.Designer.cs">
+      <DependentUpon>201701211511238_FixDemographicId.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Demographic.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Survey.cs" />
-    <Compile Include="Models\SurveyOption.cs" />
+    <Compile Include="Models\Option.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -386,6 +423,33 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201701190216054_AddSurveyOptionId.resx">
       <DependentUpon>201701190216054_AddSurveyOptionId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701200055320_RemoveSurveyOptionSurveyId.resx">
+      <DependentUpon>201701200055320_RemoveSurveyOptionSurveyId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701211333444_RemoveSurveyOptions.resx">
+      <DependentUpon>201701211333444_RemoveSurveyOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701211337211_AddOptions.resx">
+      <DependentUpon>201701211337211_AddOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701211339127_AddOptionSurveyId.resx">
+      <DependentUpon>201701211339127_AddOptionSurveyId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701211401152_AddDemographic.resx">
+      <DependentUpon>201701211401152_AddDemographic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701211446205_AddDemographicId.resx">
+      <DependentUpon>201701211446205_AddDemographicId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701211450061_UpdateDemographicId.resx">
+      <DependentUpon>201701211450061_UpdateDemographicId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701211452123_RemoveSecondDemographicId.resx">
+      <DependentUpon>201701211452123_RemoveSecondDemographicId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701211511238_FixDemographicId.resx">
+      <DependentUpon>201701211511238_FixDemographicId.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
