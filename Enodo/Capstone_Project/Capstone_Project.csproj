@@ -325,18 +325,29 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\jquery-sortable.css.sass" />
+    <Content Include="Scripts\flare.json" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.12.4.js" />
     <Content Include="Scripts\jquery-sortable.js" />
+    <Content Include="Scripts\jquery-ui.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\libraries\d3.geom.js" />
+    <Content Include="Scripts\libraries\d3.js" />
+    <Content Include="Scripts\libraries\d3.layout.js" />
+    <Content Include="Scripts\libraries\d3.min.js" />
+    <Content Include="Scripts\libraries\p5.dom.js" />
+    <Content Include="Scripts\libraries\p5.js" />
+    <Content Include="Scripts\libraries\p5.sound.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\sketch.js" />
     <Content Include="Scripts\surveyUI.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
