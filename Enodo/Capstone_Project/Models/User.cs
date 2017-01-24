@@ -23,7 +23,12 @@ namespace Capstone_Project.Models
 
         [Display(Name = "Ethnicity")]
         public int DemographicId { get; set; }
-        
+
+        public Gender Gender { get; set; }
+
+        [Display(Name = "Gender")]
+        public int GenderId { get; set; }
+
         public List<string> SurveyIds { get; set; }
     }
 }

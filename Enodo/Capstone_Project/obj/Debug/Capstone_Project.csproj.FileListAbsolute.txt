@@ -520,3 +520,4 @@ C:\Users\Cody\GitHub\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_
 C:\Users\Cody\GitHub\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.RemoveSecondDemographicId.resources
 C:\Users\Cody\GitHub\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.FixDemographicId.resources
 C:\Users\Cody\GitHub\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.AddOwnerToSurvey.resources
+C:\Users\Cody\GitHub\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.AddedGenderToUser.resources

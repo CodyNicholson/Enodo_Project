@@ -56,6 +56,7 @@ namespace Capstone_Project.Controllers
                 userInDb.Birthdate = user.Birthdate;
                 userInDb.IsResearcher = user.IsResearcher;
                 userInDb.DemographicId = user.DemographicId;
+                userInDb.GenderId = user.GenderId;
             }
 
             _context.SaveChanges(); // To persist these changes, we write the customer to the database using the SaveChanges() method
@@ -66,9 +67,11 @@ namespace Capstone_Project.Controllers
         public ActionResult New()
         {
             var demographics = _context.Demographics.ToList();
+            var genders = _context.Genders.ToList();
             var viewModel = new UserFormViewModel()
             {
-                Demographics = demographics
+                Demographics = demographics,
+                Genders = genders
             };
 
             return View("UserForm", viewModel);
@@ -86,7 +89,8 @@ namespace Capstone_Project.Controllers
             var viewModel = new UserFormViewModel()
             {
                 User = user,
-                Demographics = _context.Demographics.ToList()
+                Demographics = _context.Demographics.ToList(),
+                Genders = _context.Genders.ToList()
             };
 
             return View("UserForm", viewModel);
