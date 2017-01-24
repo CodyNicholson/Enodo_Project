@@ -5,19 +5,30 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+
 <h2>@Model.Survey.Name</h2>
 
-<body>
-    <ul id="sortable">
-        @foreach (var option in Model.Options)
+<h4 style="margin-top: 1em">Most Favorite</h4>
+
+<ul id="sortable">
+    @foreach (var option in Model.Options)
+    {
+        if (option.SurveyId == Model.Survey.Id)
         {
-             if(option.SurveyId == Model.Survey.Id)
-             {
-                 <li>@option.Name</li>
-             }
+            <li class="list-group-item">@option.Name</li>
         }
-    </ul>
-</body>
+    }
+</ul>
+
+<h4 style="margin-bottom: 1.5em;">Least Favorite</h4>
+
+<script type="text/javascript">
+    $(function () {
+        $("#sortable").sortable({ containment: 'parent', tolerance: 'pointer', cursor: 'pointer', revert: false, opacity: 0.60 });
+        $("#sortable").disableSelection();
+    });
+</script>
+
 
 <div class="row">
     <p><a class="btn btn-default" href="/Survey/MyResults">Submit &raquo;</a></p>
