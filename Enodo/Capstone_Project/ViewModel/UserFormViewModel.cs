@@ -8,7 +8,8 @@ namespace Capstone_Project.ViewModel
 {
     public class UserFormViewModel
     {
-        public IEnumerable<Survey> Surveys { get; set; }
+        public IEnumerable<Demographic> Demographics { get; set; }
+        public IEnumerable<Gender> Genders { get; set; }
         public User User { get; set; }
     }
 }

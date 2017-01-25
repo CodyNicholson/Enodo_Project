@@ -6,9 +6,9 @@ using System.Web;
 
 namespace Capstone_Project.Models
 {
-    public class Model
+    public class Demographic
     {
-        public byte Id { get; set; }
+        public int Id { get; set; }
 
         [Required]
         public string Name { get; set; }
