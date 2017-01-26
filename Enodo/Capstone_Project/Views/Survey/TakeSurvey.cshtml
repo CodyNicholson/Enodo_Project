@@ -37,8 +37,9 @@
 <script type="text/javascript">
     function getSortableOrderAndRedirect() {
         var optionIds = [];
-        $("ul li#surveyOption").each(function () { optionIds.push($(this).attr("name")) });
+        $("ul li#surveyOption").each(function() { optionIds.push($(this).attr("name")) });
         console.log(optionIds);
         localStorage.setItem("surveyOptionIds", optionIds);
         window.location.href = "/Survey/MyResults";
-    }</script>
+    }
+</script>

@@ -12,18 +12,22 @@
     <div class="form-group">
         @Html.LabelFor(m => m.User.Name)
         @Html.TextBoxFor(m => m.User.Name, new { @class = "form-control", placeholder="Name" })
+        @Html.ValidationMessageFor(m => m.User.Name)
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.User.Birthdate)
         @Html.TextBoxFor(m => m.User.Birthdate, "{0:d MMM yyyy}", new {@class = "form-control", placeholder = "31 Jan 2000"})
+        @Html.ValidationMessageFor(m => m.User.Birthdate)
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.User.GenderId)
         @Html.DropDownListFor(m => m.User.GenderId, new SelectList(Model.Genders, "Id", "GenderName"), "Select Your Gender", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.User.GenderId)
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.User.DemographicId)
         @Html.DropDownListFor(m => m.User.DemographicId, new SelectList(Model.Demographics, "Id", "Name"), "Select Your Ethnicity", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.User.DemographicId)
     </div>
     <div class="checkbox">
         <label>
@@ -31,5 +35,6 @@
         </label>
     </div>
     @Html.HiddenFor(m => m.User.Id)
+    @Html.AntiForgeryToken()
     <button type="submit" class="btn btn-primary">Save</button>
 }

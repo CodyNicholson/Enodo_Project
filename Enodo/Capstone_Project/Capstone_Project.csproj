@@ -299,6 +299,10 @@
     <Compile Include="Migrations\201701241305315_AddedGenderToUser.Designer.cs">
       <DependentUpon>201701241305315_AddedGenderToUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701262304232_ChangedUserDataAnnotationsToRequired.cs" />
+    <Compile Include="Migrations\201701262304232_ChangedUserDataAnnotationsToRequired.Designer.cs">
+      <DependentUpon>201701262304232_ChangedUserDataAnnotationsToRequired.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Demographic.cs" />
@@ -478,6 +482,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201701241305315_AddedGenderToUser.resx">
       <DependentUpon>201701241305315_AddedGenderToUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701262304232_ChangedUserDataAnnotationsToRequired.resx">
+      <DependentUpon>201701262304232_ChangedUserDataAnnotationsToRequired.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

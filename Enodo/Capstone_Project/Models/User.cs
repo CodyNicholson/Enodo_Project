@@ -16,16 +16,19 @@ namespace Capstone_Project.Models
 
         public bool IsResearcher { get; set; }
 
+        [Required]
         [Display(Name = "Date of Birth")]
         public DateTime? Birthdate { get; set; }
 
         public Demographic Demographic { get; set; }
 
+        [Required]
         [Display(Name = "Ethnicity")]
         public int DemographicId { get; set; }
 
         public Gender Gender { get; set; }
 
+        [Required]
         [Display(Name = "Gender")]
         public int GenderId { get; set; }
 
