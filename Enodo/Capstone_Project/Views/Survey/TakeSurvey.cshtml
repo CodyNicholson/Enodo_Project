@@ -31,5 +31,14 @@
 
 
 <div class="row">
-    <p><a class="btn btn-primary" type="submit" href="/Survey/MyResults">Submit &raquo;</a></p>
+    <p><a class="btn btn-primary" onclick="getSortableOrderAndRedirect()" type="submit" >Submit &raquo;</a></p>
 </div>
+
+<script type="text/javascript">
+    function getSortableOrderAndRedirect() {
+        var optionIds = [];
+        $("ul li#surveyOption").each(function () { optionIds.push($(this).attr("name")) });
+        console.log(optionIds);
+        localStorage.setItem("surveyOptionIds", optionIds);
+        window.location.href = "/Survey/MyResults";
+    }</script>
