@@ -44,6 +44,18 @@ namespace Capstone_Project.Controllers
         [HttpPost] // This is here so that our Action can only be called using HttpPost and not HttpGet. By convention, if your actions modify data they should only be accessible using HttpPost
         public ActionResult Save(User user) // This is called Model Binding. MVC framework will automatically map request data to this object
         {
+            // Checks if the entered information is valid based on the Customer Data Annotations
+            if (!ModelState.IsValid)
+            {
+                var viewModel = new UserFormViewModel()
+                {
+                    User = user,
+                    Demographics = _context.Demographics.ToList(),
+                    Genders = _context.Genders.ToList()
+                };
+                return View("UserForm", viewModel);
+            }
+
             if (user.Id == 0)
             {
                 _context.AppUsers.Add(user); // This does not write customer to the database, this is just saved in local memory
