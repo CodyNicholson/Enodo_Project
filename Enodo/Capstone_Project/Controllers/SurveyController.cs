@@ -49,9 +49,5 @@ namespace Capstone_Project.Controllers
             return View("TakeSurvey", viewModel);
         }
 
-        public ActionResult MyResults()
-        {
-            return View();
-        }
     }
 }
