@@ -19,5 +19,10 @@ namespace Capstone_Project.Controllers
 
             return View();
         }
+
+        public ActionResult MeetTheTeam()
+        {
+            return View();
+        }
     }
 }

@@ -401,6 +401,7 @@
     <Content Include="Views\Survey\CreateSurveys.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Survey\TakeSurvey.cshtml" />
+    <Content Include="Views\Home\MeetTheTeam.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
