@@ -1,4 +1,4 @@
-﻿@model Capstone_Project.Models.Survey
+﻿@model IEnumerable<Capstone_Project.Models.Survey>
 
 @{
     ViewBag.Title = "My Results";
@@ -7,10 +7,25 @@
 <h2>@ViewBag.Title</h2>
 <p>@ViewBag.Message</p>
 
-<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-<script src="~/Scripts/libraries/d3.geom.js"></script>
-<script src="~/Scripts/libraries/d3.layout.js"></script>
-<script src="~/Scripts/sketch.js"></script>
-<script type="text/javascript">window.onload = console.log(localStorage.getItem("surveyOptionIds"));</script>
-
-<h4><script type="text/javascript">document.write(localStorage.getItem("surveyOptionIds"));</script></h4>
+@if (!Model.Any())
+{
+    <p>We don't have any surveys yet.</p>
+}
+else
+{
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Survey</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var survey in Model)
+            {
+                <tr>
+                    <td>@Html.ActionLink(survey.Name, "Results", "Results", new { id = survey.Id }, null)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

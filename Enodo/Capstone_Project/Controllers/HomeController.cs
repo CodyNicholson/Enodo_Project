@@ -24,5 +24,10 @@ namespace Capstone_Project.Controllers
         {
             return View();
         }
+
+        public ActionResult DevNotes()
+        {
+            return View();
+        }
     }
 }

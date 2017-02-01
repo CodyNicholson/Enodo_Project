@@ -3,15 +3,41 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Capstone_Project.Models;
 
 namespace Capstone_Project.Controllers
 {
     public class ResultsController : Controller
     {
-        // GET: Results
+        private ApplicationDbContext _context;
+
+        public ResultsController()
+        {
+            _context = new ApplicationDbContext(); // This is a disposable object, so we need to properly dispose of it
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
+        }
+
         public ActionResult Index()
         {
-            return View();
+            var surveys = _context.Surveys.ToList();
+
+            return View(surveys);
+        }
+
+        public ActionResult Results(int id)
+        {
+            var survey = _context.Surveys.SingleOrDefault(s => s.Id == id);
+
+            if (survey == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(survey);
         }
     }
 }

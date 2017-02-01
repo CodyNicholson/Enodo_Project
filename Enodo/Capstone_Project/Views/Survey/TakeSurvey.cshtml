@@ -18,7 +18,7 @@
             if (option.SurveyId == Model.Survey.Id)
             {
                 index++;
-                <li class="list-group-item" id="surveyOption" name="@index">@option.Name</li>
+                <li class="list-group-item" name="surveyOption" id="@index">@option.Name</li>
             }
         }
     }
@@ -41,9 +41,9 @@
 <script type="text/javascript">
     function getSortableOrderAndRedirect() {
         var optionIds = [];
-        $("ul li#surveyOption").each(function() { optionIds.push($(this).attr("name")) });
+        $("ul li[name='surveyOption']").each(function() { optionIds.push($(this).attr("id")) });
         console.log(optionIds);
         localStorage.setItem("surveyOptionIds", optionIds);
-        window.location.href = "/Survey/MyResults";
+        window.location.href = "/Results/Results/" + @Model.Survey.Id;
     }
 </script>
