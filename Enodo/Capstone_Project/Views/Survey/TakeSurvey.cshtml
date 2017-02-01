@@ -11,11 +11,15 @@
 <h4 style="margin-top: 1em">Most Favorite</h4>
 
 <ul id="sortable">
-    @foreach (var option in Model.Options)
-    {
-        if (option.SurveyId == Model.Survey.Id)
+    @{
+        int index = 0;
+        foreach (var option in Model.Options)
         {
-            <li class="list-group-item" id="surveyOption" name="@option.Id">@option.Name</li>
+            if (option.SurveyId == Model.Survey.Id)
+            {
+                index++;
+                <li class="list-group-item" id="surveyOption" name="@index">@option.Name</li>
+            }
         }
     }
 </ul>
