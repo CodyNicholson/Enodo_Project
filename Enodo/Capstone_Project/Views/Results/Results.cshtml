@@ -9,43 +9,9 @@
 <p>@ViewBag.Message</p>
 
 
-
-<script type="text/javascript" src="//d3js.org/d3.v3.js"></script>
-
-<style type="text/css">
-    label {
-        font: 12px sans-serif;
-    }
-
-    .node circle {
-        fill: #fff;
-        stroke: steelblue;
-        stroke-width: 1.5px;
-    }
-
-    .node {
-        font: 10px sans-serif;
-    }
-
-    .link {
-        fill: none;
-        stroke: tan;
-        stroke-width: 1.5px;
-    }
-</style>
-
-<script src="~/Scripts/sketch.js" type="text/javascript"></script>
-
-<body>
-    <form>
-        <label><input type="radio" name="mode" value="radialtree">Radial Tree</label>
-        <label><input type="radio" name="mode" value="radialcluster">Radial Cluster</label>
-        <label><input type="radio" name="mode" value="tree">Tree</label>
-        <label><input type="radio" name="mode" value="cluster" checked>Cluster</label>
-    </form>
+<iframe src="~/Content/ToFrame.html" width="1200"height="800"></iframe>
 
 
-</body>
 
 
 <script type="text/javascript">window.onload = console.log(localStorage.getItem("surveyOptionIds"));</script>

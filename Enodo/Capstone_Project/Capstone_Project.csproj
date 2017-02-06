@@ -453,11 +453,12 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Scripts\sketch.js" />
+    <Content Include="Scripts\sketch2.js" />
     <Content Include="Scripts\style.css" />
     <Content Include="Scripts\surveyUI.js" />
-    <None Include="Scripts\flare.json" />
+    <None Include="Scripts\data.json" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Content\ToFrame.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
