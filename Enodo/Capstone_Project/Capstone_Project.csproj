@@ -456,7 +456,7 @@
     <Content Include="Scripts\sketch.js" />
     <Content Include="Scripts\style.css" />
     <Content Include="Scripts\surveyUI.js" />
-    <None Include="Scripts\data.json" />
+    <None Include="Scripts\flare.json" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
