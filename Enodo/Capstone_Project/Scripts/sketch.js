@@ -1,112 +1,213 @@
-﻿var w = 1280,
-    h = 800,
-    node,
-    link,
-    root;
+﻿window.onload = function () {
+    var width = 500,
+        height = 500;
+    var diameter = 300;
+    var duration = 2000;
+    var jsonData;
+    d3.json("~/Scripts/data.json", function (jdata) {
+        //console.log(jdata);
 
-var force = d3.layout.force()
-    .on("tick", tick)
-    .charge(function (d) { return d._children ? -d.size / 100 : -30; })
-    .linkDistance(function (d) { return d.target._children ? 80 : 30; })
-    .size([w, h - 160]);
 
-var vis = d3.select("body").append("svg:svg")
-    .attr("width", w)
-    .attr("height", h);
 
-d3.json("../Scripts/flare.json", function (json) {
-    root = json;
-    root.fixed = true;
-    root.x = w / 2;
-    root.y = h / 2 - 80;
-    update();
-});
+        d3.selectAll("input").on("change", change);
 
-function update() {
-    var nodes = flatten(root),
-        links = d3.layout.tree().links(nodes);
+        function change() {
+            if (this.value === "radialtree")
+                transitionToRadialTree();
+            else if (this.value === "radialcluster")
+                transitionToRadialCluster();
+            else if (this.value === "tree")
+                transitionToTree();
+            else
+                transitionToCluster();
+        };
 
-    // Restart the force layout.
-    force
-        .nodes(nodes)
-        .links(links)
-        .start();
+        function transitionToRadialTree() {
 
-    // Update the links…
-    link = vis.selectAll("line.link")
-        .data(links, function (d) { return d.target.id; });
+            var nodes = radialTree.nodes(root), // recalculate layout
+                links = radialTree.links(nodes);
 
-    // Enter any new links.
-    link.enter().insert("svg:line", ".node")
-        .attr("class", "link")
-        .attr("x1", function (d) { return d.source.x; })
-        .attr("y1", function (d) { return d.source.y; })
-        .attr("x2", function (d) { return d.target.x; })
-        .attr("y2", function (d) { return d.target.y; });
+            svg.transition().duration(duration)
+                .attr("transform", "translate(" + (width / 2) + "," +
+                                                  (height / 2) + ")");
+            // set appropriate translation (origin in middle of svg)
 
-    // Exit any old links.
-    link.exit().remove();
+            link.data(links)
+                .transition()
+                .duration(duration)
+                .style("stroke", "#fc8d62")
+                .attr("d", radialDiagonal); //get the new radial path
 
-    // Update the nodes…
-    node = vis.selectAll("circle.node")
-        .data(nodes, function (d) { return d.id; })
-        .style("fill", color);
+            node.data(nodes)
+                .transition()
+                .duration(duration)
+                .attr("transform", function (d) {
+                    return "rotate(" + (d.x - 90) + ")translate(" + d.y + ")";
+                });
 
-    node.transition()
-        .attr("r", function (d) { return d.children ? 4.5 : Math.sqrt(d.size) / 10; });
+            node.select("circle")
+                .transition()
+                .duration(duration)
+                .style("stroke", "#984ea3");
 
-    // Enter any new nodes.
-    node.enter().append("svg:circle")
-        .attr("class", "node")
-        .attr("cx", function (d) { return d.x; })
-        .attr("cy", function (d) { return d.y; })
-        .attr("r", function (d) { return d.children ? 4.5 : Math.sqrt(d.size) / 10; })
-        .style("fill", color)
-        .on("click", click)
-        .call(force.drag);
+        };
 
-    // Exit any old nodes.
-    node.exit().remove();
-}
+        function transitionToRadialCluster() {
 
-function tick() {
-    link.attr("x1", function (d) { return d.source.x; })
-        .attr("y1", function (d) { return d.source.y; })
-        .attr("x2", function (d) { return d.target.x; })
-        .attr("y2", function (d) { return d.target.y; });
+            var nodes = radialCluster.nodes(root), // recalculate layout
+                links = radialCluster.links(nodes);
 
-    node.attr("cx", function (d) { return d.x; })
-        .attr("cy", function (d) { return d.y; });
-}
+            svg.transition().duration(duration)
+                .attr("transform", "translate(" + (width / 2) + "," +
+                                                  (height / 2) + ")");
+            // set appropriate translation (origin in middle of svg)
 
-// Color leaf nodes orange, and packages white or blue.
-function color(d) {
-    return d._children ? "#3182bd" : d.children ? "#c6dbef" : "#fd8d3c";
-}
+            link.data(links)
+                .transition()
+                .duration(duration)
+                .style("stroke", "#66c2a5")
+                .attr("d", radialDiagonal); //get the new radial path
 
-// Toggle children on click.
-function click(d) {
-    if (d.children) {
-        d._children = d.children;
-        d.children = null;
-    } else {
-        d.children = d._children;
-        d._children = null;
-    }
-    update();
-}
+            node.data(nodes)
+                .transition()
+                .duration(duration)
+                .attr("transform", function (d) {
+                    return "rotate(" + (d.x - 90) + ")translate(" + d.y + ")";
+                });
 
-// Returns a list of all nodes under the root.
-function flatten(root) {
-    var nodes = [], i = 0;
+            node.select("circle")
+                .transition()
+                .duration(duration)
+                .style("stroke", "#4daf4a");
 
-    function recurse(node) {
-        if (node.children) node.size = node.children.reduce(function (p, v) { return p + recurse(v); }, 0);
-        if (!node.id) node.id = ++i;
-        nodes.push(node);
-        return node.size;
-    }
+        };
 
-    root.size = recurse(root);
-    return nodes;
+        function transitionToTree() {
+
+            var nodes = tree.nodes(root), //recalculate layout
+                links = tree.links(nodes);
+
+            svg.transition().duration(duration)
+                .attr("transform", "translate(40,0)");
+
+            link.data(links)
+                .transition()
+                .duration(duration)
+                .style("stroke", "#e78ac3")
+                .attr("d", diagonal); // get the new tree path
+
+            node.data(nodes)
+                .transition()
+                .duration(duration)
+                .attr("transform", function (d) {
+                    return "translate(" + d.y + "," + d.x + ")";
+                });
+
+            node.select("circle")
+                .transition()
+                .duration(duration)
+                .style("stroke", "#377eb8");
+
+        };
+
+        function transitionToCluster() {
+
+            var nodes = cluster.nodes(root), //recalculate layout
+                links = cluster.links(nodes);
+
+            svg.transition().duration(duration)
+                .attr("transform", "translate(40,0)");
+
+            link.data(links)
+                .transition()
+                .duration(duration)
+                .style("stroke", "#8da0cb")
+                .attr("d", diagonal); //get the new cluster path
+
+            node.data(nodes)
+                .transition()
+                .duration(duration)
+                .attr("transform", function (d) {
+                    return "translate(" + d.y + "," + d.x + ")";
+                });
+
+            node.select("circle")
+                .transition()
+                .duration(duration)
+                .style("stroke", "#e41a1c");
+
+        };
+
+        var root; // store data in a variable accessible by all functions
+
+        var tree = d3.layout.tree()
+            .size([height, width - 160]);
+
+        var cluster = d3.layout.cluster()
+            .size([height, width - 160]);
+
+        var diagonal = d3.svg.diagonal()
+            .projection(function (d) {
+                return [d.y, d.x];
+            });
+
+        var radialTree = d3.layout.tree()
+            .size([360, diameter / 2])
+            .separation(function (a, b) {
+                return (a.parent == b.parent ? 1 : 2) / a.depth;
+            });
+
+        var radialCluster = d3.layout.cluster()
+            .size([360, diameter / 2])
+            .separation(function (a, b) {
+                return (a.parent == b.parent ? 1 : 2) / a.depth;
+            });
+
+        var radialDiagonal = d3.svg.diagonal.radial()
+            .projection(function (d) {
+                return [d.y, d.x / 180 * Math.PI];
+            });
+
+
+        var svg = d3.select("body").append("svg")
+            .attr("width", width)
+            .attr("height", height)
+            .append("g")
+            .attr("transform", "translate(40,0)");
+
+
+
+        //d3.json("data.json", function(jdata) {
+        var root = jdata,
+            nodes = cluster.nodes(root),
+            links = cluster.links(nodes);
+
+
+        var link = svg.selectAll(".link")
+            .data(links)
+           .enter()
+            .append("path")
+            .attr("class", "link")
+            .style("stroke", "#8da0cb")
+            .attr("d", diagonal);
+
+        var node = svg.selectAll(".node")
+            .data(nodes)
+           .enter()
+            .append("g")
+            .attr("class", "node")
+            .attr("transform", function (d) {
+                return "translate(" + d.y + "," + d.x + ")";
+            })
+
+        node.append("circle")
+            .attr("r", 4.5)
+            .style("stroke", "#e41a1c");
+    });
+
+   /* function getData() {
+        console.log(jsonData);
+        return jsonData
+    }*/
+
 }
