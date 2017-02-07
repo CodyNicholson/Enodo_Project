@@ -1,0 +1,25 @@
+﻿@model Capstone_Project.ViewModel.CreateSurveysViewModel
+
+@{
+    ViewBag.Title = "Create a Survey";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create a Survey</h2>
+
+@using (@Html.BeginForm("Save", "Survey")) // The "using" block will create an ending "</form> tag for us
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Survey.Name)
+        @Html.TextBoxFor(m => m.Survey.Name, new { @class = "form-control", placeholder = "Survey Name" })
+        @Html.ValidationMessageFor(m => m.Survey.Name)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.numOfOptions)
+        @Html.TextBoxFor(m => m.numOfOptions, new { @class = "form-control", placeholder = "1-30" })
+        @Html.ValidationMessageFor(m => m.numOfOptions)
+    </div>
+
+    <a class="btn btn-default" href="/CreateSurveys/AddOptions">Next</a>
+}

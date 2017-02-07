@@ -30,10 +30,30 @@ namespace Capstone_Project.Controllers
             return View(surveys);
         }
 
-        public ActionResult CreateSurveys()
+        public ActionResult CreateSurveys(int id)
         {
-            return View();
+            var user = _context.AppUsers.SingleOrDefault(u => u.Id == id);
+
+            if (user == null)
+            {
+                return HttpNotFound();
+            }
+
+            if (!user.IsResearcher)
+            {
+                return HttpNotFound();
+            }
+
+            var viewModel = new CreateSurveysViewModel()
+            {
+                Owner = user
+
+            };
+
+            return View("CreateSurveys", viewModel);
         }
+
+        
 
         public ActionResult TakeSurvey(int id)
         {

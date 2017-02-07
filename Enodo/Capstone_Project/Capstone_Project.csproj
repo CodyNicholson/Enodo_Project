@@ -196,6 +196,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CreateSurveysController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ResultsController.cs" />
@@ -323,6 +324,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModel\CreateSurveysViewModel.cs" />
     <Compile Include="ViewModel\SurveyViewModel.cs" />
     <Compile Include="ViewModel\UserFormViewModel.cs" />
   </ItemGroup>
@@ -497,13 +499,14 @@
     <Content Include="Views\Users\Details.cshtml" />
     <Content Include="Views\Shared\_NavBar.cshtml" />
     <Content Include="Views\Users\UserForm.cshtml" />
-    <Content Include="Views\Survey\CreateSurveys.cshtml" />
+    <Content Include="Views\CreateSurveys\Index.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Survey\TakeSurvey.cshtml" />
     <Content Include="Views\Home\MeetTheTeam.cshtml" />
     <Content Include="Views\Results\Index.cshtml" />
     <Content Include="Views\Results\Results.cshtml" />
     <Content Include="Views\Home\DevNotes.cshtml" />
+    <Content Include="Views\CreateSurveys\AddOptions.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="obj\Debug\TempPE\" />
