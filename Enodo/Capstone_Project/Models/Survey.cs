@@ -13,6 +13,9 @@ namespace Capstone_Project.Models
         [Required]
         public string Name { get; set; }
 
+        [Required]
+        public string Directions { get; set; }
+
         public string Owner { get; set; }
     }
 }
