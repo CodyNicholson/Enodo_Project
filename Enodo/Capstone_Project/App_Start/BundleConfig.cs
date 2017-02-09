@@ -27,6 +27,7 @@ namespace Capstone_Project
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap-yeti.css",
                       "~/Content/toFrame.html",
+                      "~/Content/segmented-controls.css",
                       "~/Content/site.css"));
         }
     }
