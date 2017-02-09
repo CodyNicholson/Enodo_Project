@@ -1,20 +1,15 @@
 ﻿window.onload = function () {
-    var width = 700,
-        height = 800;
-    var diameter = 400;
+    var width = 500,
+        height = 500;
+    var diameter = 300;
     var duration = 2000;
     var jsonData;
-    var currentColor = "#e41a1c";
     d3.json("/Scripts/data.json", function (jdata) {
         //console.log(jdata);
 
 
 
         d3.selectAll("input").on("change", change);
-
-
-
-
 
         function change() {
             if (this.value === "radialtree")
@@ -54,8 +49,6 @@
                 .transition()
                 .duration(duration)
                 .style("stroke", "#984ea3");
-
-
 
         };
 
@@ -143,8 +136,6 @@
                 .duration(duration)
                 .style("stroke", "#e41a1c");
 
-
-
         };
 
         var root; // store data in a variable accessible by all functions
@@ -182,7 +173,7 @@
             .attr("width", width)
             .attr("height", height)
             .append("g")
-            .attr("transform", "translate(40,5)");
+            .attr("transform", "translate(40,0)");
 
 
 
@@ -211,52 +202,12 @@
 
         node.append("circle")
             .attr("r", 4.5)
-            .on("click", click)
             .style("stroke", "#e41a1c");
-
-        /*  node.append("text")
-              .attr("dy", ".31em")
-              .attr("x", function(d) { return d.x < 180 === !d.children ? 6 : -6; })
-              .style("text-anchor", function(d) { return d.x < 180 === !d.children ? "start" : "end"; })
-              .attr("transform", function(d) { return "rotate(" + (d.x < 180 ? d.x - 90 : d.x + 90) + ")"; })
-              .text(function(d) { return d.name });*/
-
-        node.append("text")
-            .text(function (d) {
-                return d.name;
-            })
-            .attr("x", function (d) { return !d.children ? 25 : -8 })
-            //.attr("y", function(d){ return !d.children ? 0 : -10    })
-            .attr("text-anchor", function (d) { return d.children || d._children ? "end" : "start"; })
-            //.attr("transform", function(d) { return d.children ?"rotate(" + (d.x < 180 ? d.x - 180 : d.x + 180) + ")" : null; })
-            .text(function (d) {
-                return d.name
-            })
-            .style("fill-opacity", 1)
-            .style({ stroke: "grey", "stroke-width": "0.5px" });
-
-        function click() {
-
-
-            currentColor = currentColor == "#e41a1c" ? "blue" : "#e41a1c";
-            d3.select(this).style("stroke", currentColor);
-
-
-        }
-
-        /*  node.append("text")
-              .attr("x", function(d){ return 25;
-              })
-              .attr("y", function(d){ return 0;
-              })
-              .text(function(d) {return "hgeelo";})*/
     });
 
     function getData() {
         console.log(jsonData);
         return jsonData
     }
-
-
 
 }
