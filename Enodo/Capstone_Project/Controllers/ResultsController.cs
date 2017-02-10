@@ -28,7 +28,7 @@ namespace Capstone_Project.Controllers
             return View(surveys);
         }
 
-        public ActionResult Results(int id)
+        public ActionResult ShowResults(int id)
         {
             var survey = _context.Surveys.SingleOrDefault(s => s.Id == id);
 

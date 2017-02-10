@@ -41,7 +41,7 @@
 
 
 <div class="row">
-    <p><a class="btn btn-primary" onclick="getSortableOrderAndRedirect()" type="submit" >Submit &raquo;</a></p>
+    <p><a class="btn btn-primary" onclick="getSortableOrderAndRedirect()" type="submit">Submit &raquo;</a></p>
 </div>
 
 <script type="text/javascript">
@@ -50,6 +50,6 @@
         $("ul li[name='surveyOption']").each(function() { optionIds.push($(this).attr("id")) });
         console.log(optionIds);
         localStorage.setItem("surveyOptionIds", optionIds);
-        window.location.href = "/Results/Results/" + @Model.Survey.Id;
+        window.location.href = "/Results/ShowResults/" + @Model.Survey.Id;
     }
 </script>

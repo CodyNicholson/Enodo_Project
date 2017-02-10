@@ -1,0 +1,16 @@
+﻿@model Capstone_Project.Models.Survey
+
+@{
+    ViewBag.Title = @Model.Name + " Survey Results";
+    ViewBag.Message = "This is the page where you can view your results compared against everyone else who has taken the survey.";
+}
+
+<h2>@ViewBag.Title</h2>
+<p>@ViewBag.Message</p>
+
+
+<iframe title="resultsFrame" src="~/Content/ToFrame.html" width="1200"height="1000" frameBorder="0"></iframe>
+
+<script type="text/javascript">window.onload = console.log(localStorage.getItem("surveyOptionIds"));</script>
+
+<h4><script type="text/javascript">document.write(localStorage.getItem("surveyOptionIds"));</script></h4>
