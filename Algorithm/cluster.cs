@@ -5,21 +5,33 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Collections;
 
-namespace ConsoleApplication6
+ namespace ConsoleApplication1
 {
+    public class person{
+
+        public String name;
+        public int num;
+        public person(int p)
+        {
+            this.name = "" + p;
+            this.num = p;
+        }
+    }
     class cluster
     {
-        public double[] midpoint;
-        public ArrayList people = new ArrayList();
-        int[] like;
-        int[] dislike;
+        public String name;
+         double[] midpoint;
+        public ArrayList children = new ArrayList();
+         int[] like;
+         int[] dislike;
 
-        int far;
-        double fardist;
+         int far;
+         double fardist;
 
-        public cluster(int p, double[] point, int x)
+        public cluster(int p, double[] point, int x,int y)
         {
-            this.people.Add(p);
+            this.name = "Cluster " + y;
+            this.children.Add(new person(p));
             this.midpoint = point;
             this.like = new int[x];
             this.dislike = new int[x];
@@ -29,10 +41,15 @@ namespace ConsoleApplication6
 
         public void add(int x, double[] arr)
         {
-            people.Add(x);
+            children.Add(new person(x));
             updatemid(arr);
             updatefurthest(x, arr);
 
+        }
+
+        public double[] getmid()
+        {
+            return this.midpoint;
         }
         public void updatemid(double[] arr)
         {
@@ -40,7 +57,7 @@ namespace ConsoleApplication6
             double[] tempmid = new double[midpoint.Length];
             for (int i = 0; i < midpoint.Length; i++)
             {
-                tempmid[i] = midpoint[i] * (people.Count - 1);
+                tempmid[i] = midpoint[i] * (children.Count - 1);
             }
             for (int i = 0; i < midpoint.Length; i++)
             {
@@ -48,7 +65,7 @@ namespace ConsoleApplication6
             }
             for (int i = 0; i < midpoint.Length; i++)
             {
-                tempmid[i] = tempmid[i] / people.Count;
+                tempmid[i] = tempmid[i] / children.Count;
             }
             this.midpoint = tempmid;
         }
@@ -96,9 +113,9 @@ namespace ConsoleApplication6
         {
             Console.WriteLine("The midpoint " + print2darray(this.midpoint));
             Console.WriteLine("the furthest point is person " + this.far + " that is " + this.fardist + " away from the center.");
-            Console.WriteLine("The amount of the people in this cluster " + this.people.Count);
-            Console.WriteLine("The people in this cluster");
-            printpeople(people);
+            Console.WriteLine("The amount of the children in this cluster " + this.children.Count);
+            Console.WriteLine("The children in this cluster");
+            printchildren(children);
             Console.Write("The most common likes in this cluster are ");
             printtopthree();
             //Console.WriteLine(print2darray(like));
@@ -222,11 +239,11 @@ namespace ConsoleApplication6
 
         }
 
-        public static void printpeople(ArrayList x)
+        public static void printchildren(ArrayList x)
         {
-            foreach(int i in x)
+            foreach(person i in x)
             {
-                Console.Write("" + i + ", ");
+                Console.Write("" + i.num + ", ");
             }
             Console.WriteLine();
         }

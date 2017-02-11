@@ -4,15 +4,34 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections;
+using System.Web;
 
-namespace ConsoleApplication6
+
+namespace ConsoleApplication1
 {
+
+    public class dummy{
+
+        public String name;
+         int amount;
+        public ArrayList children;
+        
+
+        public dummy(String x, ArrayList y,int z) {
+
+            this.name = x;
+            this.children = y;
+            this.amount = z;
+
+        }
+    }
+
     class test 
     {
         public static Random random = new Random();
         public static ArrayList clusters = new ArrayList();
         public static ArrayList tempal = new ArrayList();
-        public static int xnum = 1000;//the number of surveys
+        public static int xnum = 20;//the number of surveys
         public static int ynum = 20;//the number of questions
 
 
@@ -20,7 +39,8 @@ namespace ConsoleApplication6
         
 
         static double avgdist = 0;
-        static double avgdistmulti = .7;
+        static double avgdistmulti = .8
+            ;
 
         public static int Main(string[] args)
         {
@@ -38,7 +58,7 @@ namespace ConsoleApplication6
             Double bestfit = 9999999999.0;
             int bestfitindex = 0;
             bool addedflag = false;
-            clusters.Add(new cluster(0, surveys[0], ynum));
+            clusters.Add(new cluster(0, surveys[0], ynum,1));
             for (int i = 1; i < surveys.Length; i++)
             {
                 bestfit = 9999999999.0;
@@ -72,15 +92,15 @@ namespace ConsoleApplication6
                 }
                 if (!addedflag)
                 {
-                    clusters.Add(new cluster(i, surveys[i], ynum));
+                    clusters.Add(new cluster(i, surveys[i], ynum,clusters.Count + 1));
                 }
 
             }
             for (int k = 0; k < clusters.Count; k++)
             {
-                foreach (int x in ((cluster)(clusters[k])).people)
+                foreach (person x in ((cluster)(clusters[k])).children)
                 {
-                    ((cluster)(clusters[k])).updatelike(surveys[x]);
+                    ((cluster)(clusters[k])).updatelike(surveys[x.num]);
                 }
             }
 
@@ -91,6 +111,12 @@ namespace ConsoleApplication6
             Console.WriteLine("There are " + clusters.Count + " clusters with a total of " + xnum + " surveys and " + ynum + " questions");
             Console.WriteLine("the average distance between the clusters is: " + clusterdist(clusters));
             Console.WriteLine("avgdist is " + avgdist);
+
+            dummy tempdummy = new dummy("Clusters", clusters,clusters.Count);
+            var json = new System.Web.Script.Serialization.JavaScriptSerializer().Serialize(tempdummy);
+            //Console.WriteLine(json);
+            System.IO.File.WriteAllText("C:/Users/Brian/Desktop/test4.json", json);
+
             Console.Read();
             return 1;
         }
@@ -164,7 +190,7 @@ namespace ConsoleApplication6
             {
                 for (int j = i + 1; j < x.Count; j++)
                 {
-                    totaldist += distance(((cluster)x[i]).midpoint, ((cluster)x[j]).midpoint);
+                    totaldist += distance(((cluster)x[i]).getmid(), ((cluster)x[j]).getmid());
                     //Console.WriteLine("the distance between cluster " + i + " and cluster "+ j+" is "+distance(x.get(i).midpoint,x.get(j).midpoint));
                     count++;
                 }
