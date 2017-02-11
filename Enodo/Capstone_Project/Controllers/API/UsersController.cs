@@ -10,35 +10,33 @@ using Capstone_Project.Models;
 
 namespace Capstone_Project.Controllers.api
 {
-    public class UsersController : Controller
+    public class UserController : ApiController
     {
-        public class UserController : ApiController
+        private ApplicationDbContext _context;
+
+        public UserController()
         {
-            private ApplicationDbContext _context;
+           _context = new ApplicationDbContext();
+        }
 
-            public UserController()
-            {
-                _context = new ApplicationDbContext();
-            }
+        // GET: /api/users
+        public IHttpActionResult GetUsers()
+        {
+            var userDtos = _context.AppUsers.ToList().Select(Mapper.Map<User, UserDto>);
+     
+            return Ok(userDtos);
+        }
 
-            // GET: /api/users
-            public IHttpActionResult GetUsers()
-            {
-                var userDtos = _context.AppUsers.ToList().Select(Mapper.Map<User, UserDto>);
+        // GET /api/user/id
+        public IHttpActionResult GetUser(int id)
+        {
+            var user = _context.AppUsers.SingleOrDefault(c => c.Id == id);
 
-                return Ok(userDtos);
-            }
+            if (user == null)
+                return NotFound();
 
-            // GET /api/user/id
-            public IHttpActionResult GetUser(int id)
-            {
-                var user = _context.AppUsers.SingleOrDefault(c => c.Id == id);
-
-                if (user == null)
-                    return NotFound();
-
-                return Ok(Mapper.Map<User, UserDto>(user));
-            }
+            return Ok(Mapper.Map<User, UserDto>(user));
+        }
 
             // POST /api/users
             [System.Web.Mvc.HttpPost] // Since we are creating a resource we use HttpPost
@@ -84,11 +82,10 @@ namespace Capstone_Project.Controllers.api
                 if (userInDb == null)
                     return NotFound();
 
-                _context.AppUsers.Remove(userInDb);
-                _context.SaveChanges();
+             _context.AppUsers.Remove(userInDb);
+             _context.SaveChanges();
 
-                return Ok();
-            }
+             return Ok();
         }
     }
 }

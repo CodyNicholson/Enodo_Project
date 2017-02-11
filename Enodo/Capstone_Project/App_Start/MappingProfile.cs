@@ -6,7 +6,7 @@ using AutoMapper;
 using Capstone_Project.Dtos;
 using Capstone_Project.Models;
 
-namespace Capstone_Project.App_Start
+namespace Capstone_Project
 {
     public class MappingProfile : Profile
     {
@@ -15,6 +15,9 @@ namespace Capstone_Project.App_Start
             // Domain to Dto
             Mapper.CreateMap<User, UserDto>();
             Mapper.CreateMap<UserDto, User>();
+
+            Mapper.CreateMap<Survey, SurveyDto>();
+            Mapper.CreateMap<SurveyDto, Survey>();
 
             // Dto to Domain
             Mapper.CreateMap<UserDto, User>().ForMember(c => c.Id, opt => opt.Ignore());

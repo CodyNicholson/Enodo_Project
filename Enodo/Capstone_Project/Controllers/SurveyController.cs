@@ -50,7 +50,7 @@ namespace Capstone_Project.Controllers
 
             };
 
-            return View("CreateSurveys", viewModel);
+            return View("CreateSurvey", viewModel);
         }
 
         
