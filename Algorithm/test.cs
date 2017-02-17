@@ -115,7 +115,7 @@ namespace ConsoleApplication1
             dummy tempdummy = new dummy("Clusters", clusters,clusters.Count);
             var json = new System.Web.Script.Serialization.JavaScriptSerializer().Serialize(tempdummy);
             //Console.WriteLine(json);
-            System.IO.File.WriteAllText("C:/Users/Brian/Desktop/test4.json", json);
+           // System.IO.File.WriteAllText("C:/Users/Brian/Desktop/test4.json", json);
 
             Console.Read();
             return 1;
