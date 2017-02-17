@@ -5,7 +5,7 @@
     var duration = 2000;
     var jsonData;
     var currentColor = "#e41a1c";
-    d3.json("/Scripts/data.json", function (jdata) {
+    d3.json("/Scripts/test4.json", function (jdata) {
         //console.log(jdata);
 
 
@@ -55,7 +55,14 @@
                 .duration(duration)
                 .style("stroke", "#984ea3");
 
-
+            /*node.select("text")
+            .transition()
+            .duration(duration)
+              .attr("transform", function(d){
+    
+                return d.children ?"rotate(" + (d.x > 180 ? d.x - 180 : d.x + 180) + ")" : null;
+              })
+            ;*/
 
         };
 
@@ -95,7 +102,7 @@
                 links = tree.links(nodes);
 
             svg.transition().duration(duration)
-                .attr("transform", "translate(40,0)");
+                .attr("transform", "translate(70,0)");
 
             link.data(links)
                 .transition()
@@ -123,7 +130,7 @@
                 links = cluster.links(nodes);
 
             svg.transition().duration(duration)
-                .attr("transform", "translate(40,0)");
+                .attr("transform", "translate(70,0)");
 
             link.data(links)
                 .transition()
@@ -150,10 +157,10 @@
         var root; // store data in a variable accessible by all functions
 
         var tree = d3.layout.tree()
-            .size([height, width - 160]);
+            .size([height, width - 250]);
 
         var cluster = d3.layout.cluster()
-            .size([height, width - 160]);
+            .size([height, width - 250]);
 
         var diagonal = d3.svg.diagonal()
             .projection(function (d) {
@@ -179,10 +186,10 @@
 
 
         var svg = d3.select("body").append("svg")
-            .attr("width", width)
-            .attr("height", height)
+            .attr("width", width + 100)
+            .attr("height", height + 100)
             .append("g")
-            .attr("transform", "translate(40,5)");
+            .attr("transform", "translate(70,5)");
 
 
 
@@ -210,7 +217,7 @@
             })
 
         node.append("circle")
-            .attr("r", 4.5)
+            .attr("r", function (d) { return !d.children ? 6 : 8 })
             .on("click", click)
             .style("stroke", "#e41a1c");
 
@@ -225,15 +232,18 @@
             .text(function (d) {
                 return d.name;
             })
-            .attr("x", function (d) { return !d.children ? 25 : -8 })
-            //.attr("y", function(d){ return !d.children ? 0 : -10    })
+            .attr("x", function (d) { return !d.children ? 25 : 15 })
+            .attr("y", function (d) { return !d.children ? 5 : -15 })
             .attr("text-anchor", function (d) { return d.children || d._children ? "end" : "start"; })
             //.attr("transform", function(d) { return d.children ?"rotate(" + (d.x < 180 ? d.x - 180 : d.x + 180) + ")" : null; })
             .text(function (d) {
-                return d.name
+                return d.name.toUpperCase();
             })
             .style("fill-opacity", 1)
-            .style({ stroke: "grey", "stroke-width": "0.5px" });
+            .style("stroke", function (d) { return !d.children ? "grey" : "#5FBAAC" })
+            .style("stroke-width", function (d) { return !d.children ? "0.5px" : "1px" })
+
+        ;
 
         function click() {
 

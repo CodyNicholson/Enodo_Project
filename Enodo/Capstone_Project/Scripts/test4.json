@@ -1,0 +1,115 @@
+﻿{
+  "name": "Clusters",
+  "children": [
+    {
+      "name": "Cluster 1",
+      "children": [
+        {
+          "name": "0",
+          "num": 0
+        }
+      ]
+    },
+    {
+      "name": "Cluster 2",
+      "children": [
+        {
+          "name": "1",
+          "num": 1
+        },
+        {
+          "name": "6",
+          "num": 6
+        },
+        {
+          "name": "7",
+          "num": 7
+        },
+        {
+          "name": "9",
+          "num": 9
+        },
+        {
+          "name": "10",
+          "num": 10
+        },
+        {
+          "name": "11",
+          "num": 11
+        },
+        {
+          "name": "12",
+          "num": 12
+        }
+      ]
+    },
+    {
+      "name": "Cluster 3",
+      "children": [
+        {
+          "name": "2",
+          "num": 2
+        }
+      ]
+    },
+    {
+      "name": "Cluster 4",
+      "children": [
+        {
+          "name": "3",
+          "num": 3
+        }
+      ]
+    },
+    {
+      "name": "Cluster 5",
+      "children": [
+        {
+          "name": "4",
+          "num": 4
+        }
+      ]
+    },
+    {
+      "name": "Cluster 6",
+      "children": [
+        {
+          "name": "5",
+          "num": 5
+        },
+        {
+          "name": "8",
+          "num": 8
+        },
+        {
+          "name": "13",
+          "num": 13
+        },
+        {
+          "name": "14",
+          "num": 14
+        },
+        {
+          "name": "15",
+          "num": 15
+        },
+        {
+          "name": "16",
+          "num": 16
+        },
+        {
+          "name": "17",
+          "num": 17
+        },
+        {
+          "name": "18",
+          "num": 18
+        },
+        {
+          "name": "19",
+          "num": 19
+        }
+      ]
+    }
+  ]
+}
