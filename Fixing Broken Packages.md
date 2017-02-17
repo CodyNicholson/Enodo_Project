@@ -12,4 +12,6 @@ If running the project causes build failure try the following things.
 
 6. Make sure files in App_Start are included
 
-7. Make sure files in Views/Results and Views/Survey are included
+7. Make sure files in Views/Results and Views/Survey are included.
+
+8. Make sure DTOS folder is included.
