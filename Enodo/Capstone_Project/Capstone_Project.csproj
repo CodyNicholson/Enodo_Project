@@ -556,6 +556,7 @@
     <Content Include="Views\CreateSurveys\AddOptions.cshtml" />
     <Content Include="Views\Survey\CreateSurvey.cshtml" />
     <Content Include="Views\Results\ShowResults.cshtml" />
+    <Content Include="Scripts\test4.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="obj\Debug\TempPE\" />
