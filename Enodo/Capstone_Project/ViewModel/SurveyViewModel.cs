@@ -10,5 +10,6 @@ namespace Capstone_Project.ViewModel
     {
         public IEnumerable<Option> Options { get; set; }
         public Survey Survey { get; set; }
+        public User Owner { get; set; }
     }
 }
