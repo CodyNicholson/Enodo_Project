@@ -44,12 +44,15 @@ namespace Capstone_Project.Controllers
             return View("CreateSurvey", viewModel);
         }
 
-        public ActionResult AddOption()
+        [HttpGet]
+        public PartialViewResult AddOption()
         {
-            return View();
+            var viewModel = new SurveyViewModel()
+            { };
+            return PartialView("AddOption", viewModel);
         }
 
-        
+
 
         public ActionResult TakeSurvey(int id)
         {
