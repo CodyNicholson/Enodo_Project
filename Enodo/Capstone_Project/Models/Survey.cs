@@ -18,5 +18,6 @@ namespace Capstone_Project.Models
         public string Directions { get; set; }
 
         public string Owner { get; set; }
+
     }
 }

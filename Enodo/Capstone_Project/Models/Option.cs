@@ -12,6 +12,7 @@ namespace Capstone_Project.Models
         public int Id { get; set; }
 
         [Required]
+        [Display(Name = "Option")]
         public string Name { get; set; }
 
         public int SurveyId { get; set; }

@@ -2,9 +2,9 @@
 
 
 <div class="form-group">
-@Html.LabelFor(m => m.Options)
-@Html.TextBoxFor(m => m.Options, new { @class = "form-control", placeholder = "Option"})
-@Html.ValidationMessageFor(m => m.Options)
+@Html.LabelFor(m => m.Option.Name)
+@Html.TextBoxFor(m => m.Option.Name, new { @class = "form-control"})
+@Html.ValidationMessageFor(m => m.Option.Name)
     </div>
 
 <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script> 
