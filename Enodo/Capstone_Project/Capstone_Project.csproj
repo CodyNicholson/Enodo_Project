@@ -344,6 +344,10 @@
     <Compile Include="Migrations\201702080303478_SurveyDirectionsRequired.Designer.cs">
       <DependentUpon>201702080303478_SurveyDirectionsRequired.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702210123061_AddedResultsTable.cs" />
+    <Compile Include="Migrations\201702210123061_AddedResultsTable.Designer.cs">
+      <DependentUpon>201702210123061_AddedResultsTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Demographic.cs" />
@@ -352,6 +356,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Survey.cs" />
     <Compile Include="Models\Option.cs" />
+    <Compile Include="Models\SurveyResults.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
@@ -650,6 +655,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702080303478_SurveyDirectionsRequired.resx">
       <DependentUpon>201702080303478_SurveyDirectionsRequired.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702210123061_AddedResultsTable.resx">
+      <DependentUpon>201702210123061_AddedResultsTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="obj\Debug\Capstone_Project.Migrations.AddDemographic.resources" />
     <EmbeddedResource Include="obj\Debug\Capstone_Project.Migrations.AddDemographicId.resources" />

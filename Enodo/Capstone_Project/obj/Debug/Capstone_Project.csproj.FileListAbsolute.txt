@@ -753,3 +753,4 @@ C:\Users\Cody\GitHub\Capstone_Project\Enodo\Capstone_Project\bin\System.Net.Http
 C:\Users\Cody\GitHub\Capstone_Project\Enodo\Capstone_Project\bin\System.Web.Http.xml
 C:\Users\Cody\GitHub\Capstone_Project\Enodo\Capstone_Project\bin\System.Web.Http.SelfHost.xml
 C:\Users\Cody\GitHub\Capstone_Project\Enodo\Capstone_Project\bin\System.Web.Http.WebHost.xml
+C:\Users\Cody\GitHub\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.AddedResultsTable.resources

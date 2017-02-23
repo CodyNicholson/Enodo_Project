@@ -25,6 +25,7 @@ namespace Capstone_Project.Models
         public DbSet<Option> Options { get; set; }
         public DbSet<Demographic> Demographics { get; set; }
         public DbSet<Gender> Genders { get; set; }
+        public DbSet<SurveyResults> SurveyResultsSet { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
