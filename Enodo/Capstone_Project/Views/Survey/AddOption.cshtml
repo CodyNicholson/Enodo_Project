@@ -1,0 +1,10 @@
+﻿@model Capstone_Project.ViewModel.SurveyViewModel
+
+
+<div class="form-group">
+@Html.LabelFor(m => m.Option.Name)
+@Html.TextBoxFor(m => m.Option.Name, new { @class = "form-control"})
+@Html.ValidationMessageFor(m => m.Option.Name)
+    </div>
+
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script> 
