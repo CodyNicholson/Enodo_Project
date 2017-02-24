@@ -8,10 +8,14 @@ If running the project causes build failure try the following things.
 
 4. Enter: Update-Package -reinstall Microsoft.AspNet.WebApi.WebHost
 
-5. Go to bin folder, make sure all files are included (if the file is a silhouette right click and hit "include in project")
+5. Enter Install-Package Microsoft.jQuery.Unobtrusive.Ajax
 
-6. Make sure files in App_Start are included
+6. Go to bin folder, make sure all files are included (if the file is a silhouette right click and hit "include in project")
 
-7. Make sure files in Views/Results and Views/Survey are included.
+7. Make sure files in App_Start are included
 
-8. Make sure DTOS folder is included.
+8. Make sure files in Views/Results and Views/Survey are included.
+
+9. Make sure DTOS folder is included.
+
+10. Enter: Install-Package shortcut.js    (not required as of yet, future features being looked into that require this script)
