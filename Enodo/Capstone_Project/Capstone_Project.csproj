@@ -225,7 +225,6 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\API\SurveyController.cs" />
     <Compile Include="Controllers\API\UsersController.cs" />
-    <Compile Include="Controllers\CreateSurveysController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ResultsController.cs" />
@@ -348,6 +347,10 @@
     <Compile Include="Migrations\201702210123061_AddedResultsTable.Designer.cs">
       <DependentUpon>201702210123061_AddedResultsTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702240012464_AddOptionOrderStringToSurveyResults.cs" />
+    <Compile Include="Migrations\201702240012464_AddOptionOrderStringToSurveyResults.Designer.cs">
+      <DependentUpon>201702240012464_AddOptionOrderStringToSurveyResults.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Demographic.cs" />
@@ -368,7 +371,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
-    <Compile Include="ViewModel\CreateSurveysViewModel.cs" />
     <Compile Include="ViewModel\SurveyViewModel.cs" />
     <Compile Include="ViewModel\UserFormViewModel.cs" />
   </ItemGroup>
@@ -493,6 +495,8 @@
     <Content Include="Scripts\jquery-1.12.4.js" />
     <Content Include="Scripts\jquery-sortable.js" />
     <Content Include="Scripts\jquery-ui.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -562,6 +566,7 @@
     <Content Include="Views\Survey\CreateSurvey.cshtml" />
     <Content Include="Views\Results\ShowResults.cshtml" />
     <Content Include="Scripts\test4.json" />
+    <Content Include="Views\Survey\SurveyForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="obj\Debug\TempPE\" />
@@ -658,6 +663,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702210123061_AddedResultsTable.resx">
       <DependentUpon>201702210123061_AddedResultsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702240012464_AddOptionOrderStringToSurveyResults.resx">
+      <DependentUpon>201702240012464_AddOptionOrderStringToSurveyResults.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="obj\Debug\Capstone_Project.Migrations.AddDemographic.resources" />
     <EmbeddedResource Include="obj\Debug\Capstone_Project.Migrations.AddDemographicId.resources" />

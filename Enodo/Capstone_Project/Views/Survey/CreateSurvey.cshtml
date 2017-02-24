@@ -1,4 +1,4 @@
-﻿@model Capstone_Project.ViewModel.SurveyViewModel
+﻿@model Capstone_Project.Models.Survey
 
 @{
     ViewBag.Title = "Create a Survey";
@@ -10,23 +10,23 @@
 @using (@Html.BeginForm("Save", "Survey")) // The "using" block will create an ending "</form> tag for us
 {
     <div class="form-group">
-        @Html.LabelFor(m => m.Survey.Name)
-        @Html.TextBoxFor(m => m.Survey.Name, new { @class = "form-control"})
-        @Html.ValidationMessageFor(m => m.Survey.Name)
+        @Html.LabelFor(m => m.Name)
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control"})
+        @Html.ValidationMessageFor(m => m.Name)
     </div>
 
     <div id="options" class="form-group">
-        @Html.LabelFor(m => m.Option.Name)
-        @Html.TextBoxFor(m => m.Option.Name, new { @class = "form-control"})
-        @Html.ValidationMessageFor(m => m.Option.Name)
+        @Html.LabelFor(m => m.Directions)
+        @Html.TextBoxFor(m => m.Directions, new { @class = "form-control"})
+        @Html.ValidationMessageFor(m => m.Directions)
     </div>
 
     @Ajax.ActionLink("Add an option", "AddOption", new { @class = "btn btn-primary" }, new AjaxOptions
-{
-    UpdateTargetId = "options",
-    InsertionMode = InsertionMode.InsertBefore,
-    HttpMethod = "GET"
-})
+    {
+        UpdateTargetId = "options",
+        InsertionMode = InsertionMode.InsertBefore,
+        HttpMethod = "GET"
+    })
     <br /><br />
     <button type="submit" class="btn btn-primary">Preview</button>    <button type="submit" class="btn btn-primary">Save</button>
 

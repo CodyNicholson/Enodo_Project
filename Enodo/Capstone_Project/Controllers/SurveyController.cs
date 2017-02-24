@@ -30,29 +30,10 @@ namespace Capstone_Project.Controllers
             return View(surveys);
         }
 
-        public ActionResult CreateSurvey(int id)
+        public ActionResult CreateSurvey()
         {
-            var user = _context.AppUsers.SingleOrDefault(u => u.Id == id);
-
-
-            var viewModel = new SurveyViewModel()
-            {
-                Owner = user
-
-            };
-
-            return View("CreateSurvey", viewModel);
+            return View("CreateSurvey");
         }
-
-        [HttpGet]
-        public PartialViewResult AddOption()
-        {
-            var viewModel = new SurveyViewModel()
-            { };
-            return PartialView("AddOption", viewModel);
-        }
-
-
 
         public ActionResult TakeSurvey(int id)
         {
@@ -68,5 +49,39 @@ namespace Capstone_Project.Controllers
             return View("TakeSurvey", viewModel);
         }
 
+        public PartialViewResult AddOption()
+        {
+            //var viewModel = new SurveyViewModel()
+            //{ };
+            return PartialView("AddOption");
+        }
+
+        [HttpPost]
+        public ActionResult Save(Survey survey)
+        {
+            if (!ModelState.IsValid)
+            {
+                var localSurvey = survey;
+
+                return View("SurveyForm", localSurvey);
+            }
+
+            if (survey.Id == 0)
+            {
+                _context.Surveys.Add(survey); // This does not write customer to the database, this is just saved in local memory
+            }
+            else
+            {
+                var surveyInDb = _context.Surveys.Single(u => u.Id == survey.Id);
+
+                surveyInDb.Name = survey.Name;
+                surveyInDb.Directions = survey.Directions;
+                surveyInDb.Owner = survey.Owner;
+            }
+
+            _context.SaveChanges(); // To persist these changes, we write the customer to the database using the SaveChanges() method
+
+            return RedirectToAction("Index", "Survey");
+        }
     }
 }
