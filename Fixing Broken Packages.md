@@ -17,3 +17,5 @@ If running the project causes build failure try the following things.
 8. Make sure files in Views/Results and Views/Survey are included.
 
 9. Make sure DTOS folder is included.
+
+10. Enter: Install-Package shortcut.js    (not required as of yet, future features being looked into that require this script)
