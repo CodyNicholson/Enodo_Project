@@ -5,10 +5,8 @@
     var duration = 2000;
     var jsonData;
     var currentColor = "#e41a1c";
-    d3.json("/Scripts/test4.json", function (jdata) {
+    d3.json("/Scripts/_output1.json", function (jdata) {
         //console.log(jdata);
-
-
 
         d3.selectAll("input").on("change", change);
 
