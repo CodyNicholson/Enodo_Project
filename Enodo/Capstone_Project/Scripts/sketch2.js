@@ -192,7 +192,7 @@
 
 
         //d3.json("data.json", function(jdata) {
-        var root = jdata,
+        var root = jdata[0],
             nodes = cluster.nodes(root),
             links = cluster.links(nodes);
 

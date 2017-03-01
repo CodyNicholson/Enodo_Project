@@ -22,11 +22,13 @@ namespace Capstone_Project
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/sketch2.js",
+                      "~/Scripts/SunBurst.js",
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap-yeti.css",
                       "~/Content/toFrame.html",
+                      "~/Content/SunBurst_Frame.html",
                       "~/Content/segmented-controls.css",
                       "~/Content/site.css"));
         }
