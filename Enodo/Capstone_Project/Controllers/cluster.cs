@@ -60,17 +60,22 @@ namespace Capstone_Project.Controllers
         {
             this.num = id;
         }
+
+        public String toString()
+        {
+            return this.name;
+        }
     }
     class cluster
     {
         public String name;
         public double[] midpoint;
-        public ArrayList children = new ArrayList();
         public int[] like;
         public int[] dislike;
-
         public int far;
         public double fardist;
+
+        public ArrayList children = new ArrayList();
 
         public cluster(int p, double[] point, int x, int y)
         {

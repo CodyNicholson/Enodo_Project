@@ -9,6 +9,8 @@ using System.Web.Mvc;
 using Capstone_Project.Models;
 using Capstone_Project.ViewModel;
 using Microsoft.AspNet.Identity;
+using Newtonsoft.Json;
+using System.Data;
 
 namespace Capstone_Project.Controllers
 {
@@ -143,9 +145,33 @@ namespace Capstone_Project.Controllers
 
             dummy tempdummy = new dummy("Clusters of survey id "+surveyid  , clusters, clusters.Count);
             var json = new System.Web.Script.Serialization.JavaScriptSerializer().Serialize(tempdummy);
+            var json2 = new System.Web.Script.Serialization.JavaScriptSerializer().Serialize(clusters);
             String outputadd = "C:/Users/bhymel/Downloads/Capstone_Project-master/Enodo/Capstone_Project/Scripts/_output" + surveyid + ".json";
             //String outputadd = "../Scripts/_output" + surveyid + ".json";
-            
+
+            DataTable dt = JsonConvert.DeserializeObject<DataTable>(json2);
+            StringBuilder sb = new StringBuilder();
+
+            foreach (DataColumn col in dt.Columns)
+            {
+                sb.Append(col.ColumnName + ',');
+            }
+
+            sb.Remove(sb.Length - 1, 1);
+            sb.Append(Environment.NewLine);
+
+            foreach (DataRow row in dt.Rows)
+            {
+                for (int i = 0; i < dt.Columns.Count; i++)
+                {
+                    sb.Append(row[i].ToString() + ",");
+                }
+
+                sb.Append(Environment.NewLine);
+            }
+
+            System.IO.File.WriteAllText("C:/Users/bhymel/Downloads/Capstone_Project-master/Enodo/Capstone_Project/Scripts/_output" + surveyid +".csv", sb.ToString());
+            //System.IO.File.WriteAllText("2" + outputadd, json2);
             json = "[" + json + "]";
             System.IO.File.WriteAllText(outputadd, json);
 
