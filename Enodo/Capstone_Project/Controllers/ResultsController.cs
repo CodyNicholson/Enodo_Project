@@ -37,10 +37,9 @@ namespace Capstone_Project.Controllers
                 return HttpNotFound();
             }
 
-            
             test.runAlgorithm(id, _context);
-
             test.createjson(id);
+
             return View(survey);
         }
     }

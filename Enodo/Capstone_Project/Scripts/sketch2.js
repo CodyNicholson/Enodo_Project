@@ -1,11 +1,11 @@
-﻿window.onload = function () {
+﻿
     var width = 700,
         height = 800;
     var diameter = 400;
     var duration = 2000;
     var jsonData;
     var currentColor = "#e41a1c";
-    d3.json("/Scripts/test3.json", function (jdata) {
+    d3.json("/Scripts/_output1.json", function (jdata) {
         //console.log(jdata);
 
         d3.selectAll("input").on("change", change);
@@ -168,13 +168,13 @@
         var radialTree = d3.layout.tree()
             .size([360, diameter / 2])
             .separation(function (a, b) {
-                return (a.parent == b.parent ? 1 : 2) / a.depth;
+                return (a.parent === b.parent ? 1 : 2) / a.depth;
             });
 
         var radialCluster = d3.layout.cluster()
             .size([360, diameter / 2])
             .separation(function (a, b) {
-                return (a.parent == b.parent ? 1 : 2) / a.depth;
+                return (a.parent === b.parent ? 1 : 2) / a.depth;
             });
 
         var radialDiagonal = d3.svg.diagonal.radial()
@@ -192,7 +192,7 @@
 
 
         //d3.json("data.json", function(jdata) {
-        var root = jdata[0],
+        root = jdata[0],
             nodes = cluster.nodes(root),
             links = cluster.links(nodes);
 
@@ -246,7 +246,7 @@
         function click() {
 
 
-            currentColor = currentColor == "#e41a1c" ? "blue" : "#e41a1c";
+            currentColor = currentColor === "#e41a1c" ? "blue" : "#e41a1c";
             d3.select(this).style("stroke", currentColor);
 
 
@@ -266,5 +266,3 @@
     }
 
 
-
-}

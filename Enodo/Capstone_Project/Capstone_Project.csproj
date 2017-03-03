@@ -225,10 +225,12 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\API\SurveyController.cs" />
     <Compile Include="Controllers\API\UsersController.cs" />
+    <Compile Include="Controllers\cluster.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ResultsController.cs" />
     <Compile Include="Controllers\SurveyController.cs" />
+    <Compile Include="Controllers\test.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Dtos\SurveyDto.cs" />
     <Compile Include="Dtos\UserDto.cs" />
@@ -445,6 +447,8 @@
     <Content Include="bin\System.Web.Helpers.dll" />
     <Content Include="bin\System.Web.Helpers.xml" />
     <Content Include="bin\System.Web.Http.dll" />
+    <Content Include="bin\System.Web.Http.SelfHost.dll" />
+    <Content Include="bin\System.Web.Http.SelfHost.xml" />
     <Content Include="bin\System.Web.Http.WebHost.dll" />
     <Content Include="bin\System.Web.Http.WebHost.xml" />
     <Content Include="bin\System.Web.Http.xml" />
@@ -461,9 +465,15 @@
     <Content Include="bin\System.Web.WebPages.Razor.xml" />
     <Content Include="bin\System.Web.WebPages.xml" />
     <Content Include="bin\WebGrease.dll" />
+    <Content Include="Content\20170209_180743[1].jpg" />
     <Content Include="Content\bootstrap-yeti.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\d3.js" />
     <Content Include="Content\rc.jpg" />
+    <Content Include="Content\segmented-controls.css" />
+    <Content Include="Content\SunBurst_Frame.html" />
+    <Content Include="Content\Thomas.png" />
+    <Content Include="Content\Thomas_Placeholder.PNG" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -484,6 +494,7 @@
     <Content Include="bin\roslyn\Microsoft.CSharp.Core.targets" />
     <Content Include="bin\roslyn\Microsoft.VisualBasic.Core.targets" />
     <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -513,6 +524,7 @@
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\sketch2.js" />
     <Content Include="Scripts\style.css" />
+    <Content Include="Scripts\SunBurst.js" />
     <Content Include="Scripts\surveyUI.js" />
     <None Include="Scripts\data.json" />
     <Content Include="Scripts\_references.js" />
@@ -567,6 +579,9 @@
     <Content Include="Views\Results\ShowResults.cshtml" />
     <Content Include="Scripts\test4.json" />
     <Content Include="Views\Survey\SurveyForm.cshtml" />
+    <Content Include="Scripts\_output1.json" />
+    <Content Include="Scripts\test3.json" />
+    <Content Include="Views\Survey\AddOption.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="obj\Debug\TempPE\" />
@@ -669,8 +684,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="obj\Debug\Capstone_Project.Migrations.AddDemographic.resources" />
     <EmbeddedResource Include="obj\Debug\Capstone_Project.Migrations.AddDemographicId.resources" />
+    <EmbeddedResource Include="obj\Debug\Capstone_Project.Migrations.AddedDirectionsToSurvey.resources" />
     <EmbeddedResource Include="obj\Debug\Capstone_Project.Migrations.AddedGenderToUser.resources" />
+    <EmbeddedResource Include="obj\Debug\Capstone_Project.Migrations.AddedResultsTable.resources" />
     <EmbeddedResource Include="obj\Debug\Capstone_Project.Migrations.AddNameToSurvey.resources" />
+    <EmbeddedResource Include="obj\Debug\Capstone_Project.Migrations.AddOptionOrderStringToSurveyResults.resources" />
     <EmbeddedResource Include="obj\Debug\Capstone_Project.Migrations.AddOptions.resources" />
     <EmbeddedResource Include="obj\Debug\Capstone_Project.Migrations.AddOptionSurveyId.resources" />
     <EmbeddedResource Include="obj\Debug\Capstone_Project.Migrations.AddOwnerToSurvey.resources" />
@@ -688,6 +706,7 @@
     <EmbeddedResource Include="obj\Debug\Capstone_Project.Migrations.RemoveSecondDemographicId.resources" />
     <EmbeddedResource Include="obj\Debug\Capstone_Project.Migrations.RemoveSurveyOptions.resources" />
     <EmbeddedResource Include="obj\Debug\Capstone_Project.Migrations.RemoveSurveyOptionSurveyId.resources" />
+    <EmbeddedResource Include="obj\Debug\Capstone_Project.Migrations.SurveyDirectionsRequired.resources" />
     <EmbeddedResource Include="obj\Debug\Capstone_Project.Migrations.UpdateDemographicId.resources" />
     <EmbeddedResource Include="obj\Debug\Capstone_Project.Migrations.UpdateIds.resources" />
     <EmbeddedResource Include="obj\Debug\Capstone_Project.Migrations.UpdateUserIdToAutoGenerate.resources" />

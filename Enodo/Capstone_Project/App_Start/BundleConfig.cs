@@ -23,6 +23,7 @@ namespace Capstone_Project
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/sketch2.js",
                       "~/Scripts/SunBurst.js",
+                      "~/Content/d3.js",
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(

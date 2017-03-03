@@ -5,10 +5,11 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Edit User</h2>
+<h2>New User</h2>
 
 @using (@Html.BeginForm("Save", "Users")) // The "using" block will create an ending "</form> tag for us
 {
+    @Html.ValidationSummary(true, "Please fix the following errors:")
     <div class="form-group">
         @Html.LabelFor(m => m.User.Name)
         @Html.TextBoxFor(m => m.User.Name, new { @class = "form-control", placeholder="Name" })
@@ -37,4 +38,9 @@
     @Html.HiddenFor(m => m.User.Id) // This line makes it so the info is updated in the database
     @Html.AntiForgeryToken()
     <button type="submit" class="btn btn-primary">Save</button>
+}
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
 }
