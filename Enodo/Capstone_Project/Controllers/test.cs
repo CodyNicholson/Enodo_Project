@@ -55,7 +55,6 @@ namespace Capstone_Project.Controllers
         public static void runAlgorithm(int surveyid, ApplicationDbContext _context)
         {
 
-            //clusters = new ArrayList();
             List<ApplicationUser> list = database.Users.ToList();
             //Console.WriteLine(list.ToString());
             //var rywjhs  = Console.In;
@@ -116,7 +115,7 @@ namespace Capstone_Project.Controllers
                 {
                     clusters.Add(new cluster(i, surveys[i], surveys[i].Length, clusters.Count + 1));
                 }
-                tempal.Clear();
+
             }
             for (int k = 0; k < clusters.Count; k++)
             {
@@ -142,14 +141,13 @@ namespace Capstone_Project.Controllers
         public static void createjson(int surveyid)
         {
 
-            dummy tempdummy = new dummy("Clusters", clusters, clusters.Count);
+            dummy tempdummy = new dummy("Clusters of survey id "+surveyid  , clusters, clusters.Count);
             var json = new System.Web.Script.Serialization.JavaScriptSerializer().Serialize(tempdummy);
-            //String outputadd = "C:/Users/Brian/Desktop/Brian's stuf/College/Senior/winter/capstone/Capstone_Project-master/Enodo/Capstone_Project/Scripts/_output" + surveyid + ".json";
+            String outputadd = "C:/Users/bhymel/Downloads/Capstone_Project-master/Enodo/Capstone_Project/Scripts/_output" + surveyid + ".json";
             //String outputadd = "../Scripts/_output" + surveyid + ".json";
+            
             json = "[" + json + "]";
-            String outputadd = "C:/Users/Cody/GitHub/Capstone_Project/Enodo/Capstone_Project/Scripts/_output" + surveyid + ".json";
             System.IO.File.WriteAllText(outputadd, json);
-            clusters.Clear();
 
         }
 

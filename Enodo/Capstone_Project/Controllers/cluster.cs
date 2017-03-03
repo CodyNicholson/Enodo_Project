@@ -17,15 +17,44 @@ namespace Capstone_Project.Controllers
 
         public String name;
         public int num;
-        public person(int p)
+        public int Genderid;
+        public String Gender;
+        public String Demographic;
+        public int Demographicid;
+        public String answers;
+        public person(int p, double[] arr)
         {
             this.name = "" + p;
             this.num = p;
+            this.Genderid = p;
+            this.Demographicid = p;
+            this.Gender = "" + p;
+            this.Demographic = "" + p;
+            for(int i = 0; i < arr.Length; i++)
+            {
+                if (i == arr.Length - 1)
+                {
+                    answers = answers + arr[i];
+                }
+                else {
+                    answers = answers + arr[i] + ",";
+                }
+            }
+            //answers = arr.ToString();
         }
         public void setname(int id, ApplicationDbContext _context)
         {
             var survey = _context.AppUsers.SingleOrDefault(s => s.Id == id);
+            
             this.name = survey.Name; ; //Grabs the name using the user id
+            this.Genderid = survey.GenderId;
+            this.Demographicid = survey.DemographicId;
+            var gender = _context.Genders.SingleOrDefault(s => s.Id == this.Genderid);
+            this.Gender = gender.GenderName;
+            var demo = _context.Demographics.SingleOrDefault(s => s.Id == this.Demographicid);
+            this.Demographic = demo.Name;
+            
+
         }
         public void setnum(int id)
         {
@@ -35,18 +64,18 @@ namespace Capstone_Project.Controllers
     class cluster
     {
         public String name;
-        double[] midpoint;
+        public double[] midpoint;
         public ArrayList children = new ArrayList();
-        int[] like;
-        int[] dislike;
+        public int[] like;
+        public int[] dislike;
 
-        int far;
-        double fardist;
+        public int far;
+        public double fardist;
 
         public cluster(int p, double[] point, int x, int y)
         {
             this.name = "Cluster " + y;
-            this.children.Add(new person(p));
+            this.children.Add(new person(p,point));
             this.midpoint = point;
             this.like = new int[x];
             this.dislike = new int[x];
@@ -56,7 +85,7 @@ namespace Capstone_Project.Controllers
 
         public void add(int x, double[] arr)
         {
-            children.Add(new person(x));
+            children.Add(new person(x,arr));
             updatemid(arr);
             updatefurthest(x, arr);
 
