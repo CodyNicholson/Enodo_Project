@@ -146,9 +146,10 @@ namespace Capstone_Project.Controllers
             dummy tempdummy = new dummy("Clusters of survey id "+surveyid  , clusters, clusters.Count);
             var json = new System.Web.Script.Serialization.JavaScriptSerializer().Serialize(tempdummy);
             var json2 = new System.Web.Script.Serialization.JavaScriptSerializer().Serialize(clusters);
-            String outputadd = "C:/Users/bhymel/Downloads/Capstone_Project-master/Enodo/Capstone_Project/Scripts/_output" + surveyid + ".json";
+            String outputadd = "C:/Users/Brian/Desktop/Brian's stuf/College/Senior/winter/capstone/Capstone_Project-master/Enodo/Capstone_Project/Scripts/_output" + surveyid + ".json";
             //String outputadd = "../Scripts/_output" + surveyid + ".json";
-
+            
+            /*
             DataTable dt = JsonConvert.DeserializeObject<DataTable>(json2);
             StringBuilder sb = new StringBuilder();
 
@@ -170,7 +171,9 @@ namespace Capstone_Project.Controllers
                 sb.Append(Environment.NewLine);
             }
 
-            System.IO.File.WriteAllText("C:/Users/bhymel/Downloads/Capstone_Project-master/Enodo/Capstone_Project/Scripts/_output" + surveyid +".csv", sb.ToString());
+            System.IO.File.WriteAllText("C:/Users/Brian/Desktop/Brian's stuf/College/Senior/winter/capstone/Capstone_Project-master/Enodo/Capstone_Project/Scripts/_output" + surveyid +".csv", sb.ToString());
+            
+            */
             //System.IO.File.WriteAllText("2" + outputadd, json2);
             json = "[" + json + "]";
             System.IO.File.WriteAllText(outputadd, json);
