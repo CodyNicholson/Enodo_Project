@@ -1,4 +1,8 @@
-﻿var width = 840,
+﻿var index = top.document.location.href;
+index = index.split(-1);
+
+
+var width = 840,
     height = width,
     radius = width / 2,
     x = d3.scale.linear().range([0, 2 * Math.PI]),
@@ -21,7 +25,7 @@ var arc = d3.svg.arc()
     .innerRadius(function (d) { return Math.max(0, d.y ? y(d.y) : d.y); })
     .outerRadius(function (d) { return Math.max(0, y(d.y + d.dy)); });
 
-d3.json("/Scripts/test3.json", function (error, json) {
+d3.json("/Scripts/_output"+index+".json", function (error, json) {
     var nodes = partition.nodes({ children: json });
     var path = vis.selectAll("path").data(nodes);
     path.enter().append("path")

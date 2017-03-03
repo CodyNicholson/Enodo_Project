@@ -5,7 +5,10 @@
     var duration = 2000;
     var jsonData;
     var currentColor = "#e41a1c";
-    d3.json("/Scripts/_output1.json", function (jdata) {
+    var index = top.document.location.href;
+    index = index.split(-1);
+
+    d3.json("/Scripts/_output"+index+".json", function (jdata) {
         //console.log(jdata);
 
         d3.selectAll("input").on("change", change);
