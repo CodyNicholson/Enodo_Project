@@ -105,7 +105,7 @@
                 links = tree.links(nodes);
 
             svg.transition().duration(duration)
-                .attr("transform", "translate(70,0)");
+                .attr("transform", "translate(100,0)");
 
             link.data(links)
                 .transition()
@@ -133,7 +133,7 @@
                 links = cluster.links(nodes);
 
             svg.transition().duration(duration)
-                .attr("transform", "translate(70,0)");
+                .attr("transform", "translate(100,0)");
 
             link.data(links)
                 .transition()
@@ -192,7 +192,7 @@
             .attr("width", width + 100)
             .attr("height", height + 100)
             .append("g")
-            .attr("transform", "translate(70,5)");
+            .attr("transform", "translate(100,5)");
 
 
 
@@ -259,11 +259,14 @@
                     ans = d.answers,
                     parent = d.parent.name;
 
+                var top_ans = ans.split(",");
+
                 document.getElementById("name").innerHTML = name;
                 document.getElementById("gender").innerHTML = gender;
                 document.getElementById("num").innerHTML = num;
                 document.getElementById("dm").innerHTML = dm;
-
+                document.getElementById("top_ans").innerHTML = top_ans[0];
+                document.getElementById("b_ans").innerHTML = top_ans[top_ans.length-1];
           
 
                 $(function () {
