@@ -7,7 +7,7 @@
     var currentColor = "#e41a1c";
     var url = top.document.location.href.toString();
     var index = url.substr(-1);
-    console.log("JNDJFDJF:  " + index);
+   // console.log("JNDJFDJF:  " + index);
 
 
     d3.json("/Scripts/_output"+index+".json", function (jdata) {
@@ -248,11 +248,37 @@
 
         ;
 
-        function click() {
+        function click(d) {
 
+            if (!d.children) {
 
-            currentColor = currentColor === "#e41a1c" ? "blue" : "#e41a1c";
-            d3.select(this).style("stroke", currentColor);
+                var name = d.name,
+                    gender = d.Gender,
+                    num = d.num,
+                    dm = d.Demographic,
+                    ans = d.answers,
+                    parent = d.parent.name;
+
+                
+                var dialog = document.getElementById("dialog");
+                    //dialog.removeAttribute('title');
+                    //dialog.setAttribute('title', "Member of " + parent);
+                    
+
+                document.getElementById("name").innerHTML = name;
+                document.getElementById("gender").innerHTML = gender;
+                document.getElementById("num").innerHTML = num;
+                document.getElementById("dm").innerHTML = dm;
+
+          
+
+                $(function () {
+                    $("#dialog").dialog();
+                });
+
+                $('#dialog').dialog('option', 'title', parent);
+            }
+          
 
 
         }
