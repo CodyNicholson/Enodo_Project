@@ -259,12 +259,6 @@
                     ans = d.answers,
                     parent = d.parent.name;
 
-                
-                var dialog = document.getElementById("dialog");
-                    //dialog.removeAttribute('title');
-                    //dialog.setAttribute('title', "Member of " + parent);
-                    
-
                 document.getElementById("name").innerHTML = name;
                 document.getElementById("gender").innerHTML = gender;
                 document.getElementById("num").innerHTML = num;
@@ -273,10 +267,10 @@
           
 
                 $(function () {
-                    $("#dialog").dialog();
+                    $("#dialog").dialog({title: parent, modal: true});
                 });
 
-                $('#dialog').dialog('option', 'title', parent);
+               // $('#dialog').dialog('option', 'title', parent);
             }
           
 
