@@ -11,6 +11,7 @@ using Capstone_Project.ViewModel;
 using Microsoft.AspNet.Identity;
 using Newtonsoft.Json;
 using System.Data;
+using System.IO;
 
 namespace Capstone_Project.Controllers
 {
@@ -148,7 +149,7 @@ namespace Capstone_Project.Controllers
             var json2 = new System.Web.Script.Serialization.JavaScriptSerializer().Serialize(clusters);
             String outputadd = "C:/Users/Brian/Desktop/Brian's stuf/College/Senior/winter/capstone/Capstone_Project-master/Enodo/Capstone_Project/Scripts/_output" + surveyid + ".json";
             //String outputadd = "../Scripts/_output" + surveyid + ".json";
-            
+
             /*
             DataTable dt = JsonConvert.DeserializeObject<DataTable>(json2);
             StringBuilder sb = new StringBuilder();
@@ -175,8 +176,13 @@ namespace Capstone_Project.Controllers
             
             */
             //System.IO.File.WriteAllText("2" + outputadd, json2);
+
+            string path = HttpContext.Current.Server.MapPath("~/Scripts/_output" + surveyid + ".json");
+          
+          
+
             json = "[" + json + "]";
-            System.IO.File.WriteAllText(outputadd, json);
+            System.IO.File.WriteAllText(path, json);
 
         }
 

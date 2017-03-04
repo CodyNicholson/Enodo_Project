@@ -5,8 +5,10 @@
     var duration = 2000;
     var jsonData;
     var currentColor = "#e41a1c";
-    var index = top.document.location.href;
-    index = index.split(-1);
+    var url = top.document.location.href.toString();
+    var index = url.substr(-1);
+    console.log("JNDJFDJF:  " + index);
+
 
     d3.json("/Scripts/_output"+index+".json", function (jdata) {
         //console.log(jdata);

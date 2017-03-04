@@ -1,6 +1,6 @@
-﻿var index = top.document.location.href;
-index = index.split(-1);
-
+﻿var url = top.document.location.href.toString();
+var index = url.substr(-1);
+console.log("JNDJFDJF:  " + index);
 
 var width = 840,
     height = width,
