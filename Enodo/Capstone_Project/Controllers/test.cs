@@ -144,10 +144,9 @@ namespace Capstone_Project.Controllers
         public static void createjson(int surveyid)
         {
 
-            dummy tempdummy = new dummy("Clusters of survey id "+surveyid  , clusters, clusters.Count);
+            dummy tempdummy = new dummy("Clusters Survey#"+surveyid  , clusters, clusters.Count);
             var json = new System.Web.Script.Serialization.JavaScriptSerializer().Serialize(tempdummy);
             var json2 = new System.Web.Script.Serialization.JavaScriptSerializer().Serialize(clusters);
-            String outputadd = "C:/Users/Brian/Desktop/Brian's stuf/College/Senior/winter/capstone/Capstone_Project-master/Enodo/Capstone_Project/Scripts/_output" + surveyid + ".json";
             //String outputadd = "../Scripts/_output" + surveyid + ".json";
 
             /*
