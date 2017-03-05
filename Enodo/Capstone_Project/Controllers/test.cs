@@ -20,15 +20,17 @@ namespace Capstone_Project.Controllers
     {
 
         public String name;
-        int amount;
+        public int amount;
+        public String[] options;
         public ArrayList children;
 
 
-        public dummy(String x, ArrayList y, int z)
+        public dummy(String x, ArrayList y, int z, String[] arr)
         {
 
             this.name = x;
             this.children = y;
+            this.options = arr;
             this.amount = z;
 
         }
@@ -136,15 +138,31 @@ namespace Capstone_Project.Controllers
                 }
             }
 
+            for (int k = 0; k < clusters.Count; k++)
+            {
+                foreach (person x in ((cluster)(clusters[k])).children)
+                {
+                    ((cluster)(clusters[k])).updateans(x, surveyid, _context);
+                }
+            }
+
 
 
 
         }
 
-        public static void createjson(int surveyid)
+        public static void createjson(int surveyid, ApplicationDbContext _context)
         {
+            var tempoptions = _context.Options.Where(s => s.SurveyId == surveyid);
+            var temparr = tempoptions.ToArray();
+            String[] arr = new String[temparr.Length];
+            for(int i = 0; i < temparr.Length; i++)
+            {
+                arr[i] = temparr[i].Name;
+            }
 
-            dummy tempdummy = new dummy("Clusters Survey#"+surveyid  , clusters, clusters.Count);
+
+            dummy tempdummy = new dummy("Clusters Survey#"+surveyid  , clusters, clusters.Count,arr);
             var json = new System.Web.Script.Serialization.JavaScriptSerializer().Serialize(tempdummy);
             var json2 = new System.Web.Script.Serialization.JavaScriptSerializer().Serialize(clusters);
             //String outputadd = "../Scripts/_output" + surveyid + ".json";
