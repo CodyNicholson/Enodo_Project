@@ -21,7 +21,8 @@ namespace Capstone_Project.Controllers
         public String Gender;
         public String Demographic;
         public int Demographicid;
-        public String answers;
+        public double[] numanswers;
+        public String[] stringans;
         public person(int p, double[] arr)
         {
             this.name = "" + p;
@@ -30,16 +31,8 @@ namespace Capstone_Project.Controllers
             this.Demographicid = p;
             this.Gender = "" + p;
             this.Demographic = "" + p;
-            for(int i = 0; i < arr.Length; i++)
-            {
-                if (i == arr.Length - 1)
-                {
-                    answers = answers + arr[i];
-                }
-                else {
-                    answers = answers + arr[i] + ",";
-                }
-            }
+            this.numanswers = arr;
+            this.stringans = new String[arr.Length];
             //answers = arr.ToString();
         }
         public void setname(int id, ApplicationDbContext _context)
@@ -53,8 +46,18 @@ namespace Capstone_Project.Controllers
             this.Gender = gender.GenderName;
             var demo = _context.Demographics.SingleOrDefault(s => s.Id == this.Demographicid);
             this.Demographic = demo.Name;
-            
 
+        }
+
+        public void setans(int id, ApplicationDbContext _context)
+        {
+            var tempoptions = _context.Options.Where(s => s.SurveyId == id);
+            var temparr = tempoptions.ToArray();
+            for (int i = 0; i < temparr.Length; i++)
+            {
+                this.stringans[i] = temparr[(int)this.numanswers[i]].Name;
+
+            }
         }
         public void setnum(int id)
         {
@@ -140,6 +143,12 @@ namespace Capstone_Project.Controllers
             y.setnum(x[y.num]);
             y.setname(y.num, _context);
         }
+
+        public void updateans(person y, int x, ApplicationDbContext _context)
+        {
+            y.setans(x, _context);
+        }
+
 
         public void updatefurthest(int p, double[] x)
         {

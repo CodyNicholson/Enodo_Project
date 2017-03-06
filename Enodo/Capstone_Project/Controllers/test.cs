@@ -20,15 +20,17 @@ namespace Capstone_Project.Controllers
     {
 
         public String name;
-        int amount;
+        public int amount;
+        public String[] options;
         public ArrayList children;
 
 
-        public dummy(String x, ArrayList y, int z)
+        public dummy(String x, ArrayList y, int z, String[] arr)
         {
 
             this.name = x;
             this.children = y;
+            this.options = arr;
             this.amount = z;
 
         }
@@ -68,7 +70,7 @@ namespace Capstone_Project.Controllers
             {
                 maparr[i] = (int)xyzaffair[0][i];
             }
-           
+
             surveys = new double[xyzaffair.Length - 1][];
             for(int x = 1; x < xyzaffair.Length; x++)
             {
@@ -136,19 +138,36 @@ namespace Capstone_Project.Controllers
                 }
             }
 
+            for (int k = 0; k < clusters.Count; k++)
+            {
+                foreach (person x in ((cluster)(clusters[k])).children)
+                {
+                    ((cluster)(clusters[k])).updateans(x, surveyid, _context);
+                }
+            }
+
 
 
 
         }
 
-        public static void createjson(int surveyid)
+        public static void createjson(int surveyid, ApplicationDbContext _context)
         {
+            var tempoptions = _context.Options.Where(s => s.SurveyId == surveyid);
+            var temparr = tempoptions.ToArray();
+            String[] arr = new String[temparr.Length];
+            for(int i = 0; i < temparr.Length; i++)
+            {
+                arr[i] = temparr[i].Name;
+            }
 
-            dummy tempdummy = new dummy("Clusters of survey id "+surveyid  , clusters, clusters.Count);
+
+            dummy tempdummy = new dummy("Clusters Survey#"+surveyid  , clusters, clusters.Count,arr);
             var json = new System.Web.Script.Serialization.JavaScriptSerializer().Serialize(tempdummy);
             var json2 = new System.Web.Script.Serialization.JavaScriptSerializer().Serialize(clusters);
             //String outputadd = "C:/Users/Brian/Desktop/Brian's stuf/College/Senior/winter/capstone/Capstone_Project-master/Enodo/Capstone_Project/Scripts/_output" + surveyid + ".json";
             String outputadd = "C:/Users/Cody/GitHub/Capstone_Project/Enodo/Capstone_Project/Scripts/_output" + surveyid + ".json";
+            //String outputadd = "C:/Users/Brian/Desktop/Brian's stuf/College/Senior/winter/capstone/Capstone_Project-master/Enodo/Capstone_Project/Scripts/_output" + surveyid + ".json";
             //String outputadd = "../Scripts/_output" + surveyid + ".json";
 
             /*
@@ -174,13 +193,11 @@ namespace Capstone_Project.Controllers
             }
 
             System.IO.File.WriteAllText("C:/Users/Brian/Desktop/Brian's stuf/College/Senior/winter/capstone/Capstone_Project-master/Enodo/Capstone_Project/Scripts/_output" + surveyid +".csv", sb.ToString());
-            
+
             */
             //System.IO.File.WriteAllText("2" + outputadd, json2);
 
             string path = HttpContext.Current.Server.MapPath("~/Scripts/_output" + surveyid + ".json");
-          
-          
 
             json = "[" + json + "]";
             System.IO.File.WriteAllText(path, json);

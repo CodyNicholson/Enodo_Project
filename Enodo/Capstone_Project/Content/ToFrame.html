@@ -5,7 +5,10 @@
 
 
     <script type="text/javascript" src="d3.js"></script>
-
+  
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script type="text/javascript" src="../Scripts/sketch2.js"></script>
     <link type="text/css" rel="stylesheet" href="../Content/segmented-controls.css">
     <style type="text/css">
@@ -35,6 +38,16 @@
 </head>
 
 <body>
+
+    <div id="dialog" title="" style="display: none;">
+       <b> Name:</b>        <em id="name" ></em><br />
+       <b> Gender:</b>      <em id="gender"></em><br />
+       <b> Number: </b>     <em id="num"></em><br />
+       <b> Demographic: </b><em id="dm"></em><br />
+       <b> Top Answer: </b><em id="top_ans"></em><br />
+       <b> Lowest Answer: </b><em id="b_ans"></em><br />
+    </div>
+
 <div class="segmented-control" style="width: 100%; color: #008cba">
     
     <input type="radio" name="mode" id="sc-1-1-2" value="radialcluster">

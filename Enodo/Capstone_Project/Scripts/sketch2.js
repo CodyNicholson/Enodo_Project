@@ -7,7 +7,7 @@
     var currentColor = "#e41a1c";
     var url = top.document.location.href.toString();
     var index = url.substr(-1);
-    console.log("JNDJFDJF:  " + index);
+   // console.log("JNDJFDJF:  " + index);
 
 
     d3.json("/Scripts/_output"+index+".json", function (jdata) {
@@ -105,7 +105,7 @@
                 links = tree.links(nodes);
 
             svg.transition().duration(duration)
-                .attr("transform", "translate(70,0)");
+                .attr("transform", "translate(100,0)");
 
             link.data(links)
                 .transition()
@@ -133,7 +133,7 @@
                 links = cluster.links(nodes);
 
             svg.transition().duration(duration)
-                .attr("transform", "translate(70,0)");
+                .attr("transform", "translate(100,0)");
 
             link.data(links)
                 .transition()
@@ -192,7 +192,7 @@
             .attr("width", width + 100)
             .attr("height", height + 100)
             .append("g")
-            .attr("transform", "translate(70,5)");
+            .attr("transform", "translate(100,5)");
 
 
 
@@ -248,11 +248,34 @@
 
         ;
 
-        function click() {
+        function click(d) {
 
+            if (!d.children) {
 
-            currentColor = currentColor === "#e41a1c" ? "blue" : "#e41a1c";
-            d3.select(this).style("stroke", currentColor);
+                var name = d.name,
+                    gender = d.Gender,
+                    num = d.num,
+                    dm = d.Demographic,
+                    ans = d.answers,
+                    parent = d.parent.name;
+
+                var top_ans = ans.split(",");
+
+                document.getElementById("name").innerHTML = name;
+                document.getElementById("gender").innerHTML = gender;
+                document.getElementById("num").innerHTML = num;
+                document.getElementById("dm").innerHTML = dm;
+                document.getElementById("top_ans").innerHTML = top_ans[0];
+                document.getElementById("b_ans").innerHTML = top_ans[top_ans.length-1];
+          
+
+                $(function () {
+                    $("#dialog").dialog({title: parent, modal: true});
+                });
+
+               // $('#dialog').dialog('option', 'title', parent);
+            }
+          
 
 
         }

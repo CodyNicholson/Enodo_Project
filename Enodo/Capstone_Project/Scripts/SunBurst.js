@@ -1,6 +1,27 @@
 ﻿var url = top.document.location.href.toString();
 var index = url.substr(-1);
-console.log("JNDJFDJF:  " + index);
+//console.log("JNDJFDJF:  " + index);
+
+var tip = d3.tip()
+  .attr('class', 'd3-tip')
+  .offset([100, 0])
+  .html(function (d) {
+
+      var name = d.name,
+                    gender = d.Gender,
+                    num = d.num,
+                    dm = d.Demographic,
+                    ans = d.answers,
+                    parent = d.parent.name;
+      var top_ans = ans.split(",");
+
+      return "<strong>Name:</strong> <span style='color:red'>" + name + "</span><br/>"
+           + "<strong>Gender:</strong> <span style='color:red'>" + gender + "</span><br/>"
+           + "<strong>Demographic:</strong> <span style='color:red'>" + dm + "</span><br/>"
+           + "<strong>Top Answer:</strong> <span style='color:red'>" + top_ans[0] + "</span><br/>"
+             ;
+  })
+
 
 var width = 840,
     height = width,
@@ -25,6 +46,8 @@ var arc = d3.svg.arc()
     .innerRadius(function (d) { return Math.max(0, d.y ? y(d.y) : d.y); })
     .outerRadius(function (d) { return Math.max(0, y(d.y + d.dy)); });
 
+vis.call(tip);
+
 d3.json("/Scripts/_output"+index+".json", function (error, json) {
     var nodes = partition.nodes({ children: json });
     var path = vis.selectAll("path").data(nodes);
@@ -33,6 +56,12 @@ d3.json("/Scripts/_output"+index+".json", function (error, json) {
         .attr("d", arc)
         .attr("fill-rule", "evenodd")
         .style("fill", colour)
+        .on('mouseover', function (d, i) {
+            if (!d.children) {
+                tip.show.call(this, d, i);
+            }
+        })
+        .on('mouseout', tip.hide)
         .on("click", click);
     var text = vis.selectAll("text").data(nodes);
     var textEnter = text.enter().append("text")
@@ -50,7 +79,9 @@ d3.json("/Scripts/_output"+index+".json", function (error, json) {
                 rotate = angle + (multiline ? -.5 : 0);
             return "rotate(" + rotate + ")translate(" + (y(d.y) + padding) + ")rotate(" + (angle > 90 ? -180 : 0) + ")";
         })
-        .on("click", click);
+        .on("click", click)
+        
+    ;
     textEnter.append("tspan")
         .attr("x", 0)
         .text(function (d) { return d.depth ? d.name.split(" ")[0] : ""; });
