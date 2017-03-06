@@ -30,9 +30,14 @@ namespace Capstone_Project.Controllers
             return View(surveys);
         }
 
-        public ActionResult CreateSurvey()
+        public ActionResult New()
         {
-            return View("CreateSurvey");
+            var viewModel = new SurveyViewModel()
+            {
+                Survey = new Survey()
+            };
+
+            return View("SurveyForm", viewModel);
         }
 
         public ActionResult TakeSurvey(int id)
@@ -51,9 +56,9 @@ namespace Capstone_Project.Controllers
 
         public PartialViewResult AddOption()
         {
-            //var viewModel = new SurveyViewModel()
-            //{ };
-            return PartialView("AddOption");
+            var viewModel = new SurveyViewModel()
+            {};
+            return PartialView("AddOption", viewModel);
         }
 
         [HttpPost]
@@ -61,9 +66,12 @@ namespace Capstone_Project.Controllers
         {
             if (!ModelState.IsValid)
             {
-                var localSurvey = survey;
+                var viewModel = new SurveyViewModel()
+                {
+                    Survey = new Survey()
+                };
 
-                return View("SurveyForm", localSurvey);
+                return View("SurveyForm", viewModel);
             }
 
             if (survey.Id == 0)

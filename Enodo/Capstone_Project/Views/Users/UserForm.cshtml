@@ -5,7 +5,14 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>New User</h2>
+@if (Model.User == null)
+{
+    <h2>New User</h2>
+}
+else
+{
+    <h2>Edit User</h2>
+}
 
 @using (@Html.BeginForm("Save", "Users")) // The "using" block will create an ending "</form> tag for us
 {

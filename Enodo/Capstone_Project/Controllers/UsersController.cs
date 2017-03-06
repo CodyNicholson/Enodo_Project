@@ -83,7 +83,8 @@ namespace Capstone_Project.Controllers
             var viewModel = new UserFormViewModel()
             {
                 Demographics = demographics,
-                Genders = genders
+                Genders = genders,
+                User = new User()
             };
 
             return View("UserForm", viewModel);
