@@ -38,7 +38,7 @@ namespace Capstone_Project.Controllers
             }
 
             test.runAlgorithm(id, _context);
-            test.createjson(id);
+            test.createjson(id, _context);
 
             return View(survey);
         }
