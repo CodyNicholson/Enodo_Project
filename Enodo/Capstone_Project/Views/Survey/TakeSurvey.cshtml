@@ -14,7 +14,7 @@
 <ul id="sortable">
     @{
         int index = 0;
-        foreach (var option in Model._contextVM.Options.ToList())
+        foreach (var option in Model.Options)
         {
             if (option.SurveyId == Model.Survey.Id)
             {
@@ -39,7 +39,7 @@
 </script>
 
 <div class="row">
-    <p><a class="btn btn-primary" onclick=" location.href = '<%: Url.Action(\"Action/>", "Controller") %>' " type="submit">Submit &raquo;</a></p>
+    <p><a class="btn btn-primary" type="submit">Submit &raquo;</a></p>
 </div>
 
 <script type="text/javascript">

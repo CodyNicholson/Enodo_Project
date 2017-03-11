@@ -43,11 +43,11 @@ namespace Capstone_Project.Controllers
         public ActionResult TakeSurvey(int id)
         {
             var survey = _context.Surveys.SingleOrDefault(s => s.Id == id);
-            //var option = _context.Options.SingleOrDefault();
+            var options = _context.Options.ToList();
 
             var viewModel = new SurveyViewModel()
             {
-                //Option = option,
+                Options = options,
                 Survey = survey
             };
 
@@ -71,9 +71,8 @@ namespace Capstone_Project.Controllers
                 var viewModel = new SurveyViewModel()
                 {
                     Survey = new Survey(),
-                    Option = new Option(),
-                    Owner = new User(),
-                    _contextVM = _context
+                    Options = new List<Option>(),
+                    Owner = new User()
                 };
 
                 return View("SurveyForm", viewModel);

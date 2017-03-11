@@ -8,9 +8,8 @@ namespace Capstone_Project.ViewModel
 {
     public class SurveyViewModel
     {
-        public Option Option { get; set; }
+        public IEnumerable<Option> Options { get; set; }
         public Survey Survey { get; set; }
         public User Owner { get; set; }
-        public ApplicationDbContext _contextVM { get; set; }
     }
 }
