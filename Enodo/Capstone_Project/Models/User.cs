@@ -32,6 +32,10 @@ namespace Capstone_Project.Models
         [Display(Name = "Gender")]
         public int GenderId { get; set; }
 
+        [Required]
+        [Display(Name = "Country")]
+        public String Country { get; set; }
+
         public List<string> SurveyIds { get; set; }
     }
 }

@@ -30,50 +30,56 @@ namespace Capstone_Project.Controllers
             return View(surveys);
         }
 
-        public ActionResult New()
+        public ActionResult CreateSurvey()
         {
             var viewModel = new SurveyViewModel()
             {
                 Survey = new Survey()
             };
 
-            return View("SurveyForm", viewModel);
+            return View("CreateSurvey", viewModel);
         }
 
         public ActionResult TakeSurvey(int id)
         {
             var survey = _context.Surveys.SingleOrDefault(s => s.Id == id);
-            var options = _context.Options.ToList();
+            //var option = _context.Options.SingleOrDefault();
 
             var viewModel = new SurveyViewModel()
             {
-                Options = options,
+                //Option = option,
                 Survey = survey
             };
 
             return View("TakeSurvey", viewModel);
         }
 
+        
         public PartialViewResult AddOption()
         {
             var viewModel = new SurveyViewModel()
             {};
             return PartialView("AddOption", viewModel);
         }
+        
 
         [HttpPost]
-        public ActionResult Save(Survey survey)
+        public ActionResult Save(Survey survey, Option option)
         {
             if (!ModelState.IsValid)
             {
                 var viewModel = new SurveyViewModel()
                 {
-                    Survey = new Survey()
+                    Survey = new Survey(),
+                    Option = new Option(),
+                    Owner = new User(),
+                    _contextVM = _context
                 };
 
                 return View("SurveyForm", viewModel);
             }
 
+            
             if (survey.Id == 0)
             {
                 _context.Surveys.Add(survey); // This does not write customer to the database, this is just saved in local memory
@@ -81,6 +87,10 @@ namespace Capstone_Project.Controllers
             else
             {
                 var surveyInDb = _context.Surveys.Single(u => u.Id == survey.Id);
+                var optionsInDb = _context.Options.Single(o => o.Id == option.Id);
+
+                optionsInDb.Name = option.Name;
+                optionsInDb.SurveyId = survey.Id;
 
                 surveyInDb.Name = survey.Name;
                 surveyInDb.Directions = survey.Directions;
@@ -91,5 +101,11 @@ namespace Capstone_Project.Controllers
 
             return RedirectToAction("Index", "Survey");
         }
+
+        /*[HttpPost]
+        public ActionResult GetOptions(string[] values)
+        {
+            
+        }*/
     }
 }

@@ -28,6 +28,11 @@ else
         @Html.ValidationMessageFor(m => m.User.Birthdate)
     </div>
     <div class="form-group">
+        @Html.LabelFor(m => m.User.Country)
+        @Html.TextBoxFor(m => m.User.Country, new { @class = "form-control", placeholder = "Place Country Here" })
+        @Html.ValidationMessageFor(m => m.User.Country)
+    </div>
+    <div class="form-group">
         @Html.LabelFor(m => m.User.GenderId)
         @Html.DropDownListFor(m => m.User.GenderId, new SelectList(Model.Genders, "Id", "GenderName"), "Select Your Gender", new { @class = "form-control" })
         @Html.ValidationMessageFor(m => m.User.GenderId)

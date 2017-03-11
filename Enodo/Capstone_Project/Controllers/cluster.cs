@@ -21,8 +21,10 @@ namespace Capstone_Project.Controllers
         public String Gender;
         public String Demographic;
         public int Demographicid;
+        public String Country;
         public double[] numanswers;
         public String[] stringans;
+
         public person(int p, double[] arr)
         {
             this.name = "" + p;
@@ -42,10 +44,11 @@ namespace Capstone_Project.Controllers
             this.name = survey.Name; ; //Grabs the name using the user id
             this.Genderid = survey.GenderId;
             this.Demographicid = survey.DemographicId;
+            this.Country = survey.Country;
             var gender = _context.Genders.SingleOrDefault(s => s.Id == this.Genderid);
             this.Gender = gender.GenderName;
             var demo = _context.Demographics.SingleOrDefault(s => s.Id == this.Demographicid);
-            this.Demographic = demo.Name;
+            
 
         }
 

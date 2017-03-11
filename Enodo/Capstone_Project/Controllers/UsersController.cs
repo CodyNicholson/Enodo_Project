@@ -66,6 +66,7 @@ namespace Capstone_Project.Controllers
 
                 userInDb.Name = user.Name;
                 userInDb.Birthdate = user.Birthdate;
+                userInDb.Country = user.Country;
                 userInDb.IsResearcher = user.IsResearcher;
                 userInDb.DemographicId = user.DemographicId;
                 userInDb.GenderId = user.GenderId;

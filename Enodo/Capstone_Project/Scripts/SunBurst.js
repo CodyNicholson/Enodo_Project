@@ -13,12 +13,12 @@ var tip = d3.tip()
                     dm = d.Demographic,
                     ans = d.answers,
                     parent = d.parent.name;
-      var top_ans = ans.split(",");
+    //  var top_ans = ans.split(",");
 
       return "<strong>Name:</strong> <span style='color:red'>" + name + "</span><br/>"
            + "<strong>Gender:</strong> <span style='color:red'>" + gender + "</span><br/>"
            + "<strong>Demographic:</strong> <span style='color:red'>" + dm + "</span><br/>"
-           + "<strong>Top Answer:</strong> <span style='color:red'>" + top_ans[0] + "</span><br/>"
+           + "<strong>Top Answer:</strong> <span style='color:red'>" + "</span><br/>"
              ;
   })
 

@@ -59,7 +59,7 @@ namespace Capstone_Project.Controllers
 
         public static void runAlgorithm(int surveyid, ApplicationDbContext _context)
         {
-
+            clusters.Clear();
             List<ApplicationUser> list = database.Users.ToList();
             //Console.WriteLine(list.ToString());
             //var rywjhs  = Console.In;
@@ -70,7 +70,7 @@ namespace Capstone_Project.Controllers
             {
                 maparr[i] = (int)xyzaffair[0][i];
             }
-
+            
             surveys = new double[xyzaffair.Length - 1][];
             for(int x = 1; x < xyzaffair.Length; x++)
             {
@@ -107,7 +107,7 @@ namespace Capstone_Project.Controllers
                 {
                     foreach (int j in tempal)
                     {
-                        if (((cluster)(clusters[j])).disttomid(surveys[i]) < bestfit) ;
+                        if (((cluster)(clusters[j])).disttomid(surveys[i]) < bestfit)
                         {
                             bestfitindex = j;
                             bestfit = ((cluster)(clusters[j])).disttomid(surveys[i]);
@@ -146,7 +146,8 @@ namespace Capstone_Project.Controllers
                 }
             }
 
-
+            tempal.Clear();
+            
 
 
         }

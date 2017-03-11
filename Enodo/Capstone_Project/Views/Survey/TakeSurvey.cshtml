@@ -5,7 +5,6 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
 <h2 name="@Model.Survey.Id">@Model.Survey.Name</h2>
 
 <p>@Model.Survey.Directions</p>
@@ -15,7 +14,7 @@
 <ul id="sortable">
     @{
         int index = 0;
-        foreach (var option in Model.Options)
+        foreach (var option in Model._contextVM.Options.ToList())
         {
             if (option.SurveyId == Model.Survey.Id)
             {
@@ -39,9 +38,8 @@
     });
 </script>
 
-
 <div class="row">
-    <p><a class="btn btn-primary" onclick="getSortableOrderAndRedirect()" type="submit">Submit &raquo;</a></p>
+    <p><a class="btn btn-primary" onclick=" location.href = '<%: Url.Action(\"Action/>", "Controller") %>' " type="submit">Submit &raquo;</a></p>
 </div>
 
 <script type="text/javascript">
@@ -53,3 +51,8 @@
         window.location.href = "/Results/ShowResults/" + @Model.Survey.Id;
     }
 </script>
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}

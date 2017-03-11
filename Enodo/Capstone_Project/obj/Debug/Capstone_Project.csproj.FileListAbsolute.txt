@@ -754,3 +754,5 @@ C:\Users\Cody\GitHub\Capstone_Project\Enodo\Capstone_Project\bin\System.Web.Http
 C:\Users\Cody\GitHub\Capstone_Project\Enodo\Capstone_Project\bin\System.Web.Http.WebHost.xml
 C:\Users\Cody\GitHub\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.AddedResultsTable.resources
 C:\Users\Cody\GitHub\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.AddOptionOrderStringToSurveyResults.resources
+C:\Users\Cody\GitHub\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.AddContryToUserModel.resources
+C:\Users\Cody\GitHub\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.AddContryToUserModelRequired.resources

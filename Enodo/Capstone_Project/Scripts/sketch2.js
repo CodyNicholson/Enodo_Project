@@ -259,14 +259,14 @@
                     ans = d.answers,
                     parent = d.parent.name;
 
-                var top_ans = ans.split(",");
+            //    var top_ans = ans.split(",");
 
                 document.getElementById("name").innerHTML = name;
                 document.getElementById("gender").innerHTML = gender;
                 document.getElementById("num").innerHTML = num;
                 document.getElementById("dm").innerHTML = dm;
-                document.getElementById("top_ans").innerHTML = top_ans[0];
-                document.getElementById("b_ans").innerHTML = top_ans[top_ans.length-1];
+               // document.getElementById("top_ans").innerHTML = top_ans[0];
+                //document.getElementById("b_ans").innerHTML = top_ans[top_ans.length-1];
           
 
                 $(function () {

@@ -20,19 +20,30 @@
         @Html.ValidationMessageFor(m => m.Survey.Directions)
     </div>
 
+    
+
     <div id="options" class="form-group">
-        @Html.LabelFor(m => m.Options)
-        @Html.TextBoxFor(m => m.Options, new { @class = "form-control", placeholder = "Option" })
-        @Html.ValidationMessageFor(m => m.Options)
+        <div class="form-group">
+            <label for="options">Options:</label>
+            <textarea class="form-control" rows="5" id="options"></textarea>
+        </div>
     </div>
 
-    @Ajax.ActionLink("Add an option", "AddOption", new { @class = "btn btn-primary" }, new AjaxOptions
-{
-    UpdateTargetId = "options",
-    InsertionMode = InsertionMode.InsertBefore,
-})
+
+    <script type="text/javascript">
+        function getOptions() {
+            var options = $("textarea#options").val().trim();
+            options = options.split(",");
+            console.log(options);
+        }
+    </script>
 
     @Html.HiddenFor(m => m.Survey.Id) // This line makes it so the info is updated in the database
     @Html.AntiForgeryToken()
     <button type="submit" class="btn btn-primary">Save</button>
 }
+
+<a class="btn btn-primary" onclick="getOptions()">Click Me &raquo;</a>
+
+<button onclick="myFunction()">Try it</button>
+
