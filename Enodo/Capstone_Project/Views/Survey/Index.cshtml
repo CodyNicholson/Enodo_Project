@@ -13,11 +13,12 @@
 }
 else
 {
-    <table class="table table-bordered table-hover">
+    <table id="surveys" class="table table-bordered table-hover">
         <thead>
             <tr>
                 <th>Survey</th>
                 <th>Owner</th>
+                <th>Delete Survey</th>
             </tr>
         </thead>
         <tbody>
@@ -33,10 +34,37 @@ else
                     {
                         <td>@survey.Owner</td>
                     }
+                    <td>
+                        <button data-survey-id="@survey.Id" class="btn-link js-delete">Delete</button>
+                    </td>
                 </tr>
             }
         </tbody>
     </table>
 }
 
-<p><a class="btn btn-primary" href="CreateSurvey/">Create a Survey &raquo;</a></p>
+<p><a class="btn btn-primary" href="/Survey/CreateSurvey/">Create a Survey &raquo;</a></p>
+
+@section scripts
+{
+    <script>
+        $(document).ready(function() {
+            $('#surveys').on("click", ".js-delete", function () {
+                var button = $(this);
+
+                bootbox.confirm("Are you sure you want to delete this customer?", function(result) {
+                    if (result) {
+                        $.ajax({
+                            url: "/api/survey/" + button.attr("data-survey-id"),
+                            method: "DELETE",
+                            success: function () {
+                                button.parents("tr").remove();
+                            }
+                        });
+                    }
+                });
+
+            });
+        });
+    </script>
+}

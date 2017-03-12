@@ -14,7 +14,7 @@ else
     <h2>Edit User</h2>
 }
 
-@using (@Html.BeginForm("Save", "Users")) // The "using" block will create an ending "</form> tag for us
+@using (@Html.BeginForm("Save", "Users")) // The "using" block will create an ending "</form>" tag for us
 {
     @Html.ValidationSummary(true, "Please fix the following errors:")
     <div class="form-group">
@@ -24,7 +24,7 @@ else
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.User.Birthdate)
-        @Html.TextBoxFor(m => m.User.Birthdate, "{0:d MMM yyyy}", new {@class = "form-control", placeholder = "31 Jan 2000"})
+        @Html.TextBoxFor(m => m.User.Birthdate, "{0:d MMM yyyy}", new {@class = "form-control", placeholder = "01/31/2000"})
         @Html.ValidationMessageFor(m => m.User.Birthdate)
     </div>
     <div class="form-group">

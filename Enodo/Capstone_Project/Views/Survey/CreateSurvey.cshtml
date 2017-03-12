@@ -16,23 +16,218 @@
         @Html.ValidationMessageFor(m => m.Survey.Name)
     </div>
 
-    <div id="options" class="form-group">
+    <div class="form-group">
         @Html.LabelFor(m => m.Survey.Directions)
-        @Html.TextBoxFor(m => m.Survey.Directions, new { @class = "form-control"})
+        @Html.TextBoxFor(m => m.Survey.Directions, new {@class = "form-control"})
         @Html.ValidationMessageFor(m => m.Survey.Directions)
     </div>
 
-    @Ajax.ActionLink("Add an option", "AddOption", new { @class = "btn btn-primary" }, new AjaxOptions
+    <h4>Survey Options:</h4>
+    
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Options[0].Name)
+        @Html.TextBoxFor(m => m.Options[0].Name, new {@class = "form-control", placeholder = "Option Name"})
+        @Html.ValidationMessageFor(m => m.Options[0].Name)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Options[1].Name)
+        @Html.TextBoxFor(m => m.Options[1].Name, new {@class = "form-control", placeholder = "Option Name"})
+        @Html.ValidationMessageFor(m => m.Options[1].Name)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Options[2].Name)
+        @Html.TextBoxFor(m => m.Options[2].Name, new {@class = "form-control", placeholder = "Option Name"})
+        @Html.ValidationMessageFor(m => m.Options[2].Name)
+    </div>
+
+    <div id="hidden1" class="form-group" style="display: none">
+        @Html.LabelFor(m => m.Options[3].Name)
+        @Html.TextBoxFor(m => m.Options[3].Name, new { @class = "form-control", placeholder = "Option Name" })
+        @Html.ValidationMessageFor(m => m.Options[3].Name)
+    </div>
+
+    <div id="hidden2" class="form-group" style="display: none">
+        @Html.LabelFor(m => m.Options[4].Name)
+        @Html.TextBoxFor(m => m.Options[4].Name, new {@class = "form-control", placeholder = "Option Name"})
+        @Html.ValidationMessageFor(m => m.Options[4].Name)
+    </div>
+
+    <div id="hidden3" class="form-group" style="display: none">
+        @Html.LabelFor(m => m.Options[5].Name)
+        @Html.TextBoxFor(m => m.Options[5].Name, new {@class = "form-control", placeholder = "Option Name"})
+        @Html.ValidationMessageFor(m => m.Options[5].Name)
+    </div>
+
+    <div id="hidden4" class="form-group" style="display: none">
+        @Html.LabelFor(m => m.Options[6].Name)
+        @Html.TextBoxFor(m => m.Options[6].Name, new {@class = "form-control", placeholder = "Option Name"})
+        @Html.ValidationMessageFor(m => m.Options[6].Name)
+    </div>
+
+    <div id="hidden5" class="form-group" style="display: none">
+        @Html.LabelFor(m => m.Options[7].Name)
+        @Html.TextBoxFor(m => m.Options[7].Name, new {@class = "form-control", placeholder = "Option Name"})
+        @Html.ValidationMessageFor(m => m.Options[7].Name)
+    </div>
+
+    <div id="hidden6" class="form-group" style="display: none">
+        @Html.LabelFor(m => m.Options[8].Name)
+        @Html.TextBoxFor(m => m.Options[8].Name, new {@class = "form-control", placeholder = "Option Name"})
+        @Html.ValidationMessageFor(m => m.Options[8].Name)
+    </div>
+
+    <div id="hidden7" class="form-group" style="display: none">
+        @Html.LabelFor(m => m.Options[9].Name)
+        @Html.TextBoxFor(m => m.Options[9].Name, new { @class = "form-control", placeholder = "Option Name" })
+        @Html.ValidationMessageFor(m => m.Options[9].Name)
+    </div>
+
+    <div id="hidden8" class="form-group" style="display: none">
+        @Html.LabelFor(m => m.Options[10].Name)
+        @Html.TextBoxFor(m => m.Options[10].Name, new {@class = "form-control", placeholder = "Option Name"})
+        @Html.ValidationMessageFor(m => m.Options[10].Name)
+    </div>
+
+    <div id="hidden9" class="form-group" style="display: none">
+        @Html.LabelFor(m => m.Options[11].Name)
+        @Html.TextBoxFor(m => m.Options[11].Name, new { @class = "form-control", placeholder = "Option Name" })
+        @Html.ValidationMessageFor(m => m.Options[11].Name)
+    </div>
+
+    <div id="hidden10" class="form-group" style="display: none">
+        @Html.LabelFor(m => m.Options[12].Name)
+        @Html.TextBoxFor(m => m.Options[12].Name, new {@class = "form-control", placeholder = "Option Name"})
+        @Html.ValidationMessageFor(m => m.Options[12].Name)
+    </div>
+
+    <div id="hidden11" class="form-group" style="display: none">
+        @Html.LabelFor(m => m.Options[13].Name)
+        @Html.TextBoxFor(m => m.Options[13].Name, new { @class = "form-control", placeholder = "Option Name" })
+        @Html.ValidationMessageFor(m => m.Options[13].Name)
+    </div>
+
+    <div id="hidden12" class="form-group" style="display: none">
+        @Html.LabelFor(m => m.Options[14].Name)
+        @Html.TextBoxFor(m => m.Options[14].Name, new {@class = "form-control", placeholder = "Option Name"})
+        @Html.ValidationMessageFor(m => m.Options[14].Name)
+    </div>
+
+    <div id="hidden13" class="form-group" style="display: none">
+        @Html.LabelFor(m => m.Options[15].Name)
+        @Html.TextBoxFor(m => m.Options[15].Name, new { @class = "form-control", placeholder = "Option Name" })
+        @Html.ValidationMessageFor(m => m.Options[15].Name)
+    </div>
+
+    <div id="hidden14" class="form-group" style="display: none">
+        @Html.LabelFor(m => m.Options[16].Name)
+        @Html.TextBoxFor(m => m.Options[16].Name, new {@class = "form-control", placeholder = "Option Name"})
+        @Html.ValidationMessageFor(m => m.Options[16].Name)
+    </div>
+
+    <div id="hidden15" class="form-group" style="display: none">
+        @Html.LabelFor(m => m.Options[17].Name)
+        @Html.TextBoxFor(m => m.Options[17].Name, new { @class = "form-control", placeholder = "Option Name" })
+        @Html.ValidationMessageFor(m => m.Options[17].Name)
+    </div>
+
+    <div id="hidden16" class="form-group" style="display: none">
+        @Html.LabelFor(m => m.Options[18].Name)
+        @Html.TextBoxFor(m => m.Options[18].Name, new {@class = "form-control", placeholder = "Option Name"})
+        @Html.ValidationMessageFor(m => m.Options[18].Name)
+    </div>
+
+    <div id="hidden17" class="form-group" style="display: none">
+        @Html.LabelFor(m => m.Options[19].Name)
+        @Html.TextBoxFor(m => m.Options[19].Name, new { @class = "form-control", placeholder = "Option Name" })
+        @Html.ValidationMessageFor(m => m.Options[19].Name)
+    </div>
+
+    <div id="hidden18" class="form-group" style="display: none">
+        @Html.LabelFor(m => m.Options[20].Name)
+        @Html.TextBoxFor(m => m.Options[20].Name, new {@class = "form-control", placeholder = "Option Name"})
+        @Html.ValidationMessageFor(m => m.Options[20].Name)
+    </div>
+
+    <div id="hidden19" class="form-group" style="display: none">
+        @Html.LabelFor(m => m.Options[21].Name)
+        @Html.TextBoxFor(m => m.Options[21].Name, new { @class = "form-control", placeholder = "Option Name" })
+        @Html.ValidationMessageFor(m => m.Options[21].Name)
+    </div>
+
+    <div id="hidden20" class="form-group" style="display: none">
+        @Html.LabelFor(m => m.Options[22].Name)
+        @Html.TextBoxFor(m => m.Options[22].Name, new {@class = "form-control", placeholder = "Option Name"})
+        @Html.ValidationMessageFor(m => m.Options[22].Name)
+    </div>
+
+    <div id="hidden21" class="form-group" style="display: none">
+        @Html.LabelFor(m => m.Options[23].Name)
+        @Html.TextBoxFor(m => m.Options[23].Name, new { @class = "form-control", placeholder = "Option Name" })
+        @Html.ValidationMessageFor(m => m.Options[23].Name)
+    </div>
+
+    <div id="hidden22" class="form-group" style="display: none">
+        @Html.LabelFor(m => m.Options[24].Name)
+        @Html.TextBoxFor(m => m.Options[24].Name, new {@class = "form-control", placeholder = "Option Name"})
+        @Html.ValidationMessageFor(m => m.Options[24].Name)
+    </div>
+
+    <div id="hidden23" class="form-group" style="display: none">
+        @Html.LabelFor(m => m.Options[25].Name)
+        @Html.TextBoxFor(m => m.Options[25].Name, new { @class = "form-control", placeholder = "Option Name" })
+        @Html.ValidationMessageFor(m => m.Options[25].Name)
+    </div>
+
+    <div id="hidden24" class="form-group" style="display: none">
+        @Html.LabelFor(m => m.Options[26].Name)
+        @Html.TextBoxFor(m => m.Options[26].Name, new {@class = "form-control", placeholder = "Option Name"})
+        @Html.ValidationMessageFor(m => m.Options[26].Name)
+    </div>
+
+    <div id="hidden25" class="form-group" style="display: none">
+        @Html.LabelFor(m => m.Options[27].Name)
+        @Html.TextBoxFor(m => m.Options[27].Name, new { @class = "form-control", placeholder = "Option Name" })
+        @Html.ValidationMessageFor(m => m.Options[27].Name)
+    </div>
+
+    <div id="hidden26" class="form-group" style="display: none">
+        @Html.LabelFor(m => m.Options[28].Name)
+        @Html.TextBoxFor(m => m.Options[28].Name, new {@class = "form-control", placeholder = "Option Name"})
+        @Html.ValidationMessageFor(m => m.Options[28].Name)
+    </div>
+
+    <div id="hidden27" class="form-group" style="display: none">
+        @Html.LabelFor(m => m.Options[29].Name)
+        @Html.TextBoxFor(m => m.Options[29].Name, new { @class = "form-control", placeholder = "Option Name" })
+        @Html.ValidationMessageFor(m => m.Options[29].Name)
+    </div>
+
+    /*
+    @Ajax.ActionLink("Add an option", "AddOption", new { @class = "btn btn-primary", optionCount}, new AjaxOptions
     {
         UpdateTargetId = "options",
         InsertionMode = InsertionMode.InsertAfter,
         HttpMethod = "GET"
     })
+    */
     <br/><br/>
-    @Html.HiddenFor(m => m.Survey.Id) // This line makes it so the info is updated in the database
+
+    @Html.HiddenFor(m => m.Survey.Id, Model.Options) //This line makes it so the info is updated in the database
     @Html.AntiForgeryToken()
+    <button type="button" class="btn" onclick="unhideOption()">Add Option</button>
     <button type="submit" class="btn btn-primary">Save</button>
 }
 
-<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script> 
-    
+<script type="text/javascript">
+    var i = 0;
+    function unhideOption() {
+        i++;
+        var optionIds = [];
+        $("div#hidden"+i+"[style='display: none']").attr("style", " ");
+    }
+</script>
+
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>

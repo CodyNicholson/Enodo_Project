@@ -14,6 +14,6 @@ namespace Capstone_Project.Models
 
         public int UserId { get; set; }
         
-        public String OptionOrder { get; set; }
+        public string OptionOrder { get; set; }
     }
 }

@@ -223,6 +223,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\API\ResultsController.cs" />
     <Compile Include="Controllers\API\SurveyController.cs" />
     <Compile Include="Controllers\API\UsersController.cs" />
     <Compile Include="Controllers\cluster.cs" />
@@ -232,6 +233,7 @@
     <Compile Include="Controllers\SurveyController.cs" />
     <Compile Include="Controllers\test.cs" />
     <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="Dtos\SurveyResultsDto.cs" />
     <Compile Include="Dtos\SurveyDto.cs" />
     <Compile Include="Dtos\UserDto.cs" />
     <Compile Include="Global.asax.cs">
@@ -361,6 +363,18 @@
     <Compile Include="Migrations\201703100145360_AddContryToUserModelRequired.Designer.cs">
       <DependentUpon>201703100145360_AddContryToUserModelRequired.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703111626046_TryToFixSurveyId.cs" />
+    <Compile Include="Migrations\201703111626046_TryToFixSurveyId.Designer.cs">
+      <DependentUpon>201703111626046_TryToFixSurveyId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703111631239_TryToFixSurveyId1.cs" />
+    <Compile Include="Migrations\201703111631239_TryToFixSurveyId1.Designer.cs">
+      <DependentUpon>201703111631239_TryToFixSurveyId1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703112107038_MakeOptionNameNotRequired.cs" />
+    <Compile Include="Migrations\201703112107038_MakeOptionNameNotRequired.Designer.cs">
+      <DependentUpon>201703112107038_MakeOptionNameNotRequired.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Demographic.cs" />
@@ -381,6 +395,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModel\ResultsViewModel.cs" />
     <Compile Include="ViewModel\SurveyViewModel.cs" />
     <Compile Include="ViewModel\UserFormViewModel.cs" />
   </ItemGroup>
@@ -489,6 +504,8 @@
     <Content Include="obj\Debug\Capstone_Project.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\Capstone_Project.dll" />
     <Content Include="obj\Debug\Capstone_Project.pdb" />
+    <Content Include="Scripts\bootbox.js" />
+    <Content Include="Scripts\bootbox.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -694,6 +711,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201703100145360_AddContryToUserModelRequired.resx">
       <DependentUpon>201703100145360_AddContryToUserModelRequired.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703111626046_TryToFixSurveyId.resx">
+      <DependentUpon>201703111626046_TryToFixSurveyId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703111631239_TryToFixSurveyId1.resx">
+      <DependentUpon>201703111631239_TryToFixSurveyId1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703112107038_MakeOptionNameNotRequired.resx">
+      <DependentUpon>201703112107038_MakeOptionNameNotRequired.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="obj\Debug\Capstone_Project.Migrations.AddDemographic.resources" />
     <EmbeddedResource Include="obj\Debug\Capstone_Project.Migrations.AddDemographicId.resources" />

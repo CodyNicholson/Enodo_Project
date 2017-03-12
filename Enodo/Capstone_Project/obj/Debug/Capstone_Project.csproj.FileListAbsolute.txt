@@ -756,3 +756,6 @@ C:\Users\Cody\GitHub\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_
 C:\Users\Cody\GitHub\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.AddOptionOrderStringToSurveyResults.resources
 C:\Users\Cody\GitHub\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.AddContryToUserModel.resources
 C:\Users\Cody\GitHub\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.AddContryToUserModelRequired.resources
+C:\Users\Cody\GitHub\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.TryToFixSurveyId.resources
+C:\Users\Cody\GitHub\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.TryToFixSurveyId1.resources
+C:\Users\Cody\GitHub\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.MakeOptionNameNotRequired.resources

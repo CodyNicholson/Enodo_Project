@@ -1,0 +1,90 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Http;
+using AutoMapper;
+using Capstone_Project.Dtos;
+using Capstone_Project.Models;
+
+namespace Capstone_Project.Controllers.api
+{
+    public class ResultsController : ApiController
+    {
+        private ApplicationDbContext _context;
+
+        public ResultsController()
+        {
+            _context = new ApplicationDbContext();
+        }
+
+        // GET: /api/results
+        public IHttpActionResult GetResults()
+        {
+            var surveyResultsDtos = _context.SurveyResultsSet.ToList().Select(Mapper.Map<SurveyResults, SurveyDto>);
+
+            return Ok(surveyResultsDtos);
+        }
+
+        // GET /api/results/id
+        public IHttpActionResult GetSurveyResults(int id)
+        {
+            var surveyResults = _context.SurveyResultsSet.SingleOrDefault(c => c.Id == id);
+
+            if (surveyResults == null)
+                return NotFound();
+
+            return Ok(Mapper.Map<SurveyResults, SurveyResultsDto>(surveyResults));
+        }
+
+        // POST /api/results
+        [HttpPost] // Since we are creating a resource we use HttpPost
+        public IHttpActionResult CreateSurveyResults(SurveyResultsDto surveyResultsDto)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest();
+
+            var surveyResults = Mapper.Map<SurveyResultsDto, SurveyResults>(surveyResultsDto);
+            _context.SurveyResultsSet.Add(surveyResults);
+            _context.SaveChanges();
+
+            surveyResultsDto.Id = surveyResults.Id;
+
+            return Created(new Uri(Request.RequestUri + "/" + surveyResults.Id), surveyResultsDto);
+        }
+
+        // PUT /api/results/id
+        [HttpPut]
+        public IHttpActionResult UpdateSurvey(int id, SurveyResultsDto surveyResultsDto)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest();
+
+            var surveyResultsInDb = _context.SurveyResultsSet.SingleOrDefault(c => c.Id == id);
+
+            if (surveyResultsInDb == null)
+                return NotFound();
+
+            Mapper.Map(surveyResultsDto, surveyResultsInDb);
+
+            _context.SaveChanges();
+
+            return Ok();
+        }
+
+        // DELETE /api/results/id
+        [HttpDelete]
+        public IHttpActionResult DeleteSurveyResults(int id)
+        {
+            var surveyResultsInDb = _context.SurveyResultsSet.SingleOrDefault(c => c.Id == id);
+
+            if (surveyResultsInDb == null)
+                return NotFound();
+
+            _context.SurveyResultsSet.Remove(surveyResultsInDb);
+            _context.SaveChanges();
+
+            return Ok();
+        }
+    }
+}
