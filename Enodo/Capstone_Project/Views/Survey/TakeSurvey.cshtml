@@ -39,7 +39,7 @@
 </script>
 
 <div class="row">
-    <p><a id="submitBtn" data-user-id="@.Id" class="btn btn-primary js-post" onclick="getSortableOrderAndRedirect()" type="submit">Submit &raquo;</a></p>
+    <p><a id="submitBtn" data-user-id="@Model.User.Id" class="btn btn-primary js-post" onclick="getSortableOrderAndRedirect()" type="submit">Submit &raquo;</a></p>
 </div>
 
 <script type="text/javascript">
@@ -49,32 +49,18 @@
         console.log(optionIds);
         localStorage.setItem("surveyOptionIds", optionIds);
         window.location.href = "/Results/ShowResults/" + @Model.Survey.Id;
+        //$.post("/Results/SaveOptionOrder/", JSONstring);
+        /*$.ajax({
+            url: "/api/results/" + button.attr("data-results-id"),
+            method: "POST",
+            contentType: 'application/json; charset=utf-8',
+            data: JSON.stringify({ jewellerId: filter, locale: 'en-US' }),
+            dataType: 'json',
+            success: function() {console.log("Posted survey results");},
+            error: function() {console.log("Error in posting survey results");}
+        });*/
     }
 </script>
-
-@section scripts
-{
-    <script>
-        $(document).ready(function() {
-            $('#submitBtn').on("click", ".js-post", function () {
-                var button = $(this);
-
-                bootbox.confirm("Submit this option order?", function(result) {
-                    if (result) {
-                        $.ajax({
-                            url: "/api/results/" + button.attr("data-results-id"),
-                            method: "POST",
-                            success: function () {
-                                console.log("Posted survey results");
-                            }
-                        });
-                    }
-                });
-
-            });
-        });
-    </script>
-}
 
 @section scripts
 {

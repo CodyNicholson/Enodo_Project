@@ -26,9 +26,7 @@ namespace Capstone_Project.Controllers
 
         public ActionResult Index()
         {
-            var surveys = _context.Surveys.ToList();
-
-            return View(surveys);
+            return View();
         }
 
         public ActionResult CreateSurvey()
@@ -59,7 +57,7 @@ namespace Capstone_Project.Controllers
             {
                 Options = options,
                 Survey = survey,
-                //User = user
+                User = user
             };
 
             return View("TakeSurvey", viewModel);
@@ -123,11 +121,5 @@ namespace Capstone_Project.Controllers
 
             return RedirectToAction("Index", "Survey");
         }
-
-        /*[HttpPost]
-        public ActionResult GetOptions(string[] values)
-        {
-            
-        }*/
     }
 }

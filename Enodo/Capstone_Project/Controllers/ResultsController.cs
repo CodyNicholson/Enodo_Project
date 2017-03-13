@@ -24,22 +24,19 @@ namespace Capstone_Project.Controllers
 
         public ActionResult Index()
         {
-            var surveys = _context.Surveys.ToList();
-
-            return View(surveys);
+            return View();
         }
 
         public ActionResult ShowResults(int id)
         {
             int[] optionOrder = new[] {1,2,3};
-            var survey = _context.Surveys.SingleOrDefault(s => s.Id == id);
-            var viewModel = new ResultsViewModel()
+            var viewModel = new SurveyViewModel()
             {
                 OptionOrder = optionOrder,
                 Survey = _context.Surveys.SingleOrDefault(s => s.Id == id)
             };
 
-            if (survey == null)
+            if (viewModel.Survey == null)
             {
                 return HttpNotFound();
             }
@@ -47,7 +44,7 @@ namespace Capstone_Project.Controllers
             test.runAlgorithm(id, _context);
             test.createjson(id, _context);
 
-            return View(survey);
+            return View(viewModel);
         }
     }
 }

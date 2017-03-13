@@ -21,7 +21,7 @@ namespace Capstone_Project.Controllers.api
         // GET: /api/results
         public IHttpActionResult GetResults()
         {
-            var surveyResultsDtos = _context.SurveyResultsSet.ToList().Select(Mapper.Map<SurveyResults, SurveyDto>);
+            var surveyResultsDtos = _context.SurveyResultsSet.ToList().Select(Mapper.Map<SurveyResults, SurveyResultsDto>);
 
             return Ok(surveyResultsDtos);
         }
@@ -55,7 +55,7 @@ namespace Capstone_Project.Controllers.api
 
         // PUT /api/results/id
         [HttpPut]
-        public IHttpActionResult UpdateSurvey(int id, SurveyResultsDto surveyResultsDto)
+        public IHttpActionResult UpdateSurveyResults(int id, SurveyResultsDto surveyResultsDto)
         {
             if (!ModelState.IsValid)
                 return BadRequest();

@@ -19,9 +19,13 @@ namespace Capstone_Project
             Mapper.CreateMap<Survey, SurveyDto>();
             Mapper.CreateMap<SurveyDto, Survey>();
 
+            Mapper.CreateMap<SurveyResults, SurveyResultsDto>();
+            Mapper.CreateMap<SurveyResultsDto, SurveyResults>();
+
             // Dto to Domain
             Mapper.CreateMap<UserDto, User>().ForMember(c => c.Id, opt => opt.Ignore());
             Mapper.CreateMap<SurveyDto, Survey>().ForMember(c => c.Id, opt => opt.Ignore());
+            Mapper.CreateMap<SurveyResultsDto, SurveyResults>().ForMember(c => c.Id, opt => opt.Ignore());
         }
     }
 }

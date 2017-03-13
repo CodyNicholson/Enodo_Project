@@ -6,9 +6,10 @@ using Capstone_Project.Models;
 
 namespace Capstone_Project.ViewModel
 {
-    public class SurveyViewModel
+    public class ResultsViewModel
     {
-        public List<Option> Options { get; set; }
+        public int[] OptionOrder { get; set; }
         public Survey Survey { get; set; }
+        public User User { get; set; }
     }
 }

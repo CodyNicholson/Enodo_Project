@@ -25,10 +25,13 @@ namespace Capstone_Project
                       "~/Scripts/SunBurst.js",
                       "~/Content/d3.js",
                       "~/Scripts/bootbox.js",
-                      "~/Scripts/respond.js"));
+                      "~/Scripts/respond.js",
+                      "~/Scripts/DataTables/jquery.dataTables.js",
+                      "~/Scripts/DataTables/dataTables.bootstrap.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap-yeti.css",
+                      "~/Content/DataTables/css/dataTables.bootstrap.css",
                       "~/Content/toFrame.html",
                       "~/Content/SunBurst_Frame.html",
                       "~/Content/segmented-controls.css",

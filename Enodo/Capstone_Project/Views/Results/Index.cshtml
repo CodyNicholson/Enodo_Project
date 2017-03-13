@@ -1,31 +1,43 @@
 ﻿@model IEnumerable<Capstone_Project.Models.Survey>
 
 @{
-    ViewBag.Title = "My Results";
+    ViewBag.Title = "Results";
     ViewBag.Message = "This is the page where you can view your results compared against everyone else who has taken the survey.";
 }
 <h2>@ViewBag.Title</h2>
 <p>@ViewBag.Message</p>
 
-@if (!Model.Any())
-{
-    <p>We don't have any surveys yet.</p>
-}
-else
-{
-    <table class="table table-bordered table-hover">
+<hr/>
+
+    <table id="results" class="table table-bordered table-hover">
         <thead>
             <tr>
                 <th>Survey</th>
+                <th>Owner</th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var survey in Model)
-            {
-                <tr>
-                    <td>@Html.ActionLink(survey.Name, "ShowResults", "Results", new { id = survey.Id }, null)</td>
-                </tr>
-            }
         </tbody>
     </table>
+
+@section scripts
+{
+    <script>
+        $(document).ready(function() {
+            $('#results').DataTable({
+                ajax: {
+                    url: "/api/results",
+                    dataSrc: ""
+                },
+                columns: [
+                    {
+                        data: "id"
+                    },
+                    {
+                        data: "id"
+                    }
+                ]
+            });
+        });
+    </script>
 }
