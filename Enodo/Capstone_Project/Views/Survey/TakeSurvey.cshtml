@@ -31,6 +31,13 @@
 
 <h4 style="margin-bottom: 1.5em;">Least Favorite</h4>
 
+<!-- Pick up from here, trying to populate hidden fields with server data on client side -->
+<div class="form-group">
+    @Html.LabelFor(m => m.SurveyResults.OptionOrder)
+    @Html.TextBoxFor(m => m.SurveyResults.OptionOrder, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.SurveyResults.OptionOrder)
+</div>
+
 <script type="text/javascript">
     $(function () {
         $("#sortable").sortable({ containment: 'parent', tolerance: 'pointer', cursor: 'pointer', revert: false, opacity: 0.60 });

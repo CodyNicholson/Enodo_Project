@@ -29,7 +29,7 @@
 {
     <script>
         $(document).ready(function() {
-            $('#users').DataTable({
+            var table = $('#users').DataTable({
                 ajax: {
                     url: "/api/user",
                     dataSrc: ""
@@ -42,7 +42,7 @@
                     }
                 },
                 {
-                    data: "name"
+                    data: "isResearcher"
                 },
                 {
                     data: "id",
@@ -62,7 +62,7 @@
                         url: "/api/user/" + button.attr("data-user-id"),
                         method: "DELETE",
                         success: function() {
-                            button.parents("tr").remove();
+                            table.row(button.parents("tr")).remove().draw();
                         }
                     });
                 }

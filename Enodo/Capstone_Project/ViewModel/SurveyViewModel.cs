@@ -9,7 +9,7 @@ namespace Capstone_Project.ViewModel
     public class SurveyViewModel
     {
         public List<Option> Options { get; set; }
-        public int[] OptionOrder { get; set; }
+        public SurveyResults SurveyResults { get; set; }
         public Survey Survey { get; set; }
         public User User { get; set; }
     }

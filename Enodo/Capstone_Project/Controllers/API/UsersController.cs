@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data.Entity;
 using System.Web;
 using System.Web.Http;
 using AutoMapper;
@@ -21,7 +22,9 @@ namespace Capstone_Project.Controllers.api
         // GET: /api/users
         public IHttpActionResult GetUsers()
         {
-            var userDtos = _context.AppUsers.ToList().Select(Mapper.Map<User, UserDto>);
+            var userDtos = _context.AppUsers
+                .ToList()
+                .Select(Mapper.Map<User, UserDto>);
      
             return Ok(userDtos);
         }

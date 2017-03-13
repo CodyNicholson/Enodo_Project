@@ -32,7 +32,7 @@ namespace Capstone_Project.Controllers
             int[] optionOrder = new[] {1,2,3};
             var viewModel = new SurveyViewModel()
             {
-                OptionOrder = optionOrder,
+                SurveyResults = new SurveyResults(),
                 Survey = _context.Surveys.SingleOrDefault(s => s.Id == id)
             };
 

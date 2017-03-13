@@ -28,7 +28,7 @@
 {
     <script>
         $(document).ready(function () {
-            $('#surveys').DataTable({
+            var table = $('#surveys').DataTable({
                 ajax: {
                     url: "/api/survey",
                     dataSrc: ""
@@ -37,7 +37,7 @@
                     {
                         data: "name",
                         render: function (data, type, survey) {
-                            return "<a href='/user/edit/" + survey.id + "'>" + survey.name + "</a>";
+                            return "<a href='/survey/takesurvey/" + survey.id + "'>" + survey.name + "</a>";
                         }
                     },
                     {
@@ -61,7 +61,7 @@
                             url: "/api/survey/" + button.attr("data-survey-id"),
                             method: "DELETE",
                             success: function () {
-                                button.parents("tr").remove();
+                                table.row(button.parents("tr")).remove().draw();
                             }
                         });
                     }
