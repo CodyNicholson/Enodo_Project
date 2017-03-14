@@ -80,7 +80,7 @@ namespace Capstone_Project.Controllers
                     Survey = new Survey()
                 };
 
-                return CreateSurvey(); //View("SurveyForm", viewModel);
+                return CreateSurvey(); 
             }
 
             

@@ -31,13 +31,6 @@
 
 <h4 style="margin-bottom: 1.5em;">Least Favorite</h4>
 
-<!-- Pick up from here, trying to populate hidden fields with server data on client side -->
-<div class="form-group">
-    @Html.LabelFor(m => m.SurveyResults.OptionOrder)
-    @Html.TextBoxFor(m => m.SurveyResults.OptionOrder, new { @class = "form-control" })
-    @Html.ValidationMessageFor(m => m.SurveyResults.OptionOrder)
-</div>
-
 <script type="text/javascript">
     $(function () {
         $("#sortable").sortable({ containment: 'parent', tolerance: 'pointer', cursor: 'pointer', revert: false, opacity: 0.60 });
@@ -54,18 +47,7 @@
         var optionIds = [];
         $("ul li[name='surveyOption']").each(function() { optionIds.push($(this).attr("id")) });
         console.log(optionIds);
-        localStorage.setItem("surveyOptionIds", optionIds);
-        window.location.href = "/Results/ShowResults/" + @Model.Survey.Id;
-        //$.post("/Results/SaveOptionOrder/", JSONstring);
-        /*$.ajax({
-            url: "/api/results/" + button.attr("data-results-id"),
-            method: "POST",
-            contentType: 'application/json; charset=utf-8',
-            data: JSON.stringify({ jewellerId: filter, locale: 'en-US' }),
-            dataType: 'json',
-            success: function() {console.log("Posted survey results");},
-            error: function() {console.log("Error in posting survey results");}
-        });*/
+        window.location.href = "/Results/ShowResults/" + @Model.Survey.Id + "?sortorder=" + optionIds; // + "&&userid=" + Model.User.Id
     }
 </script>
 

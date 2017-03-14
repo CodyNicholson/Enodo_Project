@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.ModelBinding;
 using System.Web.Mvc;
 using Capstone_Project.Models;
 using Capstone_Project.ViewModel;
+using Microsoft.Ajax.Utilities;
 
 namespace Capstone_Project.Controllers
 {
@@ -27,12 +29,12 @@ namespace Capstone_Project.Controllers
             return View();
         }
 
-        public ActionResult ShowResults(int id)
+        public ActionResult ShowResults(int id, SurveyResults surveyResults)
         {
-            int[] optionOrder = new[] {1,2,3};
+            var optionOrder = HttpContext.Request.QueryString["sortorder"];
+
             var viewModel = new SurveyViewModel()
             {
-                SurveyResults = new SurveyResults(),
                 Survey = _context.Surveys.SingleOrDefault(s => s.Id == id)
             };
 
@@ -40,6 +42,15 @@ namespace Capstone_Project.Controllers
             {
                 return HttpNotFound();
             }
+            else
+            {
+                surveyResults.OptionOrder = optionOrder;
+                surveyResults.SurveyId = id;
+                surveyResults.UserId = 35;
+                _context.SurveyResultsSet.Add(surveyResults);
+            }
+
+            _context.SaveChanges();
 
             test.runAlgorithm(id, _context);
             test.createjson(id, _context);
