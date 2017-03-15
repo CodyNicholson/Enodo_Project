@@ -12,7 +12,7 @@
     <table id="results" class="table table-bordered table-hover">
         <thead>
             <tr>
-                <th>Survey</th>
+                <th>Survey Results</th>
                 <th>Owner</th>
             </tr>
         </thead>
@@ -26,20 +26,24 @@
         $(document).ready(function() {
             $('#results').DataTable({
                 ajax: {
-                    url: "/api/results",
+                    url: "/api/survey",
                     dataSrc: ""
                 },
                 columns: [
                     {
                         data: "id",
-                        render: function (data, type, result) {
-                            return "<a href='/results/showresults/" + result.surveyid + "'>" + result.id + "</a>";
+                        render: function (data, type, survey) {
+                            return "<a href='/results/showresults/" + survey.id + "'>" + survey.name + "</a>";
                         }
                     },
                     {
                         data: "id",
-                        render: function (data, type, result) {
-                            return result.id;
+                        render: function (data, type, survey) {
+                            if (survey.owner === null) {
+                                return 'Enodo';
+                            } else {
+                                return survey.owner;
+                            }
                         }
                     }
                 ]

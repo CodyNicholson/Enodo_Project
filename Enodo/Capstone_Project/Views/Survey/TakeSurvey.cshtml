@@ -49,7 +49,7 @@
             var optionIds = [];
             $("ul li[name='surveyOption']").each(function() { optionIds.push($(this).attr("id")) });
             console.log(optionIds);
-            window.location.href = "/Results/ShowResults/" + @Model.Survey.Id + "?sortorder=" + optionIds; // + "&&userid=" + Model.User.Id
+            window.location.href = "/Results/ShowResults/" + @Model.Survey.Id + "?sortorder=" + optionIds;
         };
     </script>
 
