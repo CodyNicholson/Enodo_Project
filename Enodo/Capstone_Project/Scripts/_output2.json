@@ -1,1 +1,1 @@
-[{"name":"Clusters of survey id 2","children":[]}]
+[{"name":"Clusters Survey#2","amount":1,"options":["Rock","Pop","Rap"],"children":[{"name":"Cluster 1","midpoint":[2,0,1],"like":[1,1,1],"dislike":[1,1,1],"far":0,"fardist":0,"children":[{"name":"Enodo","num":35,"Genderid":3,"Gender":"Prefer Not To Answer","Demographic":"0","Demographicid":5,"Country":"USA","numanswers":[2,0,1],"stringans":["Rap","Rock","Pop"]}]}]}]
