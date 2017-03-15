@@ -42,44 +42,16 @@
     <p><a id="submitBtn" data-user-id="@Model.User.Id" onclick="getSortableOrderAndRedirect()" class="btn btn-primary js-post" type="submit">Submit &raquo;</a></p>
 </div>
 
-<script type="text/javascript">
-    function getSortableOrderAndRedirect() {
-        var optionIds = [];
-        $("ul li[name='surveyOption']").each(function() { optionIds.push($(this).attr("id")) });
-        console.log(optionIds);
-        window.location.href = "/Results/ShowResults/" + @Model.Survey.Id + "?sortorder=" + optionIds; // + "&&userid=" + Model.User.Id
-    };
-        /*
-        $.ajax({
-            url: "/Results/ShowResults/" + Model.Survey.Id + "?sortorder=" + optionIds,
-            method: "POST",
-            success: function() {
-                console.log("Successfully added SurveyResults");
-            }
-        });
-        //window.location.href = "/Results/ShowResults/" + Model.Survey.Id;
-            <script>
-        $(document).ready(function() {
-
-            $('div.row').on("click", "#submitBtn", function () {
-                var button = $(this);
-
-                bootbox.confirm("Are you sure you want to delete this customer?", function(result) {
-                    if (result) {
-                        $.ajax({
-                            url: "/api/results/" + button.attr("data-user-id"),
-                            method: "POST",
-                            success: function() {
-                                console.log("Successful post survey options");
-                            }
-                        });
-                    }
-                });
-
-            });*/
-</script>
-
 @section scripts
 {
+    <script type="text/javascript">
+        function getSortableOrderAndRedirect() {
+            var optionIds = [];
+            $("ul li[name='surveyOption']").each(function() { optionIds.push($(this).attr("id")) });
+            console.log(optionIds);
+            window.location.href = "/Results/ShowResults/" + @Model.Survey.Id + "?sortorder=" + optionIds; // + "&&userid=" + Model.User.Id
+        };
+    </script>
+
     @Scripts.Render("~/bundles/jqueryval")
 }
