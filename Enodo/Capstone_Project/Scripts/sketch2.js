@@ -263,7 +263,9 @@
                     num = d.num,
                     dm = d.Demographic,
                     ans = d.numanswers,
-                    parent = d.parent.name;
+                    parent = d.parent.name
+                    country = d.Country
+                ;
 
                 //var top_ans = ans.split(",");
 
@@ -271,12 +273,14 @@
                 document.getElementById("gender").innerHTML = gender;
                 document.getElementById("num").innerHTML = num;
                 document.getElementById("dm").innerHTML = dm;
+                document.getElementById("country").innerHTML = country;
                 document.getElementById("top_ans").innerHTML = options[ans[0]];
                 document.getElementById("b_ans").innerHTML = options[ans[ans.length - 1]];
           
 
                 $(function () {
-                    $("#dialog").dialog({title: parent, modal: true});
+                    $("#dialog").dialog({ title: parent, modal: true });
+                    $("#dialog").dialog({ width: 400 });
                 });
 
                // $('#dialog').dialog('option', 'title', parent);

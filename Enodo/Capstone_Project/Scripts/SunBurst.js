@@ -13,13 +13,16 @@ var tip = d3.tip()
                     gender = d.Gender,
                     num = d.num,
                     dm = d.Demographic,
-                    ans = d.answers,
-                    parent = d.parent.name;
+                    ans = d.numanswers,
+                    parent = d.parent.name
+                    country = d.Country
+      ;
     //  var top_ans = ans.split(",");
 
       return "<strong>Name:</strong> <span style='color:red'>" + name + "</span><br/>"
            + "<strong>Gender:</strong> <span style='color:red'>" + gender + "</span><br/>"
            + "<strong>Demographic:</strong> <span style='color:red'>" + dm + "</span><br/>"
+           + "<strong>Country:</strong> <span style='color:red'>" + country + "</span><br/>"
            + "<strong>Top Answer:</strong> <span style='color:red'>" + options[ans[0]] + "</span><br/>"
            + "<strong>Lowest Answer:</strong> <span style='color:red'>" + options[ans[ans.length-1]] + "</span><br/>"
              ;
