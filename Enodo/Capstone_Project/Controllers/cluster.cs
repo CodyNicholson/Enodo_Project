@@ -48,6 +48,7 @@ namespace Capstone_Project.Controllers
             var gender = _context.Genders.SingleOrDefault(s => s.Id == this.Genderid);
             this.Gender = gender.GenderName;
             var demo = _context.Demographics.SingleOrDefault(s => s.Id == this.Demographicid);
+            this.Demographic = demo.Name;
             
 
         }
