@@ -1,5 +1,7 @@
 ﻿var url = top.document.location.href.toString();
-var index = url.substr(-1);
+
+var index = url.substring(url.lastIndexOf("/") + 1, url.lastIndexOf("?"));
+//var index = url.substr(-1);
 //console.log("JNDJFDJF:  " + index);
 
 var tip = d3.tip()
