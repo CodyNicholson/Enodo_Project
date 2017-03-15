@@ -41,7 +41,14 @@
                         }
                     },
                     {
-                        data: "id"
+                        data: "id",
+                        render: function (data, type, survey) {
+                            if (survey.owner === null) {
+                                return 'Enodo';
+                            } else {
+                                return survey.owner;
+                            }
+                        }
                     },
                     {
                         data: "id",

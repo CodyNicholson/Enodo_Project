@@ -44,7 +44,7 @@
                 {
                     data: "isResearcher",
                     render: function(data, type, user) {
-                        if (data === 0) {
+                        if (user.isResearcher === false) {
                             return "Standard User";
                         } else {
                             return "Researcher";

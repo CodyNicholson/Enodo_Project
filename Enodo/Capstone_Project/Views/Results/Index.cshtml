@@ -31,10 +31,16 @@
                 },
                 columns: [
                     {
-                        data: "name"
+                        data: "id",
+                        render: function (data, type, result) {
+                            return "<a href='/results/showresults/" + result.surveyid + "'>" + result.id + "</a>";
+                        }
                     },
                     {
-                        data: "id"
+                        data: "id",
+                        render: function (data, type, result) {
+                            return result.id;
+                        }
                     }
                 ]
             });
