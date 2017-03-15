@@ -8,7 +8,7 @@ var tip = d3.tip()
   .attr('class', 'd3-tip')
   .offset([100, 0])
   .html(function (d) {
-      console.log(d);
+      //console.log(d);
       var num_Members = d.parent.children.length;
       var options = d.parent.parent.options;
       var name = d.name,
