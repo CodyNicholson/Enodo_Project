@@ -8,6 +8,8 @@ var tip = d3.tip()
   .attr('class', 'd3-tip')
   .offset([100, 0])
   .html(function (d) {
+      console.log(d);
+      var num_Members = d.parent.children.length;
       var options = d.parent.parent.options;
       var name = d.name,
                     gender = d.Gender,
@@ -15,7 +17,8 @@ var tip = d3.tip()
                     dm = d.Demographic,
                     ans = d.numanswers,
                     parent = d.parent.name
-                    country = d.Country
+      country = d.Country
+      percentage = (100/num_Members);
       ;
     //  var top_ans = ans.split(",");
 
@@ -24,7 +27,9 @@ var tip = d3.tip()
            + "<strong>Demographic:</strong> <span style='color:red'>" + dm + "</span><br/>"
            + "<strong>Country:</strong> <span style='color:red'>" + country + "</span><br/>"
            + "<strong>Top Answer:</strong> <span style='color:red'>" + options[ans[0]] + "</span><br/>"
-           + "<strong>Lowest Answer:</strong> <span style='color:red'>" + options[ans[ans.length-1]] + "</span><br/>"
+           + "<strong>Lowest Answer:</strong> <span style='color:red'>" + options[ans[ans.length - 1]] + "</span><br/>"
+        + "<strong>Cluster Percentage:</strong> <span style='color:red'>" + percentage + "%" + "</span><br/>"
+        
              ;
   })
 
@@ -101,6 +106,7 @@ d3.json("/Scripts/_output"+index+".json", function (error, json) {
           .attrTween("d", arcTween(d));
         // Somewhat of a hack as we rely on arcTween updating the scales.
         text.style("visibility", function (e) {
+          
             return isParentOf(d, e) ? null : d3.select(this).style("visibility");
         })
           .transition()
