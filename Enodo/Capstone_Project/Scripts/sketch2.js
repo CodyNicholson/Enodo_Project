@@ -254,10 +254,10 @@
 
         function click(d) {
             var options = d.parent.parent.options;
-
+           
             if (!d.children) {
 
-                
+                var num_Members = d.parent.children.length;
                 var name = d.name,
                     gender = d.Gender,
                     num = d.num,
@@ -276,6 +276,7 @@
                 document.getElementById("country").innerHTML = country;
                 document.getElementById("top_ans").innerHTML = options[ans[0]];
                 document.getElementById("b_ans").innerHTML = options[ans[ans.length - 1]];
+                document.getElementById("percent").innerHTML = (100 / num_Members).toFixed(2) + "%";
           
 
                 $(function () {

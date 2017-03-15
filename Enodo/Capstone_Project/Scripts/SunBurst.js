@@ -18,7 +18,7 @@ var tip = d3.tip()
                     ans = d.numanswers,
                     parent = d.parent.name
       country = d.Country
-      percentage = (100/num_Members);
+      percentage = (100/num_Members).toFixed(2);
       ;
     //  var top_ans = ans.split(",");
 
@@ -28,9 +28,25 @@ var tip = d3.tip()
            + "<strong>Country:</strong> <span style='color:red'>" + country + "</span><br/>"
            + "<strong>Top Answer:</strong> <span style='color:red'>" + options[ans[0]] + "</span><br/>"
            + "<strong>Lowest Answer:</strong> <span style='color:red'>" + options[ans[ans.length - 1]] + "</span><br/>"
-        + "<strong>Cluster Percentage:</strong> <span style='color:red'>" + percentage + "%" + "</span><br/>"
+           + "<strong>Cluster Percentage:</strong> <span style='color:red'>" + percentage + "%" + "</span><br/>"
         
              ;
+  })
+
+var tip2 = d3.tip()
+  .attr('class', 'd3-tip')
+  .offset([100, 0])
+  .html(function (d) {
+      console.log(d);
+     
+  
+      var percentage = d.dx * 100;
+
+  
+      return "<strong>Percentage:</strong> <span style='color:red'>" + percentage.toFixed(2) +"%" + "</span><br/>"
+           
+
+      ;
   })
 
 
@@ -58,6 +74,7 @@ var arc = d3.svg.arc()
     .outerRadius(function (d) { return Math.max(0, y(d.y + d.dy)); });
 
 vis.call(tip);
+vis.call(tip2);
 
 d3.json("/Scripts/_output"+index+".json", function (error, json) {
     var nodes = partition.nodes({ children: json });
@@ -70,6 +87,9 @@ d3.json("/Scripts/_output"+index+".json", function (error, json) {
         .on('mouseover', function (d, i) {
             if (!d.children) {
                 tip.show.call(this, d, i);
+            } else if (d.depth == 2)
+            {
+                tip2.show.call(this, d, i);
             }
         })
         .on('mouseout', tip.hide)
