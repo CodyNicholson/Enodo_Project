@@ -29,8 +29,9 @@ namespace Capstone_Project.Controllers
             return View();
         }
 
-        public ActionResult ShowResults(int id, SurveyResults surveyResults)
+        public ActionResult ShowResults(int id)
         {
+            SurveyResults surveyResults = new SurveyResults();
             var optionOrder = HttpContext.Request.QueryString["sortorder"];
 
             var viewModel = new SurveyViewModel()
@@ -42,15 +43,14 @@ namespace Capstone_Project.Controllers
             {
                 return HttpNotFound();
             }
-            else
+            else if (optionOrder != null)
             {
                 surveyResults.OptionOrder = optionOrder;
                 surveyResults.SurveyId = id;
                 surveyResults.UserId = 35;
                 _context.SurveyResultsSet.Add(surveyResults);
+                _context.SaveChanges();
             }
-
-            _context.SaveChanges();
 
             test.runAlgorithm(id, _context);
             test.createjson(id, _context);

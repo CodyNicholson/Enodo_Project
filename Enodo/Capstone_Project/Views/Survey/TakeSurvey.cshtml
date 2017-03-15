@@ -24,7 +24,7 @@
         }
         if (index == 0)
         {
-            <p id="@index" style="padding-top: 0.2%;">This survey does not have any options</p>
+            <li id="@index" style="padding-top: 0.2%;">This survey does not have any options</li>
         }
     }
 </ul>
@@ -39,7 +39,7 @@
 </script>
 
 <div class="row">
-    <p><a id="submitBtn" data-user-id="@Model.User.Id" class="btn btn-primary js-post" onclick="getSortableOrderAndRedirect()" type="submit">Submit &raquo;</a></p>
+    <p><a id="submitBtn" data-user-id="@Model.User.Id" onclick="getSortableOrderAndRedirect()" class="btn btn-primary js-post" type="submit">Submit &raquo;</a></p>
 </div>
 
 <script type="text/javascript">
@@ -48,7 +48,35 @@
         $("ul li[name='surveyOption']").each(function() { optionIds.push($(this).attr("id")) });
         console.log(optionIds);
         window.location.href = "/Results/ShowResults/" + @Model.Survey.Id + "?sortorder=" + optionIds; // + "&&userid=" + Model.User.Id
-    }
+    };
+        /*
+        $.ajax({
+            url: "/Results/ShowResults/" + Model.Survey.Id + "?sortorder=" + optionIds,
+            method: "POST",
+            success: function() {
+                console.log("Successfully added SurveyResults");
+            }
+        });
+        //window.location.href = "/Results/ShowResults/" + Model.Survey.Id;
+            <script>
+        $(document).ready(function() {
+
+            $('div.row').on("click", "#submitBtn", function () {
+                var button = $(this);
+
+                bootbox.confirm("Are you sure you want to delete this customer?", function(result) {
+                    if (result) {
+                        $.ajax({
+                            url: "/api/results/" + button.attr("data-user-id"),
+                            method: "POST",
+                            success: function() {
+                                console.log("Successful post survey options");
+                            }
+                        });
+                    }
+                });
+
+            });*/
 </script>
 
 @section scripts

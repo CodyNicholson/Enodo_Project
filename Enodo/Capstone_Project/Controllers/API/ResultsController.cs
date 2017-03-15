@@ -30,7 +30,7 @@ namespace Capstone_Project.Controllers.api
         // GET /api/results/id
         public IHttpActionResult GetSurveyResults(int id)
         {
-            var surveyResults = _context.SurveyResultsSet.SingleOrDefault(c => c.Id == id);
+            var surveyResults = _context.SurveyResultsSet.SingleOrDefault(c => c.UserId == id);
 
             if (surveyResults == null)
                 return NotFound();
