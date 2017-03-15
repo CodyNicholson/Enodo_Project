@@ -5,9 +5,11 @@
     var duration = 2000;
     var jsonData;
     var currentColor = "#e41a1c";
-
+    var pattern = "\/([0-9]+)(?=[^\/]*$)";
     var url = top.document.location.href.toString();
-    var index = url.substring(url.lastIndexOf("/") + 1, url.lastIndexOf("?"));
+    var index = url.match(pattern)[1];
+//  var index = url.substring(url.lastIndexOf("/") + 1, url.lastIndexOf("?"));
+    
     //var index = url.substr(-1);
    //console.log("JNDJFDJF:  " + index);
 

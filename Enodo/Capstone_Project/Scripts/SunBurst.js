@@ -1,6 +1,6 @@
-﻿var url = top.document.location.href.toString();
-
-var index = url.substring(url.lastIndexOf("/") + 1, url.lastIndexOf("?"));
+﻿var pattern = "\/([0-9]+)(?=[^\/]*$)";
+var url = top.document.location.href.toString();
+var index = url.match(pattern)[1];
 //var index = url.substr(-1);
 //console.log("JNDJFDJF:  " + index);
 
