@@ -253,24 +253,26 @@
         ;
 
         function click(d) {
+            var options = d.parent.parent.options;
 
             if (!d.children) {
 
+                
                 var name = d.name,
                     gender = d.Gender,
                     num = d.num,
                     dm = d.Demographic,
-                    ans = d.answers,
+                    ans = d.numanswers,
                     parent = d.parent.name;
 
-            //    var top_ans = ans.split(",");
+                //var top_ans = ans.split(",");
 
                 document.getElementById("name").innerHTML = name;
                 document.getElementById("gender").innerHTML = gender;
                 document.getElementById("num").innerHTML = num;
                 document.getElementById("dm").innerHTML = dm;
-               // document.getElementById("top_ans").innerHTML = top_ans[0];
-                //document.getElementById("b_ans").innerHTML = top_ans[top_ans.length-1];
+                document.getElementById("top_ans").innerHTML = options[ans[0]];
+                document.getElementById("b_ans").innerHTML = options[ans[ans.length - 1]];
           
 
                 $(function () {

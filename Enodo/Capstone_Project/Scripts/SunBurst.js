@@ -8,7 +8,7 @@ var tip = d3.tip()
   .attr('class', 'd3-tip')
   .offset([100, 0])
   .html(function (d) {
-
+      var options = d.parent.parent.options;
       var name = d.name,
                     gender = d.Gender,
                     num = d.num,
@@ -20,7 +20,8 @@ var tip = d3.tip()
       return "<strong>Name:</strong> <span style='color:red'>" + name + "</span><br/>"
            + "<strong>Gender:</strong> <span style='color:red'>" + gender + "</span><br/>"
            + "<strong>Demographic:</strong> <span style='color:red'>" + dm + "</span><br/>"
-           + "<strong>Top Answer:</strong> <span style='color:red'>" + "</span><br/>"
+           + "<strong>Top Answer:</strong> <span style='color:red'>" + options[ans[0]] + "</span><br/>"
+           + "<strong>Lowest Answer:</strong> <span style='color:red'>" + options[ans[ans.length-1]] + "</span><br/>"
              ;
   })
 
