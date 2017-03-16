@@ -263,7 +263,7 @@
                     num = d.num,
                     dm = d.Demographic,
                     ans = d.numanswers,
-                    parent = d.parent.name
+                    parent = d.parent.name,
                     country = d.Country
                 ;
 

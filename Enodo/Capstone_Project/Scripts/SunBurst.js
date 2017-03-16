@@ -37,7 +37,7 @@ var tip2 = d3.tip()
   .attr('class', 'd3-tip')
   .offset([100, 0])
   .html(function (d) {
-      console.log(d);
+     // console.log(d);
      
   
       var percentage = d.dx * 100;
