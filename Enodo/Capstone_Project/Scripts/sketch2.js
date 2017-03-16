@@ -40,7 +40,7 @@
                 links = radialTree.links(nodes);
 
             svg.transition().duration(duration)
-                .attr("transform", "translate(" + (width / 2) + "," +
+                .attr("transform", "translate(" + ((width / 2)+100) + "," +
                                                   (height / 2) + ")");
             // set appropriate translation (origin in middle of svg)
 
@@ -79,7 +79,7 @@
                 links = radialCluster.links(nodes);
 
             svg.transition().duration(duration)
-                .attr("transform", "translate(" + (width / 2) + "," +
+                .attr("transform", "translate(" + ((width / 2) + 150) + "," +
                                                   (height / 2) + ")");
             // set appropriate translation (origin in middle of svg)
 
@@ -109,7 +109,7 @@
                 links = tree.links(nodes);
 
             svg.transition().duration(duration)
-                .attr("transform", "translate(100,0)");
+                .attr("transform", "translate(200,0)");
 
             link.data(links)
                 .transition()
@@ -137,7 +137,7 @@
                 links = cluster.links(nodes);
 
             svg.transition().duration(duration)
-                .attr("transform", "translate(100,0)");
+                .attr("transform", "translate(200,0)");
 
             link.data(links)
                 .transition()
@@ -196,7 +196,7 @@
             .attr("width", width + 100)
             .attr("height", height + 100)
             .append("g")
-            .attr("transform", "translate(100,5)");
+            .attr("transform", "translate(200,5)");
 
 
 
