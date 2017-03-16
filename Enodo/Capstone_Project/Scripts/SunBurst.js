@@ -6,7 +6,7 @@ var index = url.match(pattern)[1];
 
 var tip = d3.tip()
   .attr('class', 'd3-tip')
-  .offset([100, 0])
+  .offset([30, 0])
   .html(function (d) {
       //console.log(d);
       var num_Members = d.parent.children.length;
@@ -51,7 +51,7 @@ var tip2 = d3.tip()
 
 
 var width = 840,
-    height = width,
+    height = width+110,
     radius = width / 2,
     x = d3.scale.linear().range([0, 2 * Math.PI]),
     y = d3.scale.pow().exponent(1.3).domain([0, 1]).range([0, radius]),
@@ -63,7 +63,7 @@ var vis = div.append("svg")
     .attr("width", width + padding * 2)
     .attr("height", height + padding * 2)
   .append("g")
-    .attr("transform", "translate(" + [radius + padding, radius + padding] + ")");
+    .attr("transform", "translate(" + [radius + padding, radius + padding+110] + ")");
 var partition = d3.layout.partition()
     .sort(null)
     .value(function (d) { return 5.8 - d.depth; });
@@ -92,7 +92,13 @@ d3.json("/Scripts/_output"+index+".json", function (error, json) {
                 tip2.show.call(this, d, i);
             }
         })
-        .on('mouseout', tip.hide)
+        .on('mouseout', function (d, i) {
+            if (!d.children) {
+                tip.hide();
+            } else if (d.depth == 2) {
+                tip2.hide();
+            }
+        })
         .on("click", click);
     var text = vis.selectAll("text").data(nodes);
     var textEnter = text.enter().append("text")
