@@ -70,7 +70,30 @@ namespace Capstone_Project.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return View(model);
+                if (!ModelState.IsValid)
+                {
+                    var ident = new ClaimsIdentity(
+                     new[] { 
+              // adding following 2 claim just for supporting default antiforgery provider
+              new Claim(ClaimTypes.NameIdentifier, model.Email),
+              new Claim("http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider", "ASP.NET Identity", "http://www.w3.org/2001/XMLSchema#string"),
+
+              new Claim(ClaimTypes.Name,model.Email),
+
+              // optionally you could add roles if any
+              new Claim(ClaimTypes.Role, "Admin"),
+
+
+              },
+              DefaultAuthenticationTypes.ApplicationCookie);
+
+                    HttpContext.GetOwinContext().Authentication.SignIn(
+                       new AuthenticationProperties { IsPersistent = false }, ident);
+
+
+                    return View(model);
+                }
+               
             }
 
             // This doesn't count login failures towards account lockout
