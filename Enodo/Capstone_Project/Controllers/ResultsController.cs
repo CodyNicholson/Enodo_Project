@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using Capstone_Project.Models;
 using Capstone_Project.ViewModel;
 using Microsoft.Ajax.Utilities;
+using System.IO;
 
 namespace Capstone_Project.Controllers
 {
@@ -56,6 +57,12 @@ namespace Capstone_Project.Controllers
             test.createjson(id, _context);
 
             return View(viewModel);
+        }
+        public ActionResult Download(int id)
+        {
+            string file = @"~/Scripts/_output" + id + ".json";
+            string contentType = "text/json";
+            return File(file, contentType, Path.GetFileName(file));
         }
     }
 }
