@@ -48,7 +48,7 @@ namespace Capstone_Project.Controllers
             return View("CreateSurvey", viewModel);
         }
 
-        public ActionResult TakeSurvey(int id, User user)
+        public ActionResult TakeSurvey(int id, ApplicationUser user)
         {
             var survey = _context.Surveys.SingleOrDefault(s => s.Id == id);
             var options = _context.Options.ToList();

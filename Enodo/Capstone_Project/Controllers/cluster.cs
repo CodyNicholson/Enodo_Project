@@ -16,7 +16,7 @@ namespace Capstone_Project.Controllers
     {
 
         public String name;
-        public int num;
+        public string num;
         public int Genderid;
         public String Gender;
         public String Demographic;
@@ -28,7 +28,7 @@ namespace Capstone_Project.Controllers
         public person(int p, double[] arr)
         {
             this.name = "" + p;
-            this.num = p;
+            this.num = ""+p;
             this.Genderid = p;
             this.Demographicid = p;
             this.Gender = "" + p;
@@ -37,11 +37,11 @@ namespace Capstone_Project.Controllers
             this.stringans = new String[arr.Length];
             //answers = arr.ToString();
         }
-        public void setname(int id, ApplicationDbContext _context)
+        public void setname(string id, ApplicationDbContext _context)
         {
-            var survey = _context.AppUsers.SingleOrDefault(s => s.Id == id);
+            var survey = _context.Users.SingleOrDefault(s => s.Id.Equals(id));
             
-            this.name = survey.Name; ; //Grabs the name using the user id
+            this.name = survey.UserName; ; //Grabs the name using the user id
             this.Genderid = survey.GenderId;
             this.Demographicid = survey.DemographicId;
             this.Country = survey.Country;
@@ -63,9 +63,9 @@ namespace Capstone_Project.Controllers
 
             }
         }
-        public void setnum(int id)
+        public void setnum(string id)
         {
-            this.num = id;
+            this.num = id+ "";
         }
 
         public String toString()
@@ -142,9 +142,9 @@ namespace Capstone_Project.Controllers
             this.dislike[dislike3] = this.dislike[dislike3] + 1;
         }
 
-        public void updatename(person y, int[] x, ApplicationDbContext _context)
+        public void updatename(person y, string[] x, ApplicationDbContext _context)
         {
-            y.setnum(x[y.num]);
+            y.setnum(x[Int32.Parse(y.num)]);
             y.setname(y.num, _context);
         }
 

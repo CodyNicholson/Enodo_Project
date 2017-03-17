@@ -11,6 +11,6 @@ namespace Capstone_Project.ViewModel
         public List<Option> Options { get; set; }
         public SurveyResults SurveyResults { get; set; }
         public Survey Survey { get; set; }
-        public User User { get; set; }
+        public ApplicationUser User { get; set; }
     }
 }

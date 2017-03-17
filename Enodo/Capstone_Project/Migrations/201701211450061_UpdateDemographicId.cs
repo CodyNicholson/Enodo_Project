@@ -7,14 +7,14 @@ namespace Capstone_Project.Migrations
     {
         public override void Up()
         {
-            AddColumn("dbo.Users", "DemographicTypeId", c => c.Byte(nullable: false));
-            DropColumn("dbo.Users", "DemographicId");
+            AddColumn("dbo.AspNetUsers", "DemographicTypeId", c => c.Byte(nullable: false));
+            DropColumn("dbo.AspNetUsers", "DemographicId");
         }
         
         public override void Down()
         {
-            AddColumn("dbo.Users", "DemographicId", c => c.Byte(nullable: false));
-            DropColumn("dbo.Users", "DemographicTypeId");
+            AddColumn("dbo.AspNetUsers", "DemographicId", c => c.Byte(nullable: false));
+            DropColumn("dbo.AspNetUsers", "DemographicTypeId");
         }
     }
 }

@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using Capstone_Project.Models;
 using Capstone_Project.ViewModel;
+using System.Runtime.InteropServices;
 
 namespace Capstone_Project.Controllers
 {
@@ -16,8 +17,9 @@ namespace Capstone_Project.Controllers
         public UsersController()
         {
             _context = new ApplicationDbContext(); // This is a disposable object, so we need to properly dispose of it
+           
         }
-
+       
         protected override void Dispose(bool disposing)
         {
             _context.Dispose();
@@ -29,9 +31,9 @@ namespace Capstone_Project.Controllers
             return View();
         }
 
-        public ActionResult Details(int id)
+        public ActionResult Details(string id)
         {
-            var user = _context.AppUsers.SingleOrDefault(u => u.Id == id); //This will make our query execute immediately
+            var user = _context.Users.SingleOrDefault(u => u.Id.Equals(id)); //This will make our query execute immediately
 
             if (user == null)
                 return HttpNotFound();
@@ -40,7 +42,7 @@ namespace Capstone_Project.Controllers
         }
 
         [HttpPost] // This is here so that our Action can only be called using HttpPost and not HttpGet. By convention, if your actions modify data they should only be accessible using HttpPost
-        public ActionResult Save(User user) // This is called Model Binding. MVC framework will automatically map request data to this object
+        public ActionResult Save(ApplicationUser user) // This is called Model Binding. MVC framework will automatically map request data to this object
         {
             // Checks if the entered information is valid based on the Customer Data Annotations
             if (!ModelState.IsValid)
@@ -54,15 +56,21 @@ namespace Capstone_Project.Controllers
                 return View("UserForm", viewModel);
             }
 
-            if (user.Id == 0)
+            var userInDb = _context.Users.SingleOrDefault(u => object.Equals(u.Id, user.Id));
+
+            // System.Diagnostics.Debug.WriteLine(user.Id + "SIUJAHFHASDIFJHIDSUAHFIOUDSHFIUDSHFUHI");
+            if (userInDb == null)
             {
-                _context.AppUsers.Add(user); // This does not write customer to the database, this is just saved in local memory
+                _context.Users.Add(user); // This does not write customer to the database, this is just saved in local memory
             }
             else
             {
-                var userInDb = _context.AppUsers.Single(u => u.Id == user.Id);
+               
+               // ApplicationUser t = _context.Users.First();
+               // var ttt = t.Id;
+                
 
-                userInDb.Name = user.Name;
+                userInDb.UserName = user.UserName;
                 userInDb.Birthdate = user.Birthdate;
                 userInDb.Country = user.Country;
                 userInDb.IsResearcher = user.IsResearcher;
@@ -83,15 +91,15 @@ namespace Capstone_Project.Controllers
             {
                 Demographics = demographics,
                 Genders = genders,
-                User = new User()
+                User = new ApplicationUser()
             };
 
             return View("UserForm", viewModel);
         }
 
-        public ActionResult Edit(int id)
+        public ActionResult Edit(string id)
         {
-            var user = _context.AppUsers.SingleOrDefault(u => u.Id == id);
+            var user = _context.Users.SingleOrDefault(u => u.Id.Equals(id));
 
             if (user == null)
             {

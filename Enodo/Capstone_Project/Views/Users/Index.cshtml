@@ -37,14 +37,16 @@
                 columns: [
                 {
                     data: "name",
-                    render: function(data, type, user) {
-                        return "<a href='/users/edit/" + user.id + "'>" + user.name + "</a>";
+                    render: function (data, type, user) {
+
+                        return "<a href='/users/edit/" + user.id + "'>" + user.userName + "</a>";
                     }
                 },
                 {
                     data: "isResearcher",
                     render: function(data, type, user) {
                         if (user.isResearcher === false) {
+                            console.log(user);
                             return "Standard User";
                         } else {
                             return "Researcher";

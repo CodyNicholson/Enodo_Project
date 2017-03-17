@@ -10,6 +10,6 @@ namespace Capstone_Project.ViewModel
     {
         public int[] OptionOrder { get; set; }
         public Survey Survey { get; set; }
-        public User User { get; set; }
+        public ApplicationUser User { get; set; }
     }
 }

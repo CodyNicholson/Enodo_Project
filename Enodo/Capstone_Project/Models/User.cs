@@ -2,13 +2,22 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Security.Claims;
+using System.Threading.Tasks;
 using System.Web;
+using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.AspNet.Identity;
 
 namespace Capstone_Project.Models
 {
-    public class User
+    public class User : IdentityUser
     {
-        public int Id { get; set; }
+
+
+       
+      /*  public int Id { get; set; }
+
+       
 
         [Required]
         [StringLength(255)]
@@ -37,5 +46,7 @@ namespace Capstone_Project.Models
         public String Country { get; set; }
 
         public List<string> SurveyIds { get; set; }
+        */
+      
     }
 }

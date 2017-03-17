@@ -7,12 +7,12 @@ namespace Capstone_Project.Migrations
     {
         public override void Up()
         {
-            AddColumn("dbo.Users", "Country", c => c.String());
+            AddColumn("dbo.AspNetUsers", "Country", c => c.String());
         }
         
         public override void Down()
         {
-            DropColumn("dbo.Users", "Country");
+            DropColumn("dbo.AspNetUsers", "Country");
         }
     }
 }

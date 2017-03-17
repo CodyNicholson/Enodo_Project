@@ -7,16 +7,16 @@ namespace Capstone_Project.Migrations
     {
         public override void Up()
         {
-            DropPrimaryKey("dbo.Users");
-            AlterColumn("dbo.Users", "Id", c => c.Byte(nullable: false));
-            AddPrimaryKey("dbo.Users", "Id");
+            DropPrimaryKey("dbo.AspNetUsers");
+            AlterColumn("dbo.AspNetUsers", "Id", c => c.Byte(nullable: false));
+            AddPrimaryKey("dbo.AspNetUsers", "Id");
         }
         
         public override void Down()
         {
-            DropPrimaryKey("dbo.Users");
-            AlterColumn("dbo.Users", "Id", c => c.Byte(nullable: false, identity: true));
-            AddPrimaryKey("dbo.Users", "Id");
+            DropPrimaryKey("dbo.AspNetUsers");
+            AlterColumn("dbo.AspNetUsers", "Id", c => c.Byte(nullable: false, identity: true));
+            AddPrimaryKey("dbo.AspNetUsers", "Id");
         }
     }
 }

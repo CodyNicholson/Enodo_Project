@@ -16,16 +16,16 @@ namespace Capstone_Project.Migrations
                     })
                 .PrimaryKey(t => t.Id);
             
-            AddColumn("dbo.Users", "Demographic_Id", c => c.Int());
-            CreateIndex("dbo.Users", "Demographic_Id");
-            AddForeignKey("dbo.Users", "Demographic_Id", "dbo.Demographics", "Id");
+            AddColumn("dbo.AspNetUsers", "Demographic_Id", c => c.Int());
+            CreateIndex("dbo.AspNetUsers", "Demographic_Id");
+            AddForeignKey("dbo.AspNetUsers", "Demographic_Id", "dbo.Demographics", "Id");
         }
         
         public override void Down()
         {
-            DropForeignKey("dbo.Users", "Demographic_Id", "dbo.Demographics");
-            DropIndex("dbo.Users", new[] { "Demographic_Id" });
-            DropColumn("dbo.Users", "Demographic_Id");
+            DropForeignKey("dbo.AspNetUsers", "Demographic_Id", "dbo.Demographics");
+            DropIndex("dbo.AspNetUsers", new[] { "Demographic_Id" });
+            DropColumn("dbo.AspNetUsers", "Demographic_Id");
             DropTable("dbo.Demographics");
         }
     }

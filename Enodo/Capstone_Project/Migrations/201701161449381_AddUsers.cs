@@ -8,7 +8,7 @@ namespace Capstone_Project.Migrations
         public override void Up()
         {
             CreateTable(
-                "dbo.Users",
+                "dbo.AspNetUsers",
                 c => new
                     {
                         Id = c.Byte(nullable: false),
@@ -21,7 +21,7 @@ namespace Capstone_Project.Migrations
         
         public override void Down()
         {
-            DropTable("dbo.Users");
+            DropTable("dbo.AspNetUsers");
         }
     }
 }

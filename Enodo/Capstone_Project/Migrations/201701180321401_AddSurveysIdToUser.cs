@@ -15,18 +15,18 @@ namespace Capstone_Project.Migrations
                     })
                 .PrimaryKey(t => t.Id);
             
-            AddColumn("dbo.Users", "SurveyId", c => c.String(nullable: false));
-            AddColumn("dbo.Users", "Survey_Id", c => c.Byte());
-            CreateIndex("dbo.Users", "Survey_Id");
-            AddForeignKey("dbo.Users", "Survey_Id", "dbo.Surveys", "Id");
+            AddColumn("dbo.AspNetUsers", "SurveyId", c => c.String(nullable: false));
+            AddColumn("dbo.AspNetUsers", "Survey_Id", c => c.Byte());
+            CreateIndex("dbo.AspNetUsers", "Survey_Id");
+            AddForeignKey("dbo.AspNetUsers", "Survey_Id", "dbo.Surveys", "Id");
         }
         
         public override void Down()
         {
-            DropForeignKey("dbo.Users", "Survey_Id", "dbo.Surveys");
-            DropIndex("dbo.Users", new[] { "Survey_Id" });
-            DropColumn("dbo.Users", "Survey_Id");
-            DropColumn("dbo.Users", "SurveyId");
+            DropForeignKey("dbo.AspNetUsers", "Survey_Id", "dbo.Surveys");
+            DropIndex("dbo.AspNetUsers", new[] { "Survey_Id" });
+            DropColumn("dbo.AspNetUsers", "Survey_Id");
+            DropColumn("dbo.AspNetUsers", "SurveyId");
             DropTable("dbo.Surveys");
         }
     }

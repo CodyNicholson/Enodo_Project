@@ -7,6 +7,7 @@ using System.Web.Http;
 using AutoMapper;
 using Capstone_Project.Dtos;
 using Capstone_Project.Models;
+using Microsoft.AspNet.Identity;
 
 namespace Capstone_Project.Controllers.api
 {
@@ -22,22 +23,28 @@ namespace Capstone_Project.Controllers.api
         // GET: /api/users
         public IHttpActionResult GetUsers()
         {
-            var userDtos = _context.AppUsers
+            //var user = _context.Users;
+            var userDtos = _context.Users
                 .ToList()
-                .Select(Mapper.Map<User, UserDto>);
-     
+               .Select(Mapper.Map<ApplicationUser, UserDto>);
+
+            if (userDtos == null)
+                return NotFound();
+
             return Ok(userDtos);
         }
 
         // GET /api/user/id
-        public IHttpActionResult GetUser(int id)
+        public IHttpActionResult GetUser(string id)
         {
-            var user = _context.AppUsers.SingleOrDefault(c => c.Id == id);
+            var user = _context.Users.SingleOrDefault(c => c.Id.Equals(id));
+
+            
 
             if (user == null)
                 return NotFound();
 
-            return Ok(Mapper.Map<User, UserDto>(user));
+            return Ok(Mapper.Map<ApplicationUser, UserDto>(user));
         }
 
             // POST /api/users
@@ -47,8 +54,8 @@ namespace Capstone_Project.Controllers.api
                 if (!ModelState.IsValid)
                     return BadRequest();
 
-                var user = Mapper.Map<UserDto, User>(userDto);
-                _context.AppUsers.Add(user);
+                var user = Mapper.Map<UserDto, ApplicationUser>(userDto);
+                _context.Users.Add(user);
                 _context.SaveChanges();
 
                 userDto.Id = user.Id;
@@ -58,12 +65,12 @@ namespace Capstone_Project.Controllers.api
 
             // PUT /api/users/id
             [System.Web.Mvc.HttpPut]
-            public IHttpActionResult UpdateUser(int id, UserDto userDto)
+            public IHttpActionResult UpdateUser(string id, UserDto userDto)
             {
                 if (!ModelState.IsValid)
                     return BadRequest();
 
-                var userInDb = _context.AppUsers.SingleOrDefault(c => c.Id == id);
+                var userInDb = _context.Users.SingleOrDefault(c => c.Id.Equals(id));
 
                 if (userInDb == null)
                     return NotFound();
@@ -77,14 +84,14 @@ namespace Capstone_Project.Controllers.api
 
             // DELETE /api/users/id
             [System.Web.Mvc.HttpDelete]
-            public IHttpActionResult DeleteUser(int id)
+            public IHttpActionResult DeleteUser(string id)
             {
-                var userInDb = _context.AppUsers.SingleOrDefault(c => c.Id == id);
+                var userInDb = _context.Users.SingleOrDefault(c => c.Id.Equals(id));
 
                 if (userInDb == null)
                     return NotFound();
 
-             _context.AppUsers.Remove(userInDb);
+             _context.Users.Remove(userInDb);
              _context.SaveChanges();
 
              return Ok();

@@ -10,6 +10,6 @@ namespace Capstone_Project.ViewModel
     {
         public IEnumerable<Demographic> Demographics { get; set; }
         public IEnumerable<Gender> Genders { get; set; }
-        public User User { get; set; }
+        public ApplicationUser User { get; set; }
     }
 }

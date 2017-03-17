@@ -7,12 +7,12 @@ namespace Capstone_Project.Migrations
     {
         public override void Up()
         {
-            AddColumn("dbo.Users", "Birthdate", c => c.DateTime());
+            AddColumn("dbo.AspNetUsers", "Birthdate", c => c.DateTime());
         }
         
         public override void Down()
         {
-            DropColumn("dbo.Users", "Birthdate");
+            DropColumn("dbo.AspNetUsers", "Birthdate");
         }
     }
 }

@@ -412,7 +412,7 @@ C:\Users\Cody\OneDrive\GitHub\Capstone_Project\Enodo\Capstone_Project\obj\Debug\
 C:\Users\Cody\OneDrive\GitHub\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.csproj.GenerateResource.Cache
 C:\Users\Cody\OneDrive\GitHub\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.AddUsers.resources
 C:\Users\Cody\OneDrive\GitHub\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.AddUsersBirthdate.resources
-C:\Users\Cody\OneDrive\GitHub\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.UpdateUsersToAppUsers.resources
+C:\Users\Cody\OneDrive\GitHub\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.UpdateUsersToAspUsers.resources
 C:\Users\Cody\OneDrive\GitHub\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.UpdateUserIdToAutoGenerate.resources
 C:\Users\Cody\GitHub\Capstone_Project\Enodo\Capstone_Project\bin\ApplicationInsights.config
 C:\Users\Cody\GitHub\Capstone_Project\Enodo\Capstone_Project\bin\roslyn\csc.exe
@@ -435,7 +435,7 @@ C:\Users\Cody\GitHub\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_
 C:\Users\Cody\GitHub\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.InitialMigration.resources
 C:\Users\Cody\GitHub\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.AddUsers.resources
 C:\Users\Cody\GitHub\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.AddUsersBirthdate.resources
-C:\Users\Cody\GitHub\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.UpdateUsersToAppUsers.resources
+C:\Users\Cody\GitHub\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.UpdateUsersToAspUsers.resources
 C:\Users\Cody\GitHub\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.UpdateUserIdToAutoGenerate.resources
 C:\Users\Cody\GitHub\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.csproj.GenerateResource.Cache
 C:\Users\Cody\GitHub\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.dll
@@ -509,7 +509,7 @@ C:\Users\Jeremy\Capstone\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capst
 C:\Users\Jeremy\Capstone\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.InitialMigration.resources
 C:\Users\Jeremy\Capstone\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.AddUsers.resources
 C:\Users\Jeremy\Capstone\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.AddUsersBirthdate.resources
-C:\Users\Jeremy\Capstone\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.UpdateUsersToAppUsers.resources
+C:\Users\Jeremy\Capstone\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.UpdateUsersToAspUsers.resources
 C:\Users\Jeremy\Capstone\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.UpdateUserIdToAutoGenerate.resources
 C:\Users\Jeremy\Capstone\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.AddToUserListOfSurveyIds.resources
 C:\Users\Jeremy\Capstone\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.ChangesUserIdToInt.resources
@@ -583,7 +583,7 @@ C:\Users\Valkrex\Capstone\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Caps
 C:\Users\Valkrex\Capstone\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.InitialMigration.resources
 C:\Users\Valkrex\Capstone\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.AddUsers.resources
 C:\Users\Valkrex\Capstone\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.AddUsersBirthdate.resources
-C:\Users\Valkrex\Capstone\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.UpdateUsersToAppUsers.resources
+C:\Users\Valkrex\Capstone\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.UpdateUsersToAspUsers.resources
 C:\Users\Valkrex\Capstone\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.UpdateUserIdToAutoGenerate.resources
 C:\Users\Valkrex\Capstone\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.AddToUserListOfSurveyIds.resources
 C:\Users\Valkrex\Capstone\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.ChangesUserIdToInt.resources
@@ -608,50 +608,6 @@ C:\Users\Valkrex\Capstone\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Caps
 C:\Users\Valkrex\Capstone\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.csproj.GenerateResource.Cache
 C:\Users\Valkrex\Capstone\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.dll
 C:\Users\Valkrex\Capstone\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.pdb
-C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\bin\ApplicationInsights.config
-C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\bin\roslyn\csc.exe
-C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\bin\roslyn\Microsoft.CodeAnalysis.dll
-C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\bin\roslyn\Microsoft.CSharp.Core.targets
-C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\bin\roslyn\Microsoft.VisualBasic.Core.targets
-C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\bin\roslyn\System.Collections.Immutable.dll
-C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\bin\roslyn\System.Reflection.Metadata.dll
-C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\bin\roslyn\vbc.exe
-C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\bin\roslyn\VBCSCompiler.exe
-C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\bin\Capstone_Project.dll.config
-C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\bin\Capstone_Project.dll
-C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\bin\Capstone_Project.pdb
-C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.InitialMigration.resources
-C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.AddUsers.resources
-C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.AddUsersBirthdate.resources
-C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.UpdateUsersToAppUsers.resources
-C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.UpdateUserIdToAutoGenerate.resources
-C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.AddToUserListOfSurveyIds.resources
-C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.ChangesUserIdToInt.resources
-C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.AddSurveysIdToUser.resources
-C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.AddNameToSurvey.resources
-C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.UpdateIds.resources
-C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.AddSurveyOptions.resources
-C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.AddUserListStringIds.resources
-C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.AddSurveyOptionId.resources
-C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.RemoveSurveyOptionSurveyId.resources
-C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.RemoveSurveyOptions.resources
-C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.AddOptions.resources
-C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.AddOptionSurveyId.resources
-C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.AddDemographic.resources
-C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.AddDemographicId.resources
-C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.UpdateDemographicId.resources
-C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.RemoveSecondDemographicId.resources
-C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.FixDemographicId.resources
-C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.AddOwnerToSurvey.resources
-C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.AddedGenderToUser.resources
-C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.ChangedUserDataAnnotationsToRequired.resources
-C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.csproj.GenerateResource.Cache
-C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.dll
-C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.pdb
 C:\Users\Rachel\Source\Repos\Capstone_Project\Enodo\Capstone_Project\bin\ApplicationInsights.config
 C:\Users\Rachel\Source\Repos\Capstone_Project\Enodo\Capstone_Project\bin\roslyn\csc.exe
 C:\Users\Rachel\Source\Repos\Capstone_Project\Enodo\Capstone_Project\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -672,7 +628,7 @@ C:\Users\Rachel\Source\Repos\Capstone_Project\Enodo\Capstone_Project\obj\Debug\C
 C:\Users\Rachel\Source\Repos\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.InitialMigration.resources
 C:\Users\Rachel\Source\Repos\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.AddUsers.resources
 C:\Users\Rachel\Source\Repos\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.AddUsersBirthdate.resources
-C:\Users\Rachel\Source\Repos\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.UpdateUsersToAppUsers.resources
+C:\Users\Rachel\Source\Repos\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.UpdateUsersToAspUsers.resources
 C:\Users\Rachel\Source\Repos\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.UpdateUserIdToAutoGenerate.resources
 C:\Users\Rachel\Source\Repos\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.AddToUserListOfSurveyIds.resources
 C:\Users\Rachel\Source\Repos\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.ChangesUserIdToInt.resources
@@ -720,7 +676,7 @@ C:\Users\Thomas\Desktop\Software Project\Capstone_Project\Enodo\Capstone_Project
 C:\Users\Thomas\Desktop\Software Project\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.InitialMigration.resources
 C:\Users\Thomas\Desktop\Software Project\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.AddUsers.resources
 C:\Users\Thomas\Desktop\Software Project\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.AddUsersBirthdate.resources
-C:\Users\Thomas\Desktop\Software Project\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.UpdateUsersToAppUsers.resources
+C:\Users\Thomas\Desktop\Software Project\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.UpdateUsersToAspUsers.resources
 C:\Users\Thomas\Desktop\Software Project\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.UpdateUserIdToAutoGenerate.resources
 C:\Users\Thomas\Desktop\Software Project\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.AddToUserListOfSurveyIds.resources
 C:\Users\Thomas\Desktop\Software Project\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.ChangesUserIdToInt.resources
@@ -759,3 +715,62 @@ C:\Users\Cody\GitHub\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_
 C:\Users\Cody\GitHub\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.TryToFixSurveyId.resources
 C:\Users\Cody\GitHub\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.TryToFixSurveyId1.resources
 C:\Users\Cody\GitHub\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.MakeOptionNameNotRequired.resources
+C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.InitialMigration.resources
+C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.AddUsers.resources
+C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.AddUsersBirthdate.resources
+C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.UpdateUsersToAppUsers.resources
+C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.UpdateUserIdToIdentityTrue.resources
+C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.MakeIdAutoGenerated.resources
+C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.AddUserTableWithAutoId.resources
+C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.UpdateUserIdToAutoGenerate.resources
+C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.AddToUserListOfSurveyIds.resources
+C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.ChangesUserIdToInt.resources
+C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.AddSurveysIdToUser.resources
+C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.AddNameToSurvey.resources
+C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.UpdateSurveyId.resources
+C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.UpdateIds.resources
+C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.AddSurveyOptions.resources
+C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.AddUserListStringIds.resources
+C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.AddSurveyOptionId.resources
+C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.RemoveSurveyOptionSurveyId.resources
+C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.RemoveSurveyOptions.resources
+C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.AddOptions.resources
+C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.AddOptionSurveyId.resources
+C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.AddDemographic.resources
+C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.AddDemographicId.resources
+C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.UpdateDemographicId.resources
+C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.RemoveSecondDemographicId.resources
+C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.FixDemographicId.resources
+C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.AddOwnerToSurvey.resources
+C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.AddedGenderToUser.resources
+C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.ChangedUserDataAnnotationsToRequired.resources
+C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.AddedDirectionsToSurvey.resources
+C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.SurveyDirectionsRequired.resources
+C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.AddedResultsTable.resources
+C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.AddOptionOrderStringToSurveyResults.resources
+C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.AddContryToUserModel.resources
+C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.AddContryToUserModelRequired.resources
+C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.TryToFixSurveyId.resources
+C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.TryToFixSurveyId1.resources
+C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.MakeOptionNameNotRequired.resources
+C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.Migrations.Authorize.resources
+C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.csproj.GenerateResource.Cache
+C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\bin\ApplicationInsights.config
+C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\bin\roslyn\csc.exe
+C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\bin\roslyn\vbc.exe
+C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\bin\roslyn\VBCSCompiler.exe
+C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\bin\Capstone_Project.dll.config
+C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\bin\Capstone_Project.dll
+C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\bin\Capstone_Project.pdb
+C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.dll
+C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.pdb
+C:\Users\FERMAT\Documents\Capstone_Project\Enodo\Capstone_Project\obj\Debug\Capstone_Project.csprojResolveAssemblyReference.cache

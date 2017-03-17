@@ -7,16 +7,16 @@ namespace Capstone_Project.Migrations
     {
         public override void Up()
         {
-            DropForeignKey("dbo.Users", "SurveyId", "dbo.Surveys");
-            DropIndex("dbo.Users", new[] { "SurveyId" });
-            DropColumn("dbo.Users", "SurveyId");
+            DropForeignKey("dbo.AspNetUsers", "SurveyId", "dbo.Surveys");
+            DropIndex("dbo.AspNetUsers", new[] { "SurveyId" });
+            DropColumn("dbo.AspNetUsers", "SurveyId");
         }
         
         public override void Down()
         {
-            AddColumn("dbo.Users", "SurveyId", c => c.Int(nullable: false));
-            CreateIndex("dbo.Users", "SurveyId");
-            AddForeignKey("dbo.Users", "SurveyId", "dbo.Surveys", "Id", cascadeDelete: true);
+            AddColumn("dbo.AspNetUsers", "SurveyId", c => c.Int(nullable: false));
+            CreateIndex("dbo.AspNetUsers", "SurveyId");
+            AddForeignKey("dbo.AspNetUsers", "SurveyId", "dbo.Surveys", "Id", cascadeDelete: true);
         }
     }
 }

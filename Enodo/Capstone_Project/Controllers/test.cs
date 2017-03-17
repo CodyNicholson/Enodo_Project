@@ -49,7 +49,7 @@ namespace Capstone_Project.Controllers
 
 
         static double[][] surveys;
-        static int[] maparr;
+        static string[] maparr;
 
 
         static double avgdist = 0;
@@ -60,15 +60,15 @@ namespace Capstone_Project.Controllers
         public static void runAlgorithm(int surveyid, ApplicationDbContext _context)
         {
             clusters.Clear();
-            List<ApplicationUser> list = database.Users.ToList();
+            List <ApplicationUser> list = database.Users.ToList();
             //Console.WriteLine(list.ToString());
             //var rywjhs  = Console.In;
             double[][] xyzaffair = parsetable(surveyid, _context);
             //parsetable(surveyid);
-            maparr = new int[xyzaffair.Length-1];
+            maparr = new string[xyzaffair.Length-1];
             for(int i = 0;i < xyzaffair[0].Length; i++)
             {
-                maparr[i] = (int)xyzaffair[0][i];
+                maparr[i] = xyzaffair[0][i].ToString();
             }
             
             surveys = new double[xyzaffair.Length - 1][];
@@ -126,7 +126,7 @@ namespace Capstone_Project.Controllers
             {
                 foreach (person x in ((cluster)(clusters[k])).children)
                 {
-                    ((cluster)(clusters[k])).updatelike(surveys[x.num]);
+                   // ((cluster)(clusters[k])).updatelike(surveys[x.num]);
                 }
             }
 
