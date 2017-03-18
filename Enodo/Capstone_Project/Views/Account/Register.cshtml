@@ -13,43 +13,43 @@
     @Html.ValidationSummary(true, "Please fix the following errors:")
     <div class="form-group">
         @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
+        
             @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-        </div>
+        
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(m => m.Birthday)
+        @Html.LabelFor(m => m.Birthday, new { @class = "col-md-2 control-label" })
         @Html.TextBoxFor(m => m.Birthday, "{0:d MMM yyyy}", new { @class = "form-control", placeholder = "01/31/2000" })
         @Html.ValidationMessageFor(m => m.Birthday)
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.Country)
+        @Html.LabelFor(m => m.Country, new { @class = "col-md-2 control-label" })
         @Html.TextBoxFor(m => m.Country, new { @class = "form-control", placeholder = "Place Country Here" })
         @Html.ValidationMessageFor(m => m.Country)
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.GenderId)
+        @Html.LabelFor(m => m.GenderId, new { @class = "col-md-2 control-label" })
         @Html.DropDownListFor(m => m.GenderId, new SelectList(Model.Genders, "Id", "GenderName"), "Select Your Gender", new { @class = "form-control" })
         @Html.ValidationMessageFor(m => m.GenderId)
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.DemographicId)
+        @Html.LabelFor(m => m.DemographicId, new { @class = "col-md-2 control-label" })
         @Html.DropDownListFor(m => m.DemographicId, new SelectList(Model.Demographics, "Id", "Name"), "Select Your Ethnicity", new { @class = "form-control" })
         @Html.ValidationMessageFor(m => m.DemographicId)
     </div>
 
     <div class="form-group">
         @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
+      
             @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-        </div>
+        
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
+        
             @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
-        </div>
+      
     </div>
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
