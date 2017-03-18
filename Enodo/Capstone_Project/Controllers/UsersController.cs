@@ -81,11 +81,11 @@ namespace Capstone_Project.Controllers
             _context.SaveChanges(); // To persist these changes, we write the customer to the database using the SaveChanges() method
 
             return RedirectToAction("Index", "Users");
-        }
+        } 
 
-        public ActionResult New()
-        {
-            var demographics = _context.Demographics.ToList();
+        public ActionResult New() 
+        {  
+             var demographics = _context.Demographics.ToList();
             var genders = _context.Genders.ToList();
             var viewModel = new UserFormViewModel()
             {
@@ -112,7 +112,7 @@ namespace Capstone_Project.Controllers
                 Demographics = _context.Demographics.ToList(),
                 Genders = _context.Genders.ToList()
             };
-
+             ///df
             return View("UserForm", viewModel);
         }
     }

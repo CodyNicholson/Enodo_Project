@@ -70,6 +70,25 @@ namespace Capstone_Project.Models
         public string Email { get; set; }
 
         [Required]
+        [Display(Name = "Birthday")]
+        public System.DateTime Birthday { get; set; }
+
+        [Required]
+        [Display(Name = "Gender")]
+        public int GenderId { get; set; }
+
+        [Required]
+        [Display(Name = "Country")]
+        public string Country { get; set; }
+
+        [Required]
+        [Display(Name = "Demographic")]
+        public int DemographicId { get; set; }
+
+        public IEnumerable<Demographic> Demographics { get; set; }
+        public IEnumerable<Gender> Genders { get; set; }
+
+        [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
         [Display(Name = "Password")]

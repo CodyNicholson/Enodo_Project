@@ -21,7 +21,7 @@ namespace Capstone_Project.Models
             // Add custom user claims here
             return userIdentity;
         }
-
+         
        
         public  override string Id { get; set; }
 

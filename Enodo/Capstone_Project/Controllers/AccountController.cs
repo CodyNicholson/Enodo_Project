@@ -19,9 +19,10 @@ namespace Capstone_Project.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
-
+        private ApplicationDbContext _context;
         public AccountController()
         {
+            _context = new ApplicationDbContext();
         }
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
@@ -164,7 +165,20 @@ namespace Capstone_Project.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
-            return View();
+
+            var demographics = _context.Demographics.ToList();
+            var genders = _context.Genders.ToList();
+            var viewModel = new RegisterViewModel()
+            {
+                Demographics = demographics,
+                Genders = genders,
+                
+            };
+
+            return View("Register", viewModel);
+
+            // return View("Register", viewModel);
+           // return View();
         }
 
         //
@@ -174,9 +188,22 @@ namespace Capstone_Project.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
+
+            var demographics = _context.Demographics.ToList();
+            var genders = _context.Genders.ToList();
+            var viewModel = new RegisterViewModel()
+            {
+                Demographics = demographics,
+                Genders = genders,
+
+            };
+
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+
+       
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, Birthdate = model.Birthday
+                    , GenderId = model.GenderId, DemographicId = model.DemographicId, Country = model.Country,  };
 
                 try
                 {
