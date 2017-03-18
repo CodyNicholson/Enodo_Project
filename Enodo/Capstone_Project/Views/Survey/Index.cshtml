@@ -37,7 +37,8 @@
                     {
                         data: "name",
                         render: function (data, type, survey) {
-                            return "<a href='/survey/takesurvey/" + survey.id + "'>" + survey.name + "</a>";
+
+                            return "<a href='/survey/takesurvey/" + survey.id + "?userid=" + 55 + "'>" + survey.name + "</a>";//Figure out how to get current users id here?? Something in user identity genereation
                         }
                     },
                     {
