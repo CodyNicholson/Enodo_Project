@@ -59,6 +59,7 @@ namespace Capstone_Project.Controllers
 
             return View(viewModel);
         }
+
         [Authorize]
         public ActionResult Download(int id)
         {

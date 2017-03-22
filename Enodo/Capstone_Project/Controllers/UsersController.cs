@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using Capstone_Project.Models;
 using Capstone_Project.ViewModel;
 using System.Runtime.InteropServices;
+using Microsoft.AspNet.Identity;
 
 namespace Capstone_Project.Controllers
 {
@@ -100,6 +101,7 @@ namespace Capstone_Project.Controllers
         public ActionResult Edit(string id)
         {
             var user = _context.Users.SingleOrDefault(u => u.Id.Equals(id));
+            var currentUserId = System.Web.HttpContext.Current.User.Identity.GetUserId();
 
             if (user == null)
             {
@@ -112,8 +114,15 @@ namespace Capstone_Project.Controllers
                 Demographics = _context.Demographics.ToList(),
                 Genders = _context.Genders.ToList()
             };
-             ///df
-            return View("UserForm", viewModel);
+
+            if (id != currentUserId)
+            {
+                return View("Details", viewModel);
+            }
+            else
+            {
+                return View("UserForm", viewModel);
+            }
         }
     }
 }

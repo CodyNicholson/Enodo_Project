@@ -1,13 +1,13 @@
-﻿@model Capstone_Project.Models.ApplicationUser
+﻿@model Capstone_Project.ViewModel.UserFormViewModel
 
 @{
-    ViewBag.Title = Model.UserName;
+    ViewBag.Title = Model.User.UserName;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>@Model.UserName</h2>
+<h2>@ViewBag.Title</h2>
 <ul>
-    @if (Model.IsResearcher)
+    @if (Model.User.IsResearcher)
     {
         <li>Membership Type: Researcher</li>
     }
@@ -16,9 +16,17 @@
         <li>Membership Type: User</li>
     }
 
-    @if (Model.Birthdate.HasValue)
+    @if (Model.User.Birthdate.HasValue)
     {
-        <li>Birthdate: @Model.Birthdate.Value.ToShortDateString()</li>
+        <li>Birthdate: @Model.User.Birthdate.Value.ToShortDateString()</li>
     }
 
+    <li>Gender: @Model.User.Gender.GenderName</li>
+
+    <li>Demographic: @Model.User.Demographic.Name</li>
+
+    @if (Model.User.Country != null)
+    {
+        <li>Country: @Model.User.Country</li>
+    }
 </ul>
