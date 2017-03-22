@@ -12,7 +12,7 @@ namespace Capstone_Project.Models
 
         public int SurveyId { get; set; }
 
-        public int UserId { get; set; }
+        public string UserId { get; set; }
         
         public string OptionOrder { get; set; }
     }

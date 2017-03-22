@@ -8,6 +8,7 @@ using Capstone_Project.Models;
 using Capstone_Project.ViewModel;
 using Microsoft.Ajax.Utilities;
 using System.IO;
+using Microsoft.AspNet.Identity;
 
 namespace Capstone_Project.Controllers
 {
@@ -48,7 +49,7 @@ namespace Capstone_Project.Controllers
             {
                 surveyResults.OptionOrder = optionOrder;
                 surveyResults.SurveyId = id;
-                surveyResults.UserId = 35;
+                surveyResults.UserId = System.Web.HttpContext.Current.User.Identity.GetUserId();
                 _context.SurveyResultsSet.Add(surveyResults);
                 _context.SaveChanges();
             }
