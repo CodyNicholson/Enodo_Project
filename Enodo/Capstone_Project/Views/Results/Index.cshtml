@@ -46,7 +46,7 @@
                     {
                         data: "id",
                         render: function (data, type, survey) {
-                            if (survey.owner === null) {
+                            if (survey.owner === null || survey.owner === "") {
                                 return 'Enodo';
                             } else {
                                 return survey.owner;
