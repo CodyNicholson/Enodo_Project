@@ -416,6 +416,7 @@
     </Compile>
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModel\ResultsViewModel.cs" />
+    <Compile Include="ViewModel\SurveyIndexViewModel.cs" />
     <Compile Include="ViewModel\SurveyViewModel.cs" />
     <Compile Include="ViewModel\UserFormViewModel.cs" />
   </ItemGroup>
