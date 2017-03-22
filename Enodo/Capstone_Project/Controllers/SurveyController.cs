@@ -10,6 +10,7 @@ using Microsoft.AspNet.Identity;
 
 namespace Capstone_Project.Controllers
 {
+    [Authorize]
     public class SurveyController : Controller
     {
         private ApplicationDbContext _context;
