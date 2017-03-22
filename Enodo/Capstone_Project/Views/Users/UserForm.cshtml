@@ -18,7 +18,6 @@ else
 {
     @Html.ValidationSummary(true, "Please fix the following errors:")
     <div class="form-group">
-     
         @Html.LabelFor(m => m.User.UserName)
         @Html.TextBoxFor(m => m.User.UserName, new { @class = "form-control", placeholder= "UserName" })
         @Html.ValidationMessageFor(m => m.User.UserName)

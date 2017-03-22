@@ -196,15 +196,13 @@ namespace Capstone_Project.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
-
-                    var demographics = _context.Demographics.ToList();
-                    var genders = _context.Genders.ToList();
-                    var viewModel = new RegisterViewModel()
-                    {
-                        Demographics = demographics,
-                        Genders = genders,
-
-                     };
+            var demographics = _context.Demographics.ToList();
+            var genders = _context.Genders.ToList();
+            var viewModel = new RegisterViewModel()
+            {
+                Demographics = demographics,
+                Genders = genders,
+            };
             var userWithSameEmail = _context.Users.Where(m => m.Email == model.Email).SingleOrDefault();
             if (ModelState.IsValid)
             {
