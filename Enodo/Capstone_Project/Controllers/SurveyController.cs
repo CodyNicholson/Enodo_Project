@@ -48,9 +48,9 @@ namespace Capstone_Project.Controllers
             return View("CreateSurvey", viewModel);
         }
 
-        public ActionResult TakeSurvey(int id)// Where is this getting a user?????????????????????Bla
+        public ActionResult TakeSurvey(int id)
         {
-            var usedid = HttpContext.Request.QueryString["userid"];
+            var userid = HttpContext.Request.QueryString["userid"];
             var currentUserId = System.Web.HttpContext.Current.User.Identity.GetUserId();
             var survey = _context.Surveys.SingleOrDefault(s => s.Id == id);
             var options = _context.Options.ToList();
@@ -58,9 +58,9 @@ namespace Capstone_Project.Controllers
 
             var viewModel = new SurveyViewModel()
             {
-               Options = options,
-               Survey = survey,
-               User = user
+                Options = options,
+                Survey = survey,
+                User = user
             };
 
             return View("TakeSurvey", viewModel);
