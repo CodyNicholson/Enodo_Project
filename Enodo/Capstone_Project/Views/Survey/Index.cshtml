@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Capstone_Project.Models.Survey>
+﻿@model Capstone_Project.ViewModel.SurveyIndexViewModel
 
 @{
     ViewBag.Title = "Surveys";
@@ -22,7 +22,10 @@
         </tbody>
     </table>
 
+@if (Model.User.IsResearcher == true)
+{
 <p><a class="btn btn-primary" href="/Survey/CreateSurvey/">Create a Survey &raquo;</a></p>
+}
 
 @section scripts
 {
@@ -38,7 +41,7 @@
                         data: "name",
                         render: function (data, type, survey) {
 
-                            return "<a href='/survey/takesurvey/" + survey.id + "?userid=" + 55 + "'>" + survey.name + "</a>";//Figure out how to get current users id here?? Something in user identity genereation
+                            return "<a href='/survey/takesurvey/" + survey.id + "'>" + survey.name + "</a>";//Figure out how to get current users id here?? Something in user identity genereation
                         }
                     },
                     {

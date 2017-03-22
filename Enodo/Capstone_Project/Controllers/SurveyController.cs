@@ -14,10 +14,12 @@ namespace Capstone_Project.Controllers
     public class SurveyController : Controller
     {
         private ApplicationDbContext _context;
-
+        private ApplicationUser user;
+        private string currentUserId = "35";
         public SurveyController()
         {
             _context = new ApplicationDbContext(); // This is a disposable object, so we need to properly dispose of it
+            
         }
 
         protected override void Dispose(bool disposing)
@@ -27,7 +29,15 @@ namespace Capstone_Project.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            currentUserId = System.Web.HttpContext.Current.User.Identity.GetUserId();
+            user = _context.Users.SingleOrDefault(u => u.Id == currentUserId);
+            var surveys = _context.Surveys.ToList();
+            var viewModel = new SurveyIndexViewModel()
+            {
+                Surveys = surveys,
+                User = user
+            };
+            return View(viewModel);
         }
 
         public ActionResult CreateSurvey()
