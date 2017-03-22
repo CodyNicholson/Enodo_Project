@@ -265,9 +265,9 @@ namespace Capstone_Project.Controllers
                     return View(viewModel);
                 }
                 // If we got this far, something failed, redisplay form
-                return View(model);
+                return View(viewModel);
             }
-            return View(model);
+            return View(viewModel);
         }
 
         //
