@@ -88,8 +88,12 @@ namespace Capstone_Project.Controllers
         [HttpPost]
         public ActionResult Save(Survey survey, List<Option> options)
         {
+
+            // var surveyName = _context.Surveys.Where(m => m.Name == survey.Name).SingleOrDefault(); //checking to see if this has been used
             if (!ModelState.IsValid)
             {
+               // if(surveyName == null)
+
                 var viewModel = new SurveyViewModel()
                 {
                     Survey = new Survey(),
@@ -124,7 +128,7 @@ namespace Capstone_Project.Controllers
 
             _context.SaveChanges(); // To persist these changes, we write the customer to the database using the SaveChanges() method
 
-            var newSurvey = _context.Surveys.Single(s => s.Name == survey.Name);
+            var newSurvey = _context.Surveys.Single(s => s.Id == survey.Id);
 
             foreach (var option in _context.Options)
             {
