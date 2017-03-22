@@ -11,6 +11,7 @@ using Microsoft.Owin.Security;
 using Capstone_Project.Models;
 using System.Data.Entity.Validation;
 using System.Diagnostics;
+using Capstone_Project.ViewModel;
 
 namespace Capstone_Project.Controllers
 {
@@ -61,6 +62,8 @@ namespace Capstone_Project.Controllers
         public ActionResult Login(string returnUrl)
         {
             ViewBag.ReturnUrl = returnUrl;
+
+          
             return View();
         }
 
@@ -75,6 +78,9 @@ namespace Capstone_Project.Controllers
             {
                 if (!ModelState.IsValid)
                 {
+
+                    
+
                     var ident = new ClaimsIdentity(
                      new[] { 
               // adding following 2 claim just for supporting default antiforgery provider
@@ -102,6 +108,8 @@ namespace Capstone_Project.Controllers
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true
             var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
+
+           
             switch (result)
             {
                 case SignInStatus.Success:
@@ -189,59 +197,74 @@ namespace Capstone_Project.Controllers
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
 
-            var demographics = _context.Demographics.ToList();
-            var genders = _context.Genders.ToList();
-            var viewModel = new RegisterViewModel()
-            {
-                Demographics = demographics,
-                Genders = genders,
+                    var demographics = _context.Demographics.ToList();
+                    var genders = _context.Genders.ToList();
+                    var viewModel = new RegisterViewModel()
+                    {
+                        Demographics = demographics,
+                        Genders = genders,
 
-            };
-
+                     };
+            var userWithSameEmail = _context.Users.Where(m => m.Email == model.Email).SingleOrDefault();
             if (ModelState.IsValid)
             {
-
-       
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, Birthdate = model.Birthday
-                    , GenderId = model.GenderId, DemographicId = model.DemographicId, Country = model.Country,  };
-
-                try
+                if (userWithSameEmail == null)
                 {
-                    var result = await UserManager.CreateAsync(user, model.Password);
 
-
-                    if (result.Succeeded)
+                 
+                    var user = new ApplicationUser
                     {
-                        await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+                        UserName = model.Email,
+                        Email = model.Email,
+                        Birthdate = model.Birthday
+                        ,
+                        GenderId = model.GenderId,
+                        DemographicId = model.DemographicId,
+                        Country = model.Country,
+                    };
 
-                        // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
-                        // Send an email with this link
-                        // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
-                        // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                        // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
-
-                        return RedirectToAction("Index", "Home");
-                    }
-                    AddErrors(result);
-                }
-
-
-                catch (DbEntityValidationException dbEx)
-                {
-                    
-                    foreach (var validationErrors in dbEx.EntityValidationErrors)
+                    try
                     {
-                        foreach (var validationError in validationErrors.ValidationErrors)
+                        var result = await UserManager.CreateAsync(user, model.Password);
+
+
+                        if (result.Succeeded)
                         {
+                            await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
 
-                            Trace.TraceInformation("Property: {0} Error: {1}",
-                                                    validationError.PropertyName,
-                                                    validationError.ErrorMessage);
+                            // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
+                            // Send an email with this link
+                            // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+                            // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                            // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+
+                            return RedirectToAction("Index", "Home");
                         }
+                        AddErrors(result);
                     }
 
-                }
 
+                    catch (DbEntityValidationException dbEx)
+                    {
+
+                        foreach (var validationErrors in dbEx.EntityValidationErrors)
+                        {
+                            foreach (var validationError in validationErrors.ValidationErrors)
+                            {
+
+                                Trace.TraceInformation("Property: {0} Error: {1}",
+                                                        validationError.PropertyName,
+                                                        validationError.ErrorMessage);
+                            }
+                        }
+
+                    }
+                }
+                else
+                {
+                    ViewBag.Message = "User with this Email Already Exist";
+                    return View(viewModel);
+                }
                 // If we got this far, something failed, redisplay form
                 return View(model);
             }
@@ -521,6 +544,7 @@ namespace Capstone_Project.Controllers
 
         private ActionResult RedirectToLocal(string returnUrl)
         {
+            
             if (Url.IsLocalUrl(returnUrl))
             {
                 return Redirect(returnUrl);
