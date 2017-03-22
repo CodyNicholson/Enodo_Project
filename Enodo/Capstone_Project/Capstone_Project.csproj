@@ -794,10 +794,8 @@
     <Content Include="Views\Results\ShowResults.cshtml" />
     <Content Include="Scripts\test4.json" />
     <Content Include="Views\Survey\SurveyForm.cshtml" />
-    <Content Include="Scripts\_output1.json" />
     <Content Include="Scripts\test3.json" />
     <Content Include="Views\Survey\AddOption.cshtml" />
-    <Content Include="Scripts\_output2.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="obj\Debug\TempPE\" />

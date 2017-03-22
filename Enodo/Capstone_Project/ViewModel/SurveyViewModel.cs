@@ -12,5 +12,6 @@ namespace Capstone_Project.ViewModel
         public SurveyResults SurveyResults { get; set; }
         public Survey Survey { get; set; }
         public ApplicationUser User { get; set; }
+        public bool IsTaken { get; set; }
     }
 }

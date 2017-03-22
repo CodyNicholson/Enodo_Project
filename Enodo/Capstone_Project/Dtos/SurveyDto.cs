@@ -17,5 +17,6 @@ namespace Capstone_Project.Dtos
         public string Directions { get; set; }
 
         public string Owner { get; set; }
+        public string IsTaken { get; set; }
     }
 }

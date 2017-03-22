@@ -66,13 +66,14 @@ namespace Capstone_Project.Controllers
             
             var survey = _context.Surveys.SingleOrDefault(s => s.Id == id);
             var options = _context.Options.ToList();
-           
+
 
             var viewModel = new SurveyViewModel()
             {
                 Options = options,
                 Survey = survey,
-                User = user
+                User = user,
+                IsTaken = true
             };
 
             return View("TakeSurvey", viewModel);
@@ -116,6 +117,7 @@ namespace Capstone_Project.Controllers
                 surveyInDb.Name = survey.Name;
                 surveyInDb.Directions = survey.Directions;
                 surveyInDb.Owner = user.UserName;
+                surveyInDb.IsTaken = false;
             }
 
             foreach (var option in options)

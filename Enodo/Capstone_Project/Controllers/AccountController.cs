@@ -263,7 +263,7 @@ namespace Capstone_Project.Controllers
                 else
                 {
                    // ViewBag.Message = "User with this Email Already Exist";
-                    ModelState.AddModelError("", "User with this Email Already Exist");
+                    ModelState.AddModelError("", "User with this Email Already Exists");
                     return View(viewModel);
                 }
                 // If we got this far, something failed, redisplay form

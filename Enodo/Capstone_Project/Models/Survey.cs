@@ -21,5 +21,7 @@ namespace Capstone_Project.Models
 
         public string Owner { get; set; }
 
+        public bool IsTaken { get; set; }
+
     }
 }

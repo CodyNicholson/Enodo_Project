@@ -25,6 +25,7 @@
     <script>
         $(document).ready(function() {
             $('#results').DataTable({
+
                 ajax: {
                     url: "/api/survey",
                     dataSrc: ""
@@ -33,7 +34,13 @@
                     {
                         data: "id",
                         render: function (data, type, survey) {
-                            return "<a href='/results/showresults/" + survey.id + "'>" + survey.name + "</a>";
+                            console.log(survey);
+                            if (survey.isTaken === "True") {
+                                return "<a href='/results/showresults/" + survey.id + "'>" + survey.name + "</a>";
+                            } else {
+                                return survey.name + " (This survey is not taken yet)";
+                            }
+                            
                         }
                     },
                     {
