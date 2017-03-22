@@ -34,7 +34,7 @@
                     {
                         data: "id",
                         render: function (data, type, survey) {
-                            console.log(survey);
+                            //console.log(survey);
                             if (survey.isTaken === "True") {
                                 return "<a href='/results/showresults/" + survey.id + "'>" + survey.name + "</a>";
                             } else {
