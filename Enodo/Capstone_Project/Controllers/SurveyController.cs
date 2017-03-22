@@ -19,7 +19,8 @@ namespace Capstone_Project.Controllers
         public SurveyController()
         {
             _context = new ApplicationDbContext(); // This is a disposable object, so we need to properly dispose of it
-            
+            currentUserId = System.Web.HttpContext.Current.User.Identity.GetUserId();
+            user = _context.Users.SingleOrDefault(u => u.Id == currentUserId);
         }
 
         protected override void Dispose(bool disposing)
@@ -29,8 +30,7 @@ namespace Capstone_Project.Controllers
 
         public ActionResult Index()
         {
-            currentUserId = System.Web.HttpContext.Current.User.Identity.GetUserId();
-            user = _context.Users.SingleOrDefault(u => u.Id == currentUserId);
+            
             var surveys = _context.Surveys.ToList();
             var viewModel = new SurveyIndexViewModel()
             {
@@ -42,10 +42,12 @@ namespace Capstone_Project.Controllers
 
         public ActionResult CreateSurvey()
         {
+           
             var viewModel = new SurveyViewModel()
             {
                 Survey = new Survey(),
-                Options = new List<Option>()
+                Options = new List<Option>(),
+                User = user
             };
 
             for (int i = 0; i < 30; i++)
@@ -61,11 +63,10 @@ namespace Capstone_Project.Controllers
 
         public ActionResult TakeSurvey(int id)
         {
-            var userid = HttpContext.Request.QueryString["userid"];
-            var currentUserId = System.Web.HttpContext.Current.User.Identity.GetUserId();
+            
             var survey = _context.Surveys.SingleOrDefault(s => s.Id == id);
             var options = _context.Options.ToList();
-            var user = _context.Users.SingleOrDefault(u => u.Id == currentUserId);
+           
 
             var viewModel = new SurveyViewModel()
             {
@@ -91,7 +92,8 @@ namespace Capstone_Project.Controllers
             {
                 var viewModel = new SurveyViewModel()
                 {
-                    Survey = new Survey()
+                    Survey = new Survey(),
+                    User = user
                 };
 
                 return CreateSurvey(); 
@@ -100,6 +102,7 @@ namespace Capstone_Project.Controllers
             
             if (survey.Id == 0)
             {
+                survey.Owner = user.UserName;
                 _context.Surveys.Add(survey); // This does not write customer to the database, this is just saved in local memory
             }
             else
@@ -108,7 +111,7 @@ namespace Capstone_Project.Controllers
 
                 surveyInDb.Name = survey.Name;
                 surveyInDb.Directions = survey.Directions;
-                surveyInDb.Owner = survey.Owner;
+                surveyInDb.Owner = user.UserName;
             }
 
             foreach (var option in options)
