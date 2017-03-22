@@ -210,17 +210,15 @@ namespace Capstone_Project.Controllers
             {
                 if (userWithSameEmail == null)
                 {
-
-                 
                     var user = new ApplicationUser
                     {
                         UserName = model.Email,
                         Email = model.Email,
-                        Birthdate = model.Birthday
-                        ,
+                        Birthdate = model.Birthday,
                         GenderId = model.GenderId,
                         DemographicId = model.DemographicId,
                         Country = model.Country,
+                        IsResearcher = model.IsResearcher
                     };
 
                     try

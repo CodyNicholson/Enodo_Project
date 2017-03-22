@@ -85,6 +85,8 @@ namespace Capstone_Project.Models
         [Display(Name = "Demographic")]
         public int DemographicId { get; set; }
 
+        public bool IsResearcher { get; set; }
+
         public IEnumerable<Demographic> Demographics { get; set; }
         public IEnumerable<Gender> Genders { get; set; }
 

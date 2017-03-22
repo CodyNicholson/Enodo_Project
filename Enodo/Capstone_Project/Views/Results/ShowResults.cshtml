@@ -9,7 +9,7 @@
 
 <h2>@ViewBag.Title</h2>
 <p>@ViewBag.Message</p>
-@Html.ActionLink("Download Data", "Download", "Results", new { id = @Model.Survey.Id }, new { @class = "btn btn-primary", @style = "color:white" })
+
 <div class="panel-group" id="accordion">
     <div class="panel panel-default">
         <div class="panel-heading">
@@ -21,14 +21,14 @@
         </div>
         <div id="collapse1" class="panel-collapse collapse in">
             <div class="panel-body">
-         
+
                 <div class="videoWrapper">
                     <iframe title="resultsFrame" src="~/Content/ToFrame.html" frameBorder="0" allowfullscreen></iframe>
                 </div>
 
-                </div>
-                </div>
             </div>
+        </div>
+    </div>
     <div class="panel panel-default">
         <div class="panel-heading">
             <h4 class="panel-title">
@@ -42,12 +42,14 @@
                 <div class="videoWrapper">
                     <iframe title="sunBurstFrame" src="~/Content/SunBurst_Frame.html" frameBorder="0" allowfullscreen></iframe>
                 </div>
-                </div>
-                </div>
             </div>
+        </div>
+    </div>
 </div>
 
-    <h4 style="display: none">
+@Html.ActionLink("Download Data", "Download", "Results", new { id = @Model.Survey.Id }, new { @class = "btn btn-primary", @style = "color:white" })
+
+<h4 style="display: none">
         <script type="text/javascript">document.write(localStorage.getItem("surveyOptionIds"));</script>
     </h4>
 

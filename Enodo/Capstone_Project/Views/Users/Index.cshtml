@@ -23,7 +23,8 @@
         </tbody>
     </table>
 
-<p><a class="btn btn-primary" href="/Users/New">Create User</a></p>
+
+<!--<p><a class="btn btn-primary" href="/Users/New">Create User</a></p>-->
 
 @section scripts
 {
@@ -38,8 +39,7 @@
                 {
                     data: "name",
                     render: function (data, type, user) {
-
-                        return "<a href='/users/edit/" + user.id + "'>" + user.userName + "</a>";
+                       return "<a href='/users/edit/" + user.id + "'>" + user.userName + "</a>";
                     }
                 },
                 {

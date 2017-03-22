@@ -1,4 +1,4 @@
-﻿@model Capstone_Project.Models.User
+﻿@model Capstone_Project.Models.ApplicationUser
 
 @{
     ViewBag.Title = Model.UserName;
@@ -15,8 +15,10 @@
     {
         <li>Membership Type: User</li>
     }
+
     @if (Model.Birthdate.HasValue)
     {
         <li>Birthdate: @Model.Birthdate.Value.ToShortDateString()</li>
     }
+
 </ul>
