@@ -67,6 +67,7 @@ namespace Capstone_Project.Controllers
             var survey = _context.Surveys.SingleOrDefault(s => s.Id == id);
             var options = _context.Options.ToList();
 
+            survey.IsTaken = true;
 
             var viewModel = new SurveyViewModel()
             {
@@ -75,7 +76,7 @@ namespace Capstone_Project.Controllers
                 User = user,
                 IsTaken = true
             };
-
+            _context.SaveChanges();
             return View("TakeSurvey", viewModel);
         }
 
@@ -108,6 +109,7 @@ namespace Capstone_Project.Controllers
             if (survey.Id == 0)
             {
                 survey.Owner = user.UserName;
+   
                 _context.Surveys.Add(survey); // This does not write customer to the database, this is just saved in local memory
             }
             else
