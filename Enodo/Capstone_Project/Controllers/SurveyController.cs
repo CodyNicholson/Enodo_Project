@@ -53,12 +53,16 @@ namespace Capstone_Project.Controllers
             var usedid = HttpContext.Request.QueryString["userid"];
             var survey = _context.Surveys.SingleOrDefault(s => s.Id == id);
             var options = _context.Options.ToList();
+            var current_id = System.Web.HttpContext.Current.User.Identity.GetUserId();
+        
+            var user = _context.Users.SingleOrDefault(u => u.Id == current_id);
+
 
             var viewModel = new SurveyViewModel()
             {
                 Options = options,
                 Survey = survey,
-               // User = user
+                User = user
             };
 
             return View("TakeSurvey", viewModel);
