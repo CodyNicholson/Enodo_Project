@@ -63,9 +63,9 @@ namespace Capstone_Project.Controllers
             List <ApplicationUser> list = database.Users.ToList();
             //Console.WriteLine(list.ToString());
             //var rywjhs  = Console.In;
-            double[][] xyzaffair = parsetable(surveyid, _context);
+            //double[][] xyzaffair = parsetable(surveyid, _context);
             //parsetable(surveyid);
-            maparr = new string[xyzaffair.Length-1];
+            /*maparr = new string[xyzaffair.Length-1];
             for(int i = 0;i < xyzaffair[0].Length; i++)
             {
                 maparr[i] = xyzaffair[0][i].ToString();
@@ -75,8 +75,10 @@ namespace Capstone_Project.Controllers
             for(int x = 1; x < xyzaffair.Length; x++)
             {
                 surveys[x-1] = xyzaffair[x];
-            }
+            }*/
             //surveys = xyzaffair;
+
+            parsetable(surveyid, _context);
             distarray(surveys);
 
 
@@ -205,19 +207,20 @@ namespace Capstone_Project.Controllers
 
         }
 
-        public static double[][] parsetable(int surveyid, ApplicationDbContext _context)
+        public static void parsetable(int surveyid, ApplicationDbContext _context)
         {
             var results = _context.SurveyResultsSet.Where(s => s.SurveyId == surveyid);
             var array = results.ToArray();
             int x = array.Length;
-            double[][] temp = new double[x + 1][];
-            temp[0] = new double[array.Length];
+            surveys = new double[x][];
+            maparr = new String[x];
+            
             for (int i = 0; i < x; i++)
             {
-                temp[0][i] = (double)array[i].UserId;
-                temp[i + 1] = array[i].OptionOrder.Split(',').Select(Double.Parse).ToArray();
+                maparr[i] = array[i].UserId;
+                surveys[i] = array[i].OptionOrder.Split(',').Select(Double.Parse).ToArray();
             }
-            return temp;
+            //return temp;
         }
 
 
