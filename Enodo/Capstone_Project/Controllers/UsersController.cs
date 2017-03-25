@@ -32,16 +32,6 @@ namespace Capstone_Project.Controllers
             return View();
         }
 
-        public ActionResult Details(string id)
-        {
-            var user = _context.Users.SingleOrDefault(u => u.Id.Equals(id)); //This will make our query execute immediately
-
-            if (user == null)
-                return HttpNotFound();
-
-            return View(user);
-        }
-
         [HttpPost] // This is here so that our Action can only be called using HttpPost and not HttpGet. By convention, if your actions modify data they should only be accessible using HttpPost
         public ActionResult Save(ApplicationUser user) // This is called Model Binding. MVC framework will automatically map request data to this object
         {
