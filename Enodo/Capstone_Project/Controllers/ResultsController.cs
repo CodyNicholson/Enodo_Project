@@ -28,11 +28,15 @@ namespace Capstone_Project.Controllers
 
         public ActionResult Index()
         {
+            Response.Cache.SetCacheability(System.Web.HttpCacheability.NoCache);
+            Response.Cache.SetNoStore();
             return View();
         }
 
         public ActionResult ShowResults(int id)
         {
+            Response.Cache.SetCacheability(System.Web.HttpCacheability.NoCache);
+            Response.Cache.SetNoStore();
             SurveyResults surveyResults = new SurveyResults();
             var optionOrder = HttpContext.Request.QueryString["sortorder"];
 
