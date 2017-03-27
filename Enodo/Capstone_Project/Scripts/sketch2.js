@@ -236,15 +236,19 @@
               .text(function(d) { return d.name });*/
 
         node.append("text")
-            .text(function (d) {
-                return d.name;
-            })
+        
             .attr("x", function (d) { return !d.children ? 25 : 15 })
             .attr("y", function (d) { return !d.children ? 5 : -15 })
             .attr("text-anchor", function (d) { return d.children || d._children ? "end" : "start"; })
             //.attr("transform", function(d) { return d.children ?"rotate(" + (d.x < 180 ? d.x - 180 : d.x + 180) + ")" : null; })
             .text(function (d) {
-                return d.name.toUpperCase();
+                if (!d.children) {
+
+                    return d.name.split("@")[0].toUpperCase();
+                } else {
+
+                    return d.name;
+                }
             })
             .style("fill-opacity", 1)
             .style("stroke", function (d) { return !d.children ? "grey" : "#5FBAAC" })
@@ -260,7 +264,7 @@
                 var num_Members = d.parent.children.length;
                 var name = d.name,
                     gender = d.Gender,
-                    num = d.num,
+                  //  num = d.num,
                     dm = d.Demographic,
                     ans = d.numanswers,
                     parent = d.parent.name,
@@ -271,7 +275,7 @@
 
                 document.getElementById("name").innerHTML = name;
                 document.getElementById("gender").innerHTML = gender;
-                document.getElementById("num").innerHTML = num;
+               // document.getElementById("num").innerHTML = num;
                 document.getElementById("dm").innerHTML = dm;
                 document.getElementById("country").innerHTML = country;
                 document.getElementById("top_ans").innerHTML = options[ans[0]];

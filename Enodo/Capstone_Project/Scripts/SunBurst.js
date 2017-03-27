@@ -121,7 +121,15 @@ d3.json("/Scripts/_output"+index+".json", function (error, json) {
     ;
     textEnter.append("tspan")
         .attr("x", 0)
-        .text(function (d) { return d.depth ? d.name.split(" ")[0] : ""; });
+        .text(function (d) {
+            if (!d.children) {
+
+                return d.name.split("@")[0].toUpperCase();
+            } else {
+
+                return d.depth ? d.name.split(" ")[0] : "";
+            }
+        });
     textEnter.append("tspan")
         .attr("x", 0)
         .attr("dy", "1em")
