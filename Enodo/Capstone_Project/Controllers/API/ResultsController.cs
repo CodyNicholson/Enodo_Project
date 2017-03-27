@@ -4,12 +4,14 @@ using System.Linq;
 using System.Data.Entity;
 using System.Web;
 using System.Web.Http;
+using System.Web.Mvc;
 using AutoMapper;
 using Capstone_Project.Dtos;
 using Capstone_Project.Models;
 
 namespace Capstone_Project.Controllers.api
 {
+    [OutputCache(Duration = 0)]
     public class ResultsController : ApiController
     {
         private ApplicationDbContext _context;
@@ -39,7 +41,7 @@ namespace Capstone_Project.Controllers.api
         }
 
         // POST /api/results
-        [HttpPost] // Since we are creating a resource we use HttpPost
+        [System.Web.Http.HttpPost] // Since we are creating a resource we use HttpPost
         public IHttpActionResult CreateSurveyResults(SurveyResultsDto surveyResultsDto)
         {
             if (!ModelState.IsValid)
@@ -55,7 +57,7 @@ namespace Capstone_Project.Controllers.api
         }
 
         // PUT /api/results/id
-        [HttpPut]
+        [System.Web.Http.HttpPut]
         public IHttpActionResult UpdateSurveyResults(int id, SurveyResultsDto surveyResultsDto)
         {
             if (!ModelState.IsValid)
@@ -74,7 +76,7 @@ namespace Capstone_Project.Controllers.api
         }
 
         // DELETE /api/results/id
-        [HttpDelete]
+        [System.Web.Http.HttpDelete]
         public IHttpActionResult DeleteSurveyResults(int id)
         {
             var surveyResultsInDb = _context.SurveyResultsSet.SingleOrDefault(c => c.Id == id);

@@ -12,6 +12,7 @@ using Microsoft.AspNet.Identity;
 
 namespace Capstone_Project.Controllers
 {
+    [OutputCache(Duration = 0)]
     public class ResultsController : Controller
     {
         private ApplicationDbContext _context;
