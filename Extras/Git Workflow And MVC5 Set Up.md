@@ -1,4 +1,4 @@
-#Git Workflow
+# Git Workflow
 
 1. git clone (url) - when setting up repository
 
@@ -14,15 +14,15 @@
 
 ***
 
-###Packages for Visual Studios 2015
+### Packages for Visual Studios 2015
 
-#####Go to:
+##### Go to:
 
 Tools -> Extensions and upates -> online (on the left sidebar)
 
 -
 
-#####Install these packages from extensions and updates by searching for them and clicking install
+##### Install these packages from extensions and updates by searching for them and clicking install
 
 Visual Studio Productivity Power tools 2015
 
@@ -32,6 +32,6 @@ MAKE SURE TO RESTART VISUAL STUDIOS AFTERWARDS
 
 ***
 
-#####If building still fails and you get the "Unable To Access The IIS Metabase" do this:
+##### If building still fails and you get the "Unable To Access The IIS Metabase" do this:
 
 Go To: project -> {Project Name} properties -> Click Web ( on the left menu) -> click the "Create Virtual Directory" button
