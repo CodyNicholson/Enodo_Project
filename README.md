@@ -6,4 +6,6 @@ We built a survey taking website for researchers to use to create surveys which 
 
 I led this team as the project manager, and participated in the development of this application both on the front-end and the back-end. I created our database, implemented most of our business logic, and most of the front end design save for the data visualization.
 
+The tools I used on this project were: ASP.NET, Entity Framework, C#, JavaScript, CSS, Bootstrap
+
 Capstone project, group 2, winter 2016-2017, DePaul University
