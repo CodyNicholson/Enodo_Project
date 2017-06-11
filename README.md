@@ -1,4 +1,4 @@
-# Capstone_Project
+# Enodo - Capstone Project
 
 This is my undergraduate capstone project that counts towards my computer science bachelor's degree at DePaul University. My team included: Tim Abilzade, Brian Hymel, Ermin Memic, Jeremy Hebeda, Rachel Clevenger, Tom Hemming, and myself.
 
